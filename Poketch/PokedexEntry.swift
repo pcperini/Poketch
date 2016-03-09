@@ -57,10 +57,10 @@ extension PokedexEntry {
         case 252...386:
             return "Hoenn"
             
-        case 387...493:
+        case 387...494:
             return "Sinnoh"
             
-        case 494...649:
+        case 495...649:
             return "Unova"
             
         case 650...721:

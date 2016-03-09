@@ -12,7 +12,11 @@
 		730F744E1C8B8FCD008777BC /* EntryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 730F744D1C8B8FCD008777BC /* EntryCell.swift */; };
 		730F74511C8B8FF6008777BC /* UITableView_Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 730F74501C8B8FF6008777BC /* UITableView_Extensions.swift */; };
 		730F74531C8B909B008777BC /* Cell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 730F74521C8B909B008777BC /* Cell.swift */; };
+		73173A141C8FA03F00C8ABBF /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73173A131C8FA03F00C8ABBF /* ViewController.swift */; };
 		73201D121C89246B003D1781 /* BulbapediaClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73201D111C89246B003D1781 /* BulbapediaClient.swift */; };
+		7327614B1C8E9DC0002C5A5B /* AppearanceSwizzling.m in Sources */ = {isa = PBXBuildFile; fileRef = 7327614A1C8E9DC0002C5A5B /* AppearanceSwizzling.m */; };
+		7327614D1C8EA250002C5A5B /* Display.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7327614C1C8EA250002C5A5B /* Display.swift */; };
+		73528E331C8FAB3100BA64A0 /* EntryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73528E321C8FAB3100BA64A0 /* EntryViewController.swift */; };
 		7379275F1C891FEE00208796 /* PokedexEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7379275E1C891FEE00208796 /* PokedexEntry.swift */; };
 		737927611C89206200208796 /* PokedexType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 737927601C89206200208796 /* PokedexType.swift */; };
 		73ADD1D41C890B0D000BC548 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73ADD1D31C890B0D000BC548 /* AppDelegate.swift */; };
@@ -85,7 +89,13 @@
 		730F744D1C8B8FCD008777BC /* EntryCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EntryCell.swift; sourceTree = "<group>"; };
 		730F74501C8B8FF6008777BC /* UITableView_Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UITableView_Extensions.swift; sourceTree = "<group>"; };
 		730F74521C8B909B008777BC /* Cell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Cell.swift; sourceTree = "<group>"; };
+		73173A131C8FA03F00C8ABBF /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		73201D111C89246B003D1781 /* BulbapediaClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BulbapediaClient.swift; sourceTree = "<group>"; };
+		732761481C8E9DBF002C5A5B /* Poketch-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Poketch-Bridging-Header.h"; sourceTree = "<group>"; };
+		732761491C8E9DC0002C5A5B /* AppearanceSwizzling.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppearanceSwizzling.h; sourceTree = "<group>"; };
+		7327614A1C8E9DC0002C5A5B /* AppearanceSwizzling.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppearanceSwizzling.m; sourceTree = "<group>"; };
+		7327614C1C8EA250002C5A5B /* Display.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Display.swift; sourceTree = "<group>"; };
+		73528E321C8FAB3100BA64A0 /* EntryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EntryViewController.swift; sourceTree = "<group>"; };
 		7379275E1C891FEE00208796 /* PokedexEntry.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PokedexEntry.swift; sourceTree = "<group>"; };
 		737927601C89206200208796 /* PokedexType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PokedexType.swift; sourceTree = "<group>"; };
 		73ADD1D01C890B0C000BC548 /* Poketch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Poketch.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -154,7 +164,9 @@
 		730F744C1C8B8FBE008777BC /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				73173A131C8FA03F00C8ABBF /* ViewController.swift */,
 				73ADD1D51C890B0D000BC548 /* EntriesListViewController.swift */,
+				73528E321C8FAB3100BA64A0 /* EntryViewController.swift */,
 				73ADD1D71C890B0D000BC548 /* Main.storyboard */,
 			);
 			name = "View Controllers";
@@ -170,13 +182,22 @@
 			name = Views;
 			sourceTree = "<group>";
 		};
+		7327614E1C8EA252002C5A5B /* Foundation */ = {
+			isa = PBXGroup;
+			children = (
+				73ECA9841C8D413200FF0154 /* Sequences.swift */,
+				7327614C1C8EA250002C5A5B /* Display.swift */,
+			);
+			name = Foundation;
+			sourceTree = "<group>";
+		};
 		7379275D1C891FC600208796 /* Models */ = {
 			isa = PBXGroup;
 			children = (
 				73201D111C89246B003D1781 /* BulbapediaClient.swift */,
 				7379275E1C891FEE00208796 /* PokedexEntry.swift */,
 				737927601C89206200208796 /* PokedexType.swift */,
-				73ECA9841C8D413200FF0154 /* Sequences.swift */,
+				7327614E1C8EA252002C5A5B /* Foundation */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -207,6 +228,9 @@
 			isa = PBXGroup;
 			children = (
 				73ADD1D31C890B0D000BC548 /* AppDelegate.swift */,
+				732761491C8E9DC0002C5A5B /* AppearanceSwizzling.h */,
+				7327614A1C8E9DC0002C5A5B /* AppearanceSwizzling.m */,
+				732761481C8E9DBF002C5A5B /* Poketch-Bridging-Header.h */,
 				730F744C1C8B8FBE008777BC /* View Controllers */,
 				730F744F1C8B8FD2008777BC /* Views */,
 				73ADD1DA1C890B0D000BC548 /* Assets.xcassets */,
@@ -456,10 +480,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				73173A141C8FA03F00C8ABBF /* ViewController.swift in Sources */,
 				73ADD1D61C890B0D000BC548 /* EntriesListViewController.swift in Sources */,
 				73201D121C89246B003D1781 /* BulbapediaClient.swift in Sources */,
+				7327614D1C8EA250002C5A5B /* Display.swift in Sources */,
 				73ECA9851C8D413200FF0154 /* Sequences.swift in Sources */,
+				73528E331C8FAB3100BA64A0 /* EntryViewController.swift in Sources */,
 				7302EF4B1C8D2A4A0078E84B /* BubbleLabel.swift in Sources */,
+				7327614B1C8E9DC0002C5A5B /* AppearanceSwizzling.m in Sources */,
 				73ADD1D41C890B0D000BC548 /* AppDelegate.swift in Sources */,
 				730F74511C8B8FF6008777BC /* UITableView_Extensions.swift in Sources */,
 				737927611C89206200208796 /* PokedexType.swift in Sources */,
@@ -673,10 +701,12 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				ENABLE_STRICT_OBJC_MSGSEND = NO;
 				INFOPLIST_FILE = Poketch/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.pcperini.Poketch;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Poketch/Poketch-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				TARGETED_DEVICE_FAMILY = 1;
 			};
@@ -688,10 +718,12 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				ENABLE_STRICT_OBJC_MSGSEND = NO;
 				INFOPLIST_FILE = Poketch/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.pcperini.Poketch;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Poketch/Poketch-Bridging-Header.h";
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;

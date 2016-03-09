@@ -21,6 +21,8 @@ class PokedexType: Object {
             name = "Electr"
         case "Psychic":
             name = "Psychc"
+        case "Unknown":
+            name = "???"
         default:
             break
         }

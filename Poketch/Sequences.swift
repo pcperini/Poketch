@@ -20,3 +20,24 @@ extension SequenceType where Generator.Element: Hashable {
         return frequency.sort { $0.1 > $1.1 }
     }
 }
+
+extension _ArrayType where Generator.Element: Equatable {
+    public func unique() -> Self {
+        var arrayCopy = self
+        arrayCopy.uniqueInPlace()
+        return arrayCopy
+    }
+    
+    mutating public func uniqueInPlace() {
+        var seen: [Generator.Element] = []
+        var index = 0
+        for element in self {
+            if seen.contains(element) {
+                self.removeAtIndex(index)
+            } else {
+                seen.append(element)
+                index += 1
+            }
+        }
+    }
+}
