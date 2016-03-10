@@ -91,8 +91,9 @@ class EntriesListViewController: UIViewController {
         
         self.searchTextFieldContainer.layer.borderColor = self.filterButtonColor?.CGColor
         
-        AppDelegate.sharedAppDelegate.rootViewController?.sortFilterButton.optionsViews = self.sortFilterViews
-        AppDelegate.sharedAppDelegate.rootViewController?.scrollView = self.tableView
+        let rootVC = AppDelegate.sharedAppDelegate.rootViewController
+        rootVC?.sortFilterButton.optionsViews = self.sortFilterViews
+        rootVC?.scrollView = self.tableView
         
         BulbapediaClient().fetchEntries().then { (_) -> Void in
             self.reloadData()
@@ -223,24 +224,35 @@ class EntriesListViewController: UIViewController {
         
         let title: String?
         let color: UIColor?
+        let image: UIImage?
         
         switch self.sortState {
         case .Region:
             title = self.currentSectionRepresentativeEntry?.regionName
             color = .blackColor()
+            image = UIImage(named: "Map")
         case .Alphabetical:
             title = self.currentSectionRepresentativeEntry?.name
                 .substringToIndex(((self.currentSectionRepresentativeEntry?.name) ?? "").startIndex.advancedBy(1))
             color = .blackColor()
+            image = nil
         case .Type:
             title = self.currentSectionRepresentativeEntry?.type1?.name
             color = self.currentSectionRepresentativeEntry?.type1?.color
+            image = nil
         }
         
         rootVC?.titleLabel.text = title
-
-        rootVC?.regionImageView.backgroundColor = color
-        rootVC?.regionImageView.image = UIImage(named: title ?? "")
+        rootVC?.indicatorImageView.backgroundColor = color
+        rootVC?.indicatorImageView.image = image
+        
+        if let regionArea = self.currentSectionRepresentativeEntry?.regionArea {
+            UIView.animateWithDuration(0.3) {
+                rootVC?.indicatorImageView.layer.contentsRect = CGRectNormalizedRect(regionArea, size: image?.size ?? .zero)
+            }
+        }
+        
+        rootVC?.sortFilterButtonHidden = false
     }
     
     // MARK: Responders
@@ -325,9 +337,9 @@ extension EntriesListViewController: UITableViewDelegate {
     }
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        let entry = self.entryForIndexPath(indexPath)
-        self.performSegueWithIdentifier("ShowEntryDetail",
-            sender: entry)
+//        let entry = self.entryForIndexPath(indexPath)
+//        self.performSegueWithIdentifier("ShowEntryDetail",
+//            sender: entry)
     }
 }
 

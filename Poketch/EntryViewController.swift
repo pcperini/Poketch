@@ -15,6 +15,14 @@ class EntryViewController: UIViewController {
     // MARK: Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        AppDelegate.sharedAppDelegate.rootViewController?.titleLabel.text = self.entry.name
+        
+        let rootVC = AppDelegate.sharedAppDelegate.rootViewController
+        
+        rootVC?.titleLabel.text = self.entry.name
+        rootVC?.indicatorImageView.backgroundColor = UIColor.blackColor()
+        rootVC?.indicatorImageView.setImageWithURL(self.entry.iconURL,
+            placeholderImage: nil)
+        
+        rootVC?.sortFilterButtonHidden = true
     }
 }

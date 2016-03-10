@@ -70,4 +70,34 @@ extension PokedexEntry {
             return "???"
         }
     }
+    
+    var regionArea: CGRect {
+        var rect: CGRect
+        
+        switch self.regionName {
+        case "Kanto":
+            rect = CGRect(x: 475, y: 212, width: 323, height: 194)
+            
+        case "Johto":
+            rect = CGRect(x: 202, y: 217, width: 275, height: 194)
+            
+        case "Hoenn":
+            rect = CGRect(x: 12, y: 355, width: 323, height: 211)
+            
+        case "Sinnoh":
+            rect = CGRect(x: 786, y: 0, width: 357, height: 262)
+            
+        case "Unova":
+            rect = CGRect(x: 0, y: 738, width: 323, height: 262)
+            
+        case "Kalos":
+            rect = CGRect(x: 829, y: 789, width: 299, height: 211)
+            
+        default:
+            rect = CGRect(x: 860, y: 585, width: 1, height: 1)
+        }
+        
+        rect = CGRectInset(rect, rect.width * -0.25, rect.height * -0.25)
+        return rect
+    }
 }
