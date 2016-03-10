@@ -12,7 +12,21 @@ import QuartzCore
 
 @IBDesignable
 class EntriesListViewController: UIViewController {
+    // MARK: Types
+    enum SortState: String {
+        case Region = "NUM"
+        case Alphabetical = "ABC"
+        case Type = "TYPE"
+    }
+    
     // MARK: Properties
+    var sortState: SortState = .Region {
+        didSet {
+            guard self.sortState != oldValue else { return }
+            self.reloadData()
+        }
+    }
+    
     var sortedEntries: [(String, [PokedexEntry])] = []
     var sortedAndFilteredEntries: [(String, [PokedexEntry])] {
         if let searchText = self.searchTextField.text where !searchText.isEmpty {
@@ -30,11 +44,11 @@ class EntriesListViewController: UIViewController {
         return self.sortedEntries.reduce([]) { $0.0 + $0.1.1 }
     }
     
-    var currentSectionTitle: String? {
+    var currentSectionRepresentativeEntry: PokedexEntry? {
         guard let visibleRow = self.tableView.indexPathsForVisibleRows?.middle
             else { return nil }
         
-        return self.sortedAndFilteredEntries[visibleRow.section].0
+        return self.sortedAndFilteredEntries[visibleRow.section].1[visibleRow.row]
     }
     
     @IBOutlet var tableView: UITableView!
@@ -49,10 +63,13 @@ class EntriesListViewController: UIViewController {
             button.backgroundColor = self.filterButtonColor
             
             button.setTitle(title, forState: .Normal)
-            button.titleLabel?.adjustsFontSizeToFitWidth = true
             button.titleLabel?.font = UIFont(name: "PokemonGB", size: 15.0)
             button.setTitleShadowColor(UIColor(white: 0.0, alpha: 0.50), forState: .Normal)
             button.titleLabel?.shadowOffset = CGSize(width: 1, height: 1)
+            
+            button.addTarget(self,
+                action: "filterButtonWasPressed:",
+                forControlEvents: .TouchUpInside)
             
             return button
         }
@@ -75,10 +92,10 @@ class EntriesListViewController: UIViewController {
         self.searchTextFieldContainer.layer.borderColor = self.filterButtonColor?.CGColor
         
         AppDelegate.sharedAppDelegate.rootViewController?.sortFilterButton.optionsViews = self.sortFilterViews
+        AppDelegate.sharedAppDelegate.rootViewController?.scrollView = self.tableView
         
         BulbapediaClient().fetchEntries().then { (_) -> Void in
             self.reloadData()
-            self.updateTitle()
         }
     }
     
@@ -143,15 +160,45 @@ class EntriesListViewController: UIViewController {
     }
     
     // MARK: Mutators
-    func reloadData(modifier: (Results<PokedexEntry>) -> Results<PokedexEntry> = { $0 }) {
-        let realm = try! Realm()
-        let results = modifier(realm.objects(PokedexEntry))
+    func reloadData() {
+        self.sortedEntries = []
         
+        let realm = try! Realm()
+        let results = realm.objects(PokedexEntry)
+        
+        let key: (PokedexEntry) -> String
+        let sort: ([(String, [PokedexEntry])]) -> [(String, [PokedexEntry])]
+        
+        switch self.sortState {
+        case .Region:
+            key = { $0.regionName }
+            sort = { $0 }
+        case .Alphabetical:
+            key = { $0.name[$0.name.startIndex ... $0.name.startIndex] }
+            sort = { (entries: [(String, [PokedexEntry])]) in
+                return entries.map({ (entry: (String, [PokedexEntry])) in
+                    return (entry.0, entry.1.sort { $0.name.localizedCaseInsensitiveCompare($1.name) == .OrderedAscending })
+                }).sort({
+                    return $0.0.localizedCaseInsensitiveCompare($1.0) == .OrderedAscending
+                })
+            }
+            
+        case .Type:
+            key = { $0.type1!.name }
+            sort = { (entries: [(String, [PokedexEntry])]) in
+                return entries.map({ (entry: (String, [PokedexEntry])) in
+                    return (entry.0, entry.1.sort { key($0) < key($1) })
+                }).sort({
+                    return $0.0.localizedCaseInsensitiveCompare($1.0) == .OrderedAscending
+                })
+            }
+        }
+
         // Region sorting
         for entry in results {
             var found = false
-            for (index, var section) in self.sortedAndFilteredEntries.enumerate() {
-                if section.0 == entry.regionName {
+            for (index, var section) in self.sortedEntries.enumerate() {
+                if section.0 == key(entry) {
                     section.1 += [entry]
                     self.sortedEntries[index] = section
                     
@@ -161,25 +208,57 @@ class EntriesListViewController: UIViewController {
             }
             
             if !found {
-                self.sortedEntries.append((entry.regionName, [entry]))
+                self.sortedEntries.append((key(entry), [entry]))
             }
         }
         
-        
+        self.sortedEntries = sort(self.sortedEntries)
         self.tableView.reloadData()
+        
+        self.updateTitle()
     }
     
     func updateTitle() {
         let rootVC = AppDelegate.sharedAppDelegate.rootViewController
-        rootVC?.titleLabel.text = self.currentSectionTitle
         
-        print(self.currentSectionTitle)
-        rootVC?.regionImageView.image = UIImage(named: self.currentSectionTitle ?? "")
+        let title: String?
+        let color: UIColor?
+        
+        switch self.sortState {
+        case .Region:
+            title = self.currentSectionRepresentativeEntry?.regionName
+            color = .blackColor()
+        case .Alphabetical:
+            title = self.currentSectionRepresentativeEntry?.name
+                .substringToIndex(((self.currentSectionRepresentativeEntry?.name) ?? "").startIndex.advancedBy(1))
+            color = .blackColor()
+        case .Type:
+            title = self.currentSectionRepresentativeEntry?.type1?.name
+            color = self.currentSectionRepresentativeEntry?.type1?.color
+        }
+        
+        rootVC?.titleLabel.text = title
+
+        rootVC?.regionImageView.backgroundColor = color
+        rootVC?.regionImageView.image = UIImage(named: title ?? "")
     }
     
     // MARK: Responders
     @IBAction func searchTextFieldDidChange(sender: UITextField?) {
         self.tableView.reloadData()
+    }
+    
+    func filterButtonWasPressed(sender: UIButton?) {
+        let rootVC = AppDelegate.sharedAppDelegate.rootViewController
+        
+        let oldTitle = rootVC?.sortFilterButton.titleForState(.Normal)
+        let newTitle = sender?.titleForState(.Normal)
+        
+        rootVC?.sortFilterButton.setTitle(newTitle, forState: .Normal)
+        sender?.setTitle(oldTitle, forState: .Normal)
+        
+        rootVC?.sortFilterButton.selected = false
+        self.sortState = SortState(rawValue: newTitle!)!
     }
 }
 
@@ -219,23 +298,25 @@ extension EntriesListViewController: UITableViewDataSource {
         return cell
     }
     
-    private static let padLength = 2
     func sectionIndexTitlesForTableView(tableView: UITableView) -> [String]? {
-        var sectionTitles = self.sortedAndFilteredEntries.enumerate().map { ($0.index + 1).romanNumeral }
-        
-        for _ in 0 ..< EntriesListViewController.padLength {
-            let sectionTitlesCopy = sectionTitles
-            sectionTitlesCopy.enumerate().forEach {
-                sectionTitles.insert("\n", atIndex: $0.index + (sectionTitles.count - sectionTitlesCopy.count))
-            }
+        let sectionTitles: [String]
+        switch self.sortState {
+        case .Region:
+            sectionTitles = self.sortedEntries.enumerate()
+                .map({ ($0.index + 1).romanNumeral })
+            
+        case .Alphabetical:
+            sectionTitles = self.sortedEntries.enumerate()
+                .map({ $0.element.0[$0.element.0.startIndex ... $0.element.0.startIndex] })
+            
+        case .Type:
+            sectionTitles = self.sortedEntries.enumerate()
+                .map({ $0.element.1[0].type1!.name })
         }
         
         return sectionTitles
     }
-    
-    func tableView(tableView: UITableView, sectionForSectionIndexTitle title: String, atIndex index: Int) -> Int {
-        return index / Int(pow(Float(EntriesListViewController.padLength), 2))
-    }
+
 }
 
 extension EntriesListViewController: UITableViewDelegate {

@@ -16,6 +16,8 @@ class ViewController: UIViewController {
     @IBOutlet var regionImageView: UIImageView!
     @IBOutlet var regionImageGlossView: UIView!
     
+    var scrollView: UIScrollView?
+    
     // MARK: View Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,5 +31,10 @@ class ViewController: UIViewController {
         
         self.regionImageGlossView.layer.addSublayer(gradientLayer)
         self.regionImageView.superview?.layer.borderColor = UIColor(hexString: "#2875A8").CGColor
+    }
+    
+    // MARK: Responders
+    @IBAction func topBarTapGestureWasRecognized(sender: UITapGestureRecognizer?) {
+        self.scrollView?.scrollRectToVisible(.zero, animated: true)
     }
 }

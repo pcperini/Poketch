@@ -105,7 +105,11 @@ class OptionButton: ToggleButton {
     }
     
     private func hideOptions() {
-        self.optionsViews.forEach { $0.resignFirstResponder() }
+        self.optionsViews.forEach {
+            $0.resignFirstResponder()
+            $0.subviews.forEach { $0.resignFirstResponder() }
+        }
+        
         self.yConstraints.forEach { $0.constant = self.bounds.height }
         
         self.optionsViews.enumerate().forEach { (option) in

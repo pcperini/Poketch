@@ -60,6 +60,10 @@
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Header" translatesAutoresizingMaskIntoConstraints="NO" id="07B-Po-Ij5">
                                         <rect key="frame" x="0.0" y="0.0" width="600" height="37"/>
+                                        <gestureRecognizers/>
+                                        <connections>
+                                            <outletCollection property="gestureRecognizers" destination="je1-6d-Ah9" appends="YES" id="DkA-zL-jXO"/>
+                                        </connections>
                                     </imageView>
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -135,7 +139,7 @@
                                         <fontDescription key="fontDescription" name="PokemonGB" family="Pokemon GB" pointSize="15"/>
                                         <inset key="titleEdgeInsets" minX="2" minY="0.0" maxX="2" maxY="0.0"/>
                                         <size key="titleShadowOffset" width="1" height="1"/>
-                                        <state key="normal" title="REGION">
+                                        <state key="normal" title="NUM">
                                             <color key="titleShadowColor" red="0.0" green="0.0" blue="0.0" alpha="0.5" colorSpace="calibratedRGB"/>
                                         </state>
                                         <userDefinedRuntimeAttributes>
@@ -226,6 +230,11 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ieu-8e-gaY" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="je1-6d-Ah9">
+                    <connections>
+                        <action selector="topBarTapGestureWasRecognized:" destination="CXb-yk-o1B" id="mdo-SZ-DVc"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="-1200" y="335"/>
         </scene>
