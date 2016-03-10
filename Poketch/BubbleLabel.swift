@@ -9,7 +9,7 @@
 import UIKit
 
 @IBDesignable
-class BubbleLabel: UIButton {
+class BubbleLabel: RoundableButton {
     // MARK: Properties
     private var backgroundGradientLayer: CAGradientLayer?
     @IBInspectable var secondaryBackgroundColor: UIColor? = nil {
@@ -43,12 +43,6 @@ class BubbleLabel: UIButton {
         }
     }
     
-    @IBInspectable var cornerRadius: CGFloat = 0.0 {
-        didSet {
-            self.layer.cornerRadius = self.cornerRadius
-        }
-    }
-    
     final override var enabled: Bool {
         get { return false }
         set {}
@@ -62,11 +56,5 @@ class BubbleLabel: UIButton {
     var text: String? {
         get { return self.titleForState(.Normal) }
         set { self.setTitle(newValue, forState: .Normal) }
-    }
-    
-    // MARK: Drawing Handlers
-    override func layoutSublayersOfLayer(layer: CALayer) {
-        self.layer.masksToBounds = true
-        super.layoutSublayersOfLayer(layer)
     }
 }

@@ -38,6 +38,10 @@
 		73D5391E1C8BB325006E80C9 /* PokemonUnownGB.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 73D5391B1C8BB325006E80C9 /* PokemonUnownGB.ttf */; };
 		73D5391F1C8BB325006E80C9 /* PokemonUnownGB.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 73D5391B1C8BB325006E80C9 /* PokemonUnownGB.ttf */; };
 		73ECA9851C8D413200FF0154 /* Sequences.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73ECA9841C8D413200FF0154 /* Sequences.swift */; };
+		73ECB0681C8FE3EE00D673F0 /* OptionButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73ECB0671C8FE3EE00D673F0 /* OptionButton.swift */; };
+		73ECB06A1C8FE9AF00D673F0 /* ScratchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73ECB0691C8FE9AF00D673F0 /* ScratchViewController.swift */; };
+		73ECB06C1C9099C400D673F0 /* RoundViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73ECB06B1C9099C400D673F0 /* RoundViews.swift */; };
+		73ECB06E1C90A82600D673F0 /* KeyboardLayoutConstraint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73ECB06D1C90A82600D673F0 /* KeyboardLayoutConstraint.swift */; };
 		A345C6EAF34AE28D20E753C3 /* Pods_Poketch.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7A5B4A0F3C6E427E3CD272DF /* Pods_Poketch.framework */; };
 /* End PBXBuildFile section */
 
@@ -120,6 +124,10 @@
 		73D5391A1C8BB325006E80C9 /* PokemonGB.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = PokemonGB.ttf; sourceTree = "<group>"; };
 		73D5391B1C8BB325006E80C9 /* PokemonUnownGB.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = PokemonUnownGB.ttf; sourceTree = "<group>"; };
 		73ECA9841C8D413200FF0154 /* Sequences.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Sequences.swift; sourceTree = "<group>"; };
+		73ECB0671C8FE3EE00D673F0 /* OptionButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OptionButton.swift; sourceTree = "<group>"; };
+		73ECB0691C8FE9AF00D673F0 /* ScratchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScratchViewController.swift; sourceTree = "<group>"; };
+		73ECB06B1C9099C400D673F0 /* RoundViews.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoundViews.swift; sourceTree = "<group>"; };
+		73ECB06D1C90A82600D673F0 /* KeyboardLayoutConstraint.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeyboardLayoutConstraint.swift; sourceTree = "<group>"; };
 		7A5B4A0F3C6E427E3CD272DF /* Pods_Poketch.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Poketch.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		932A54AD655C3EDEEC31B8AC /* Pods-Poketch.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Poketch.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Poketch/Pods-Poketch.debug.xcconfig"; sourceTree = "<group>"; };
 		AC5519F905CC812935C645CE /* Pods-Poketch.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Poketch.release.xcconfig"; path = "Pods/Target Support Files/Pods-Poketch/Pods-Poketch.release.xcconfig"; sourceTree = "<group>"; };
@@ -168,6 +176,7 @@
 				73ADD1D51C890B0D000BC548 /* EntriesListViewController.swift */,
 				73528E321C8FAB3100BA64A0 /* EntryViewController.swift */,
 				73ADD1D71C890B0D000BC548 /* Main.storyboard */,
+				73ECB0691C8FE9AF00D673F0 /* ScratchViewController.swift */,
 			);
 			name = "View Controllers";
 			sourceTree = "<group>";
@@ -178,6 +187,8 @@
 				73D539191C8BA755006E80C9 /* Cells */,
 				73D539171C8BA6AD006E80C9 /* BezierView.swift */,
 				7302EF4A1C8D2A4A0078E84B /* BubbleLabel.swift */,
+				73ECB06B1C9099C400D673F0 /* RoundViews.swift */,
+				73ECB0671C8FE3EE00D673F0 /* OptionButton.swift */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -185,6 +196,7 @@
 		7327614E1C8EA252002C5A5B /* Foundation */ = {
 			isa = PBXGroup;
 			children = (
+				73ECB06D1C90A82600D673F0 /* KeyboardLayoutConstraint.swift */,
 				73ECA9841C8D413200FF0154 /* Sequences.swift */,
 				7327614C1C8EA250002C5A5B /* Display.swift */,
 			);
@@ -484,12 +496,16 @@
 				73ADD1D61C890B0D000BC548 /* EntriesListViewController.swift in Sources */,
 				73201D121C89246B003D1781 /* BulbapediaClient.swift in Sources */,
 				7327614D1C8EA250002C5A5B /* Display.swift in Sources */,
+				73ECB06C1C9099C400D673F0 /* RoundViews.swift in Sources */,
 				73ECA9851C8D413200FF0154 /* Sequences.swift in Sources */,
+				73ECB0681C8FE3EE00D673F0 /* OptionButton.swift in Sources */,
 				73528E331C8FAB3100BA64A0 /* EntryViewController.swift in Sources */,
 				7302EF4B1C8D2A4A0078E84B /* BubbleLabel.swift in Sources */,
 				7327614B1C8E9DC0002C5A5B /* AppearanceSwizzling.m in Sources */,
+				73ECB06A1C8FE9AF00D673F0 /* ScratchViewController.swift in Sources */,
 				73ADD1D41C890B0D000BC548 /* AppDelegate.swift in Sources */,
 				730F74511C8B8FF6008777BC /* UITableView_Extensions.swift in Sources */,
+				73ECB06E1C90A82600D673F0 /* KeyboardLayoutConstraint.swift in Sources */,
 				737927611C89206200208796 /* PokedexType.swift in Sources */,
 				730F74531C8B909B008777BC /* Cell.swift in Sources */,
 				730F744E1C8B8FCD008777BC /* EntryCell.swift in Sources */,

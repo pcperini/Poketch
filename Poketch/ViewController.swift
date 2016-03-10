@@ -11,4 +11,23 @@ import UIKit
 class ViewController: UIViewController {
     // MARK: Properties
     @IBOutlet var titleLabel: UILabel!
+    @IBOutlet var sortFilterButton: OptionButton!
+    
+    @IBOutlet var regionImageView: UIImageView!
+    @IBOutlet var regionImageGlossView: UIView!
+    
+    // MARK: View Lifecycle
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        let gradientLayer = CAGradientLayer()
+        gradientLayer.frame = self.regionImageGlossView.bounds
+        gradientLayer.colors = [
+            UIColor(white: 1.0, alpha: 0.9).CGColor,
+            UIColor(white: 1.0, alpha: 0.0).CGColor
+        ]
+        
+        self.regionImageGlossView.layer.addSublayer(gradientLayer)
+        self.regionImageView.superview?.layer.borderColor = UIColor(hexString: "#2875A8").CGColor
+    }
 }

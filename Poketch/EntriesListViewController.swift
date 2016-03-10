@@ -10,27 +10,71 @@ import UIKit
 import RealmSwift
 import QuartzCore
 
+@IBDesignable
 class EntriesListViewController: UIViewController {
     // MARK: Properties
     var sortedEntries: [(String, [PokedexEntry])] = []
+    var sortedAndFilteredEntries: [(String, [PokedexEntry])] {
+        if let searchText = self.searchTextField.text where !searchText.isEmpty {
+            return self.sortedEntries.map { (element: (String, [PokedexEntry])) in
+                return (element.0, element.1.filter({
+                    $0.name.lowercaseString.rangeOfString(searchText.lowercaseString) != nil
+                }))
+            }
+        }
+        
+        return self.sortedEntries
+    }
+    
     var allEntries: [PokedexEntry] {
         return self.sortedEntries.reduce([]) { $0.0 + $0.1.1 }
     }
     
     var currentSectionTitle: String? {
-        guard let visibleRow = self.tableView.indexPathsForVisibleRows?.map({ $0.section }).first
+        guard let visibleRow = self.tableView.indexPathsForVisibleRows?.middle
             else { return nil }
         
-        return self.sortedEntries[visibleRow].0
+        return self.sortedAndFilteredEntries[visibleRow.section].0
     }
     
     @IBOutlet var tableView: UITableView!
+    
+    @IBInspectable var filterButtonColor: UIColor?
+    @IBOutlet var searchTextFieldContainer: UIView!
+    @IBOutlet var searchTextField: UITextField!
+    private var sortFilterViews: [UIView] {
+        let buttonWithTitle = { (title: String) -> RoundableButton in
+            let button = RoundableButton()
+            button.cornerRadius = 4.0
+            button.backgroundColor = self.filterButtonColor
+            
+            button.setTitle(title, forState: .Normal)
+            button.titleLabel?.adjustsFontSizeToFitWidth = true
+            button.titleLabel?.font = UIFont(name: "PokemonGB", size: 15.0)
+            button.setTitleShadowColor(UIColor(white: 0.0, alpha: 0.50), forState: .Normal)
+            button.titleLabel?.shadowOffset = CGSize(width: 1, height: 1)
+            
+            return button
+        }
+        
+        return [
+            buttonWithTitle("ABC"),
+            buttonWithTitle("TYPE"),
+            self.searchTextFieldContainer
+        ]
+    }
     
     // MARK: Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationController?.interactivePopGestureRecognizer?.delegate = nil
+        
         self.tableView.contentInset = UIEdgeInsets(top: 30.0, left: 0, bottom: 79.0, right: 0)
+        self.tableView.sectionIndexBackgroundColor = UIColor.clearColor()
+        
+        self.searchTextFieldContainer.layer.borderColor = self.filterButtonColor?.CGColor
+        
+        AppDelegate.sharedAppDelegate.rootViewController?.sortFilterButton.optionsViews = self.sortFilterViews
         
         BulbapediaClient().fetchEntries().then { (_) -> Void in
             self.reloadData()
@@ -69,7 +113,7 @@ class EntriesListViewController: UIViewController {
             }
             
             var bounds = cell.bounds
-            bounds.size.width = self.tableView.bounds.width - 40 // (UITableViewIndex)
+            bounds.size.width = self.tableView.bounds.width - self.tableView.subviews.last!.bounds.width
             cell.bounds = bounds
             cell.layoutIfNeeded()
             
@@ -95,7 +139,7 @@ class EntriesListViewController: UIViewController {
     }
     
     private func entryForIndexPath(indexPath: NSIndexPath) -> PokedexEntry {
-        return self.sortedEntries[indexPath.section].1[indexPath.row]
+        return self.sortedAndFilteredEntries[indexPath.section].1[indexPath.row]
     }
     
     // MARK: Mutators
@@ -106,7 +150,7 @@ class EntriesListViewController: UIViewController {
         // Region sorting
         for entry in results {
             var found = false
-            for (index, var section) in self.sortedEntries.enumerate() {
+            for (index, var section) in self.sortedAndFilteredEntries.enumerate() {
                 if section.0 == entry.regionName {
                     section.1 += [entry]
                     self.sortedEntries[index] = section
@@ -126,17 +170,26 @@ class EntriesListViewController: UIViewController {
     }
     
     func updateTitle() {
-        AppDelegate.sharedAppDelegate.rootViewController?.titleLabel.text = self.currentSectionTitle
+        let rootVC = AppDelegate.sharedAppDelegate.rootViewController
+        rootVC?.titleLabel.text = self.currentSectionTitle
+        
+        print(self.currentSectionTitle)
+        rootVC?.regionImageView.image = UIImage(named: self.currentSectionTitle ?? "")
+    }
+    
+    // MARK: Responders
+    @IBAction func searchTextFieldDidChange(sender: UITextField?) {
+        self.tableView.reloadData()
     }
 }
 
 extension EntriesListViewController: UITableViewDataSource {
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-        return self.sortedEntries.count
+        return self.sortedAndFilteredEntries.count
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return self.sortedEntries[section].1.count
+        return self.sortedAndFilteredEntries[section].1.count
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
@@ -157,6 +210,8 @@ extension EntriesListViewController: UITableViewDataSource {
         if let type2 = entry.type2 {
             cell.rightTypeLabel.backgroundColor = type2.color
             cell.rightTypeLabel.text = type2.abbreviatedName
+            
+            cell.rightTypeLabel.hidden = false
         } else {
             cell.rightTypeLabel.hidden = true
         }
@@ -166,7 +221,7 @@ extension EntriesListViewController: UITableViewDataSource {
     
     private static let padLength = 2
     func sectionIndexTitlesForTableView(tableView: UITableView) -> [String]? {
-        var sectionTitles = self.sortedEntries.enumerate().map { ($0.index + 1).romanNumeral }
+        var sectionTitles = self.sortedAndFilteredEntries.enumerate().map { ($0.index + 1).romanNumeral }
         
         for _ in 0 ..< EntriesListViewController.padLength {
             let sectionTitlesCopy = sectionTitles

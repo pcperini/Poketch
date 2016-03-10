@@ -41,3 +41,10 @@ extension _ArrayType where Generator.Element: Equatable {
         }
     }
 }
+
+extension CollectionType {
+    public var middle: Generator.Element? {
+        guard self.count > 2 else { return nil }
+        return self[self.startIndex.advancedBy(self.count / 2)]
+    }
+}
