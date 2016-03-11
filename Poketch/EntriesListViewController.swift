@@ -102,7 +102,7 @@ class EntriesListViewController: UIViewController {
     
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
-        self.updateTitle()
+        self.updateChrome()
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
@@ -216,10 +216,10 @@ class EntriesListViewController: UIViewController {
         self.sortedEntries = sort(self.sortedEntries)
         self.tableView.reloadData()
         
-        self.updateTitle()
+        self.updateChrome()
     }
     
-    func updateTitle() {
+    func updateChrome() {
         let rootVC = AppDelegate.sharedAppDelegate.rootViewController
         
         let title: String?
@@ -241,12 +241,28 @@ class EntriesListViewController: UIViewController {
             color = self.currentSectionRepresentativeEntry?.type1?.color
             image = nil
         }
+
+        if title != rootVC?.titleLabel.text {
+            UIView.animateWithDuration(0.3, animations: {
+                rootVC?.titleLabelHeightConstraint.constant = 0
+                rootVC?.titleLabelHeightConstraint.priority = UILayoutPriorityDefaultHigh
+                rootVC?.titleLabel.superview?.layoutIfNeeded()
+                
+            }, completion: { (_) in
+                rootVC?.titleLabel.text = title
+
+                UIView.animateWithDuration(0.3) {
+                    rootVC?.titleLabelHeightConstraint.priority = UILayoutPriorityDefaultLow
+                    rootVC?.titleLabel.superview?.layoutIfNeeded()
+                }
+            })
+        }
         
-        rootVC?.titleLabel.text = title
         rootVC?.indicatorImageView.backgroundColor = color
         rootVC?.indicatorImageView.image = image
         
-        if let regionArea = self.currentSectionRepresentativeEntry?.regionArea {
+        let currentRegionArea = rootVC?.indicatorImageView.layer.contentsRect ?? CGRectInfinite
+        if let regionArea = self.currentSectionRepresentativeEntry?.regionArea where !CGRectEqualToRect(regionArea, currentRegionArea) {
             UIView.animateWithDuration(0.3) {
                 rootVC?.indicatorImageView.layer.contentsRect = CGRectNormalizedRect(regionArea, size: image?.size ?? .zero)
             }
@@ -333,7 +349,7 @@ extension EntriesListViewController: UITableViewDataSource {
 
 extension EntriesListViewController: UITableViewDelegate {
     func scrollViewDidScroll(scrollView: UIScrollView) {
-        self.updateTitle()
+        self.updateChrome()
     }
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {

@@ -11,6 +11,7 @@ import UIKit
 class ViewController: UIViewController {
     // MARK: Properties
     @IBOutlet var titleLabel: UILabel!
+    @IBOutlet var titleLabelHeightConstraint: NSLayoutConstraint!
     
     @IBOutlet var sortFilterButtonContainer: UIView!
     @IBOutlet var sortFilterButton: OptionButton!
