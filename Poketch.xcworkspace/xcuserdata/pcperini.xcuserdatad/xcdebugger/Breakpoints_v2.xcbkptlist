@@ -68,12 +68,12 @@
                   moduleName = "Poketch"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/pcperini/Documents/Misc/Poketch/Poketch/ScratchViewController.swift"
-                  timestampString = "479241805.864335"
+                  timestampString = "479590431.32023"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "16"
                   endingLineNumber = "16"
-                  offsetFromSymbolStart = "103">
+                  offsetFromSymbolStart = "102">
                </Location>
                <Location
                   shouldBeEnabled = "Yes"
@@ -83,7 +83,7 @@
                   moduleName = "Poketch"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/pcperini/Documents/Misc/Poketch/Poketch/ScratchViewController.swift"
-                  timestampString = "479241805.864456"
+                  timestampString = "479590431.320398"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "17"

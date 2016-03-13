@@ -45,7 +45,7 @@ class EntriesListViewController: UIViewController {
     }
     
     var currentSectionRepresentativeEntry: PokedexEntry? {
-        guard let visibleRow = self.tableView.indexPathsForVisibleRows?.middle
+        guard let visibleRow = self.tableView?.indexPathsForVisibleRows?.middle
             else { return nil }
         
         return self.sortedAndFilteredEntries[visibleRow.section].1[visibleRow.row]
@@ -56,7 +56,7 @@ class EntriesListViewController: UIViewController {
     @IBInspectable var filterButtonColor: UIColor?
     @IBOutlet var searchTextFieldContainer: UIView!
     @IBOutlet var searchTextField: UITextField!
-    private var sortFilterViews: [UIView] {
+    private lazy var sortFilterViews: [UIView] = {
         let buttonWithTitle = { (title: String) -> RoundableButton in
             let button = RoundableButton()
             button.cornerRadius = 4.0
@@ -79,7 +79,7 @@ class EntriesListViewController: UIViewController {
             buttonWithTitle("TYPE"),
             self.searchTextFieldContainer
         ]
-    }
+    }()
     
     // MARK: Lifecycle
     override func viewDidLoad() {
@@ -91,9 +91,8 @@ class EntriesListViewController: UIViewController {
         
         self.searchTextFieldContainer.layer.borderColor = self.filterButtonColor?.CGColor
         
-        let rootVC = AppDelegate.sharedAppDelegate.rootViewController
-        rootVC?.sortFilterButton.optionsViews = self.sortFilterViews
-        rootVC?.scrollView = self.tableView
+        NSNotificationCenter.defaultCenter().postNotificationName(FrameViewController.FilterButtonNeedsUpdated,
+            object: nil)
         
         BulbapediaClient().fetchEntries().then { (_) -> Void in
             self.reloadData()
@@ -111,7 +110,8 @@ class EntriesListViewController: UIViewController {
         
         switch identifier {
         case "ShowEntryDetail":
-            (segue.destinationViewController as? EntryViewController)?.entry = (sender as? PokedexEntry)
+            let entry = sender as? PokedexEntry
+            (segue.destinationViewController as? EntryViewController)?.entry = entry
         
         default:
             break
@@ -220,73 +220,29 @@ class EntriesListViewController: UIViewController {
     }
     
     func updateChrome() {
-        let rootVC = AppDelegate.sharedAppDelegate.rootViewController
-        
-        let title: String?
-        let color: UIColor?
-        let image: UIImage?
-        
-        switch self.sortState {
-        case .Region:
-            title = self.currentSectionRepresentativeEntry?.regionName
-            color = .blackColor()
-            image = UIImage(named: "Map")
-        case .Alphabetical:
-            title = self.currentSectionRepresentativeEntry?.name
-                .substringToIndex(((self.currentSectionRepresentativeEntry?.name) ?? "").startIndex.advancedBy(1))
-            color = .blackColor()
-            image = nil
-        case .Type:
-            title = self.currentSectionRepresentativeEntry?.type1?.name
-            color = self.currentSectionRepresentativeEntry?.type1?.color
-            image = nil
+        [FrameViewController.TitleNeedsUpdated, FrameViewController.IndicatorImageNeedsUpdated].forEach {
+            NSNotificationCenter.defaultCenter().postNotificationName($0,
+                object: nil,
+                userInfo: [FrameViewController.UpdateAnimatedUserInfoKey: true])
         }
-
-        if title != rootVC?.titleLabel.text {
-            UIView.animateWithDuration(0.3, animations: {
-                rootVC?.titleLabelHeightConstraint.constant = 0
-                rootVC?.titleLabelHeightConstraint.priority = UILayoutPriorityDefaultHigh
-                rootVC?.titleLabel.superview?.layoutIfNeeded()
-                
-            }, completion: { (_) in
-                rootVC?.titleLabel.text = title
-
-                UIView.animateWithDuration(0.3) {
-                    rootVC?.titleLabelHeightConstraint.priority = UILayoutPriorityDefaultLow
-                    rootVC?.titleLabel.superview?.layoutIfNeeded()
-                }
-            })
-        }
-        
-        rootVC?.indicatorImageView.backgroundColor = color
-        rootVC?.indicatorImageView.image = image
-        
-        let currentRegionArea = rootVC?.indicatorImageView.layer.contentsRect ?? CGRectInfinite
-        if let regionArea = self.currentSectionRepresentativeEntry?.regionArea where !CGRectEqualToRect(regionArea, currentRegionArea) {
-            UIView.animateWithDuration(0.3) {
-                rootVC?.indicatorImageView.layer.contentsRect = CGRectNormalizedRect(regionArea, size: image?.size ?? .zero)
-            }
-        }
-        
-        rootVC?.sortFilterButtonHidden = false
     }
     
     // MARK: Responders
     @IBAction func searchTextFieldDidChange(sender: UITextField?) {
         self.tableView.reloadData()
+        self.updateChrome()
     }
     
     func filterButtonWasPressed(sender: UIButton?) {
-        let rootVC = AppDelegate.sharedAppDelegate.rootViewController
+        guard let selectedButton = sender else { return }
+        guard let swapIndex = self.sortFilterViews.indexOf(selectedButton) else { return }
+        let title = selectedButton.titleForState(.Normal)!
         
-        let oldTitle = rootVC?.sortFilterButton.titleForState(.Normal)
-        let newTitle = sender?.titleForState(.Normal)
+        NSNotificationCenter.defaultCenter().postNotificationName(FrameViewController.FilterButtonNeedsUpdated,
+            object: nil,
+            userInfo: [FrameViewController.FilterButtonSwapIndexUserInfoKey: swapIndex])
         
-        rootVC?.sortFilterButton.setTitle(newTitle, forState: .Normal)
-        sender?.setTitle(oldTitle, forState: .Normal)
-        
-        rootVC?.sortFilterButton.selected = false
-        self.sortState = SortState(rawValue: newTitle!)!
+        self.sortState = SortState(rawValue: title)!
     }
 }
 
@@ -353,9 +309,61 @@ extension EntriesListViewController: UITableViewDelegate {
     }
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-//        let entry = self.entryForIndexPath(indexPath)
-//        self.performSegueWithIdentifier("ShowEntryDetail",
-//            sender: entry)
+        let entry = self.entryForIndexPath(indexPath)
+        self.performSegueWithIdentifier("ShowEntryDetail",
+            sender: entry)
     }
 }
 
+extension EntriesListViewController: FrameViewControllerDataType {
+    // MARK: Properties
+    override var title: String? {
+        get {
+            switch self.sortState {
+            case .Region:
+                return self.currentSectionRepresentativeEntry?.regionName
+            case .Alphabetical:
+                return self.currentSectionRepresentativeEntry?.name
+                    .substringToIndex(((self.currentSectionRepresentativeEntry?.name) ?? "").startIndex.advancedBy(1))
+            case .Type:
+                return self.currentSectionRepresentativeEntry?.type1?.name
+            }
+        }
+        
+        set {}
+    }
+    
+    var scrollView: UIScrollView? {
+        return self.tableView
+    }
+    
+    var indicatorImage: UIImage? {
+        switch self.sortState {
+        case .Region:
+            return UIImage(named: "Map")
+        default:
+            return nil
+        }
+    }
+    
+    var indicatorImageContentRect: CGRect? {
+        return self.currentSectionRepresentativeEntry?.regionArea
+    }
+    
+    var indiactorImageBackgroundColor: UIColor? {
+        switch self.sortState {
+        case .Type:
+            return self.currentSectionRepresentativeEntry?.type1?.color
+        default:
+            return UIColor.blackColor()
+        }
+    }
+    
+    var filterButtonHidden: Bool {
+        return false
+    }
+    
+    var filterButtonOptionViews: [UIView] {
+        return self.sortFilterViews
+    }
+}

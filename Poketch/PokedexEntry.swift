@@ -94,7 +94,7 @@ extension PokedexEntry {
             rect = CGRect(x: 829, y: 789, width: 299, height: 211)
             
         default:
-            rect = CGRect(x: 860, y: 585, width: 1, height: 1)
+            rect = CGRect(x: 0, y: 0, width: 1, height: 1)
         }
         
         rect = CGRectInset(rect, rect.width * -0.25, rect.height * -0.25)

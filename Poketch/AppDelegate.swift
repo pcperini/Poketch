@@ -13,16 +13,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     // MARK: Properties
     var window: UIWindow?
     
-    static var sharedAppDelegate: AppDelegate!
-    var rootViewController: ViewController? {
-        return self.window?.rootViewController as? ViewController
-    }
-    
     // MARK: Lifecycle
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject : AnyObject]?) -> Bool {
-        AppearanceSwizzling.setupAppearances()
-        AppDelegate.sharedAppDelegate = self
-        
+        AppearanceSwizzling.setupAppearances()        
         return true
     }
 }
