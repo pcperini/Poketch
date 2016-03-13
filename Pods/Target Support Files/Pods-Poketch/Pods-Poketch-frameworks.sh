@@ -86,18 +86,14 @@ strip_invalid_archs() {
 if [[ "$CONFIGURATION" == "Debug" ]]; then
   install_framework "Pods-Poketch/AFNetworking.framework"
   install_framework "Pods-Poketch/AFOnoResponseSerializer.framework"
-  install_framework "Pods-Poketch/OMGHTTPURLRQ.framework"
   install_framework "Pods-Poketch/Ono.framework"
-  install_framework "Pods-Poketch/PromiseKit.framework"
   install_framework "Pods-Poketch/Realm.framework"
   install_framework "Pods-Poketch/RealmSwift.framework"
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
   install_framework "Pods-Poketch/AFNetworking.framework"
   install_framework "Pods-Poketch/AFOnoResponseSerializer.framework"
-  install_framework "Pods-Poketch/OMGHTTPURLRQ.framework"
   install_framework "Pods-Poketch/Ono.framework"
-  install_framework "Pods-Poketch/PromiseKit.framework"
   install_framework "Pods-Poketch/Realm.framework"
   install_framework "Pods-Poketch/RealmSwift.framework"
 fi

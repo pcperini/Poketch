@@ -3,7 +3,6 @@ inhibit_all_warnings!
 
 target 'Poketch' do
     pod 'AFOnoResponseSerializer'
-    pod 'PromiseKit', '~> 3.0', :inhibit_warnings => true
     pod 'RealmSwift'
 end
 

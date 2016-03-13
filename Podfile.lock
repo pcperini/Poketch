@@ -23,26 +23,7 @@ PODS:
   - AFOnoResponseSerializer (1.0.0):
     - AFNetworking (~> 2.2)
     - Ono (~> 1.0)
-  - OMGHTTPURLRQ (3.1.1):
-    - OMGHTTPURLRQ/RQ (= 3.1.1)
-  - OMGHTTPURLRQ/FormURLEncode (3.1.1)
-  - OMGHTTPURLRQ/RQ (3.1.1):
-    - OMGHTTPURLRQ/FormURLEncode
-    - OMGHTTPURLRQ/UserAgent
-  - OMGHTTPURLRQ/UserAgent (3.1.1)
   - Ono (1.2.2)
-  - PromiseKit (3.0.3):
-    - PromiseKit/Foundation (= 3.0.3)
-    - PromiseKit/QuartzCore (= 3.0.3)
-    - PromiseKit/UIKit (= 3.0.3)
-  - PromiseKit/CorePromise (3.0.3)
-  - PromiseKit/Foundation (3.0.3):
-    - OMGHTTPURLRQ (~> 3.1.0)
-    - PromiseKit/CorePromise
-  - PromiseKit/QuartzCore (3.0.3):
-    - PromiseKit/CorePromise
-  - PromiseKit/UIKit (3.0.3):
-    - PromiseKit/CorePromise
   - Realm (0.98.4):
     - Realm/Headers (= 0.98.4)
   - Realm/Headers (0.98.4)
@@ -51,15 +32,12 @@ PODS:
 
 DEPENDENCIES:
   - AFOnoResponseSerializer
-  - PromiseKit (~> 3.0)
   - RealmSwift
 
 SPEC CHECKSUMS:
   AFNetworking: cb8d14a848e831097108418f5d49217339d4eb60
   AFOnoResponseSerializer: c02c8bef1d6742ac68f33ecaed41826c9657bc33
-  OMGHTTPURLRQ: 633f98ee745aeda02345935a52eec1784cddb589
   Ono: 80b1c686777d3f6d5d5ce6fcac8a74afef4ca197
-  PromiseKit: 00ec2a219bf5ad2833f95977698e921932b8dfd3
   Realm: 7745674cb1b7cb2a84a655bfd420b86efdaad36e
   RealmSwift: 18742f4f13f98117aeec53b92058918ac93bf38f
 

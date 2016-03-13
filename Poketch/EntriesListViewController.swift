@@ -93,7 +93,7 @@ class EntriesListViewController: UIViewController {
         self.searchTextFieldContainer.layer.borderColor = self.filterButtonColor?.CGColor
         
         self.dataDelegate?.reloadData(true)
-        BulbapediaClient().fetchEntries().then { (_) -> Void in
+        BulbapediaClient().fetchEntries() { (_) -> Void in
             self.reloadData()
         }
     }
@@ -296,11 +296,11 @@ extension EntriesListViewController: UITableViewDelegate {
         self.dataDelegate?.reloadData(true)
     }
     
-    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        let entry = self.entryForIndexPath(indexPath)
-        self.performSegueWithIdentifier("ShowEntryDetail",
-            sender: entry)
-    }
+//    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+//        let entry = self.entryForIndexPath(indexPath)
+//        self.performSegueWithIdentifier("ShowEntryDetail",
+//            sender: entry)
+//    }
 }
 
 extension EntriesListViewController: FrameViewControllerDataType {
@@ -311,8 +311,8 @@ extension EntriesListViewController: FrameViewControllerDataType {
             case .Region:
                 return self.currentSectionRepresentativeEntry?.regionName
             case .Alphabetical:
-                return self.currentSectionRepresentativeEntry?.name
-                    .substringToIndex(((self.currentSectionRepresentativeEntry?.name) ?? "").startIndex.advancedBy(1))
+                let name = ((self.currentSectionRepresentativeEntry?.name) ?? "")
+                return name.substringToIndex(name.startIndex.advancedBy(1))
             case .Type:
                 return self.currentSectionRepresentativeEntry?.type1?.name
             }
