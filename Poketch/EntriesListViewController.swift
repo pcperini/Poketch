@@ -20,6 +20,7 @@ class EntriesListViewController: UIViewController {
     }
     
     // MARK: Properties
+    var dataDelegate: FrameViewControllerDataDelegate?
     var sortState: SortState = .Region {
         didSet {
             guard self.sortState != oldValue else { return }
@@ -91,9 +92,7 @@ class EntriesListViewController: UIViewController {
         
         self.searchTextFieldContainer.layer.borderColor = self.filterButtonColor?.CGColor
         
-        NSNotificationCenter.defaultCenter().postNotificationName(FrameViewController.FrameNeedsUpdated,
-            object: [FrameViewController.FilterButton])
-        
+        self.dataDelegate?.reloadData(true)
         BulbapediaClient().fetchEntries().then { (_) -> Void in
             self.reloadData()
         }
@@ -101,7 +100,7 @@ class EntriesListViewController: UIViewController {
     
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
-        self.updateFrameContent()
+        self.dataDelegate?.reloadData(true)
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
@@ -216,19 +215,13 @@ class EntriesListViewController: UIViewController {
         self.sortedEntries = sort(self.sortedEntries)
         self.tableView.reloadData()
         
-        self.updateFrameContent()
-    }
-    
-    func updateFrameContent() {
-        NSNotificationCenter.defaultCenter().postNotificationName(FrameViewController.FrameNeedsUpdated,
-            object: nil,
-            userInfo: [FrameViewController.UpdateAnimatedUserInfoKey: true])
+        self.dataDelegate?.reloadData(true)
     }
     
     // MARK: Responders
     @IBAction func searchTextFieldDidChange(sender: UITextField?) {
         self.tableView.reloadData()
-        self.updateFrameContent()
+        self.dataDelegate?.reloadData(true)
     }
     
     func filterButtonWasPressed(sender: UIButton?) {
@@ -236,10 +229,7 @@ class EntriesListViewController: UIViewController {
         guard let swapIndex = self.sortFilterViews.indexOf(selectedButton) else { return }
         let title = selectedButton.titleForState(.Normal)!
         
-        NSNotificationCenter.defaultCenter().postNotificationName(FrameViewController.FrameNeedsUpdated,
-            object: [FrameViewController.FilterButton],
-            userInfo: [FrameViewController.FilterButtonSwapIndexUserInfoKey: swapIndex])
-        
+        self.dataDelegate?.reloadFilterButton(swapIndex)
         self.sortState = SortState(rawValue: title)!
     }
 }
@@ -303,7 +293,7 @@ extension EntriesListViewController: UITableViewDataSource {
 
 extension EntriesListViewController: UITableViewDelegate {
     func scrollViewDidScroll(scrollView: UIScrollView) {
-        self.updateFrameContent()
+        self.dataDelegate?.reloadData(true)
     }
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {

@@ -11,14 +11,12 @@ import UIKit
 class EntryViewController: UIViewController {
     // MARK: Properties
     var entry: PokedexEntry!
+    var dataDelegate: FrameViewControllerDataDelegate?
     
     // MARK: Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        NSNotificationCenter.defaultCenter().postNotificationName(FrameViewController.FrameNeedsUpdated,
-            object: nil,
-            userInfo: [FrameViewController.UpdateAnimatedUserInfoKey: true])
+        self.dataDelegate?.reloadData(true)
     }
 }
 
