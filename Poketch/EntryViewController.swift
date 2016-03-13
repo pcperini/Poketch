@@ -14,8 +14,8 @@ class EntryViewController: UIViewController {
     var dataDelegate: FrameViewControllerDataDelegate?
     
     // MARK: Lifecycle
-    override func viewDidLoad() {
-        super.viewDidLoad()
+    override func viewDidAppear(animated: Bool){
+        super.viewDidAppear(animated)
         self.dataDelegate?.reloadData(true)
     }
 }

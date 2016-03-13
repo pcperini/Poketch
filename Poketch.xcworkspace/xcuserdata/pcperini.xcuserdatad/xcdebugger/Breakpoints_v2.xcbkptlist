@@ -68,7 +68,7 @@
                   moduleName = "Poketch"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/pcperini/Documents/Misc/Poketch/Poketch/ScratchViewController.swift"
-                  timestampString = "479591443.750999"
+                  timestampString = "479592646.39765"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "16"
@@ -83,7 +83,7 @@
                   moduleName = "Poketch"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/pcperini/Documents/Misc/Poketch/Poketch/ScratchViewController.swift"
-                  timestampString = "479591443.751099"
+                  timestampString = "479592646.397804"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "17"
@@ -91,6 +91,38 @@
                   offsetFromSymbolStart = "12">
                </Location>
             </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Poketch/EntryViewController.swift"
+            timestampString = "479592597.621805"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "19"
+            endingLineNumber = "19"
+            landmarkName = "viewDidAppear(_:)"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Poketch/FrameViewController.swift"
+            timestampString = "479592605.967748"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "101"
+            endingLineNumber = "101"
+            landmarkName = "navigationController(_:didShowViewController:animated:)"
+            landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

@@ -95,7 +95,7 @@ class FrameViewController: UIViewController {
 }
 
 extension FrameViewController: UINavigationControllerDelegate {
-    func navigationController(navigationController: UINavigationController, didShowViewController viewController: UIViewController, animated: Bool) {
+    func navigationController(navigationController: UINavigationController, willShowViewController viewController: UIViewController, animated: Bool) {
         guard let dataSource = viewController as? FrameViewControllerDataType else { return }
         
         self.dataSource = dataSource
