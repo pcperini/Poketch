@@ -91,8 +91,8 @@ class EntriesListViewController: UIViewController {
         
         self.searchTextFieldContainer.layer.borderColor = self.filterButtonColor?.CGColor
         
-        NSNotificationCenter.defaultCenter().postNotificationName(FrameViewController.FilterButtonNeedsUpdated,
-            object: nil)
+        NSNotificationCenter.defaultCenter().postNotificationName(FrameViewController.FrameNeedsUpdated,
+            object: [FrameViewController.FilterButton])
         
         BulbapediaClient().fetchEntries().then { (_) -> Void in
             self.reloadData()
@@ -101,7 +101,7 @@ class EntriesListViewController: UIViewController {
     
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
-        self.updateChrome()
+        self.updateFrameContent()
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
@@ -216,21 +216,19 @@ class EntriesListViewController: UIViewController {
         self.sortedEntries = sort(self.sortedEntries)
         self.tableView.reloadData()
         
-        self.updateChrome()
+        self.updateFrameContent()
     }
     
-    func updateChrome() {
-        [FrameViewController.TitleNeedsUpdated, FrameViewController.IndicatorImageNeedsUpdated].forEach {
-            NSNotificationCenter.defaultCenter().postNotificationName($0,
-                object: nil,
-                userInfo: [FrameViewController.UpdateAnimatedUserInfoKey: true])
-        }
+    func updateFrameContent() {
+        NSNotificationCenter.defaultCenter().postNotificationName(FrameViewController.FrameNeedsUpdated,
+            object: nil,
+            userInfo: [FrameViewController.UpdateAnimatedUserInfoKey: true])
     }
     
     // MARK: Responders
     @IBAction func searchTextFieldDidChange(sender: UITextField?) {
         self.tableView.reloadData()
-        self.updateChrome()
+        self.updateFrameContent()
     }
     
     func filterButtonWasPressed(sender: UIButton?) {
@@ -238,8 +236,8 @@ class EntriesListViewController: UIViewController {
         guard let swapIndex = self.sortFilterViews.indexOf(selectedButton) else { return }
         let title = selectedButton.titleForState(.Normal)!
         
-        NSNotificationCenter.defaultCenter().postNotificationName(FrameViewController.FilterButtonNeedsUpdated,
-            object: nil,
+        NSNotificationCenter.defaultCenter().postNotificationName(FrameViewController.FrameNeedsUpdated,
+            object: [FrameViewController.FilterButton],
             userInfo: [FrameViewController.FilterButtonSwapIndexUserInfoKey: swapIndex])
         
         self.sortState = SortState(rawValue: title)!
@@ -305,7 +303,7 @@ extension EntriesListViewController: UITableViewDataSource {
 
 extension EntriesListViewController: UITableViewDelegate {
     func scrollViewDidScroll(scrollView: UIScrollView) {
-        self.updateChrome()
+        self.updateFrameContent()
     }
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
@@ -357,10 +355,6 @@ extension EntriesListViewController: FrameViewControllerDataType {
         default:
             return UIColor.blackColor()
         }
-    }
-    
-    var filterButtonHidden: Bool {
-        return false
     }
     
     var filterButtonOptionViews: [UIView] {

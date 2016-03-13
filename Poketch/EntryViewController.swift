@@ -16,13 +16,28 @@ class EntryViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let rootVC = AppDelegate.sharedAppDelegate.rootViewController
-        
-        rootVC?.titleLabel.text = self.entry.name
-        rootVC?.indicatorImageView.backgroundColor = UIColor.blackColor()
-        rootVC?.indicatorImageView.setImageWithURL(self.entry.iconURL,
-            placeholderImage: nil)
-        
-        rootVC?.sortFilterButtonHidden = true
+        NSNotificationCenter.defaultCenter().postNotificationName(FrameViewController.FrameNeedsUpdated,
+            object: nil,
+            userInfo: [FrameViewController.UpdateAnimatedUserInfoKey: true])
+    }
+}
+
+extension EntryViewController: FrameViewControllerDataType {
+    // MARK: Properties
+    override var title: String? {
+        get { return self.entry.name }
+        set {}
+    }
+    
+    var indicatorImageURL: NSURL? {
+        return self.entry.iconURL
+    }
+    
+    var indiactorImageBackgroundColor: UIColor? {
+        return UIColor.blackColor()
+    }
+    
+    var filterButtonHidden: Bool {
+        return true
     }
 }
