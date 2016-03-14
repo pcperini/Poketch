@@ -20,7 +20,7 @@ class EntriesListViewController: UIViewController {
     }
     
     // MARK: Properties
-    var dataDelegate: FrameViewControllerDataDelegate?
+    weak var dataDelegate: FrameViewControllerDataDelegate?
     var sortState: SortState = .Region {
         didSet {
             guard self.sortState != oldValue else { return }

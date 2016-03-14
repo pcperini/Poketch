@@ -187,7 +187,7 @@ extension FrameViewControllerDataType {
 }
 
 // MARK: Data Delegation
-protocol FrameViewControllerDataDelegate {
+protocol FrameViewControllerDataDelegate: class {
     func reloadData(animated: Bool) -> Void
     func reloadTitle(animated: Bool) -> Void
     func reloadIndicatorImage(animated: Bool) -> Void

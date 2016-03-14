@@ -11,7 +11,7 @@ import UIKit
 class EntryViewController: UIViewController {
     // MARK: Properties
     var entry: PokedexEntry!
-    var dataDelegate: FrameViewControllerDataDelegate?
+    weak var dataDelegate: FrameViewControllerDataDelegate?
     
     // MARK: Lifecycle
     override func viewDidLoad() {
