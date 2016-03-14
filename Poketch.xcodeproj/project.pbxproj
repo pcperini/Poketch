@@ -15,6 +15,10 @@
 		73173A141C8FA03F00C8ABBF /* FrameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73173A131C8FA03F00C8ABBF /* FrameViewController.swift */; };
 		731EB35A1C9225490081974B /* Geometry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 731EB3591C9225490081974B /* Geometry.swift */; };
 		73201D121C89246B003D1781 /* BulbapediaClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73201D111C89246B003D1781 /* BulbapediaClient.swift */; };
+		73257E251C965C05001625EC /* EntriesListInterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73257E211C965C05001625EC /* EntriesListInterfaceController.swift */; };
+		73257E261C965C05001625EC /* EntryRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73257E221C965C05001625EC /* EntryRow.swift */; };
+		73257E271C965C05001625EC /* Row.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73257E231C965C05001625EC /* Row.swift */; };
+		73257E281C965C05001625EC /* URLExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73257E241C965C05001625EC /* URLExtensions.swift */; };
 		7327614B1C8E9DC0002C5A5B /* AppearanceSwizzling.m in Sources */ = {isa = PBXBuildFile; fileRef = 7327614A1C8E9DC0002C5A5B /* AppearanceSwizzling.m */; };
 		7327614D1C8EA250002C5A5B /* Display.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7327614C1C8EA250002C5A5B /* Display.swift */; };
 		73528E331C8FAB3100BA64A0 /* EntryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73528E321C8FAB3100BA64A0 /* EntryViewController.swift */; };
@@ -29,9 +33,7 @@
 		73ADD1E91C890B0D000BC548 /* Interface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 73ADD1E71C890B0D000BC548 /* Interface.storyboard */; };
 		73ADD1EB1C890B0D000BC548 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 73ADD1EA1C890B0D000BC548 /* Assets.xcassets */; };
 		73ADD1F21C890B0D000BC548 /* Poketch WatchKit Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 73ADD1F11C890B0D000BC548 /* Poketch WatchKit Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
-		73ADD1F91C890B0D000BC548 /* InterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73ADD1F81C890B0D000BC548 /* InterfaceController.swift */; };
 		73ADD1FB1C890B0D000BC548 /* ExtensionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73ADD1FA1C890B0D000BC548 /* ExtensionDelegate.swift */; };
-		73ADD1FD1C890B0D000BC548 /* NotificationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73ADD1FC1C890B0D000BC548 /* NotificationController.swift */; };
 		73ADD1FF1C890B0D000BC548 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 73ADD1FE1C890B0D000BC548 /* Assets.xcassets */; };
 		73D539181C8BA6AD006E80C9 /* BezierView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73D539171C8BA6AD006E80C9 /* BezierView.swift */; };
 		73D5391C1C8BB325006E80C9 /* PokemonGB.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 73D5391A1C8BB325006E80C9 /* PokemonGB.ttf */; };
@@ -97,6 +99,10 @@
 		73173A131C8FA03F00C8ABBF /* FrameViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FrameViewController.swift; sourceTree = "<group>"; };
 		731EB3591C9225490081974B /* Geometry.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Geometry.swift; sourceTree = "<group>"; };
 		73201D111C89246B003D1781 /* BulbapediaClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BulbapediaClient.swift; sourceTree = "<group>"; };
+		73257E211C965C05001625EC /* EntriesListInterfaceController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EntriesListInterfaceController.swift; sourceTree = "<group>"; };
+		73257E221C965C05001625EC /* EntryRow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EntryRow.swift; sourceTree = "<group>"; };
+		73257E231C965C05001625EC /* Row.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Row.swift; sourceTree = "<group>"; };
+		73257E241C965C05001625EC /* URLExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = URLExtensions.swift; sourceTree = "<group>"; };
 		732761481C8E9DBF002C5A5B /* Poketch-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Poketch-Bridging-Header.h"; sourceTree = "<group>"; };
 		732761491C8E9DC0002C5A5B /* AppearanceSwizzling.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppearanceSwizzling.h; sourceTree = "<group>"; };
 		7327614A1C8E9DC0002C5A5B /* AppearanceSwizzling.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppearanceSwizzling.m; sourceTree = "<group>"; };
@@ -117,9 +123,7 @@
 		73ADD1EC1C890B0D000BC548 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		73ADD1F11C890B0D000BC548 /* Poketch WatchKit Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "Poketch WatchKit Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
 		73ADD1F71C890B0D000BC548 /* PushNotificationPayload.apns */ = {isa = PBXFileReference; lastKnownFileType = text; path = PushNotificationPayload.apns; sourceTree = "<group>"; };
-		73ADD1F81C890B0D000BC548 /* InterfaceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterfaceController.swift; sourceTree = "<group>"; };
 		73ADD1FA1C890B0D000BC548 /* ExtensionDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionDelegate.swift; sourceTree = "<group>"; };
-		73ADD1FC1C890B0D000BC548 /* NotificationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationController.swift; sourceTree = "<group>"; };
 		73ADD1FE1C890B0D000BC548 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		73ADD2001C890B0D000BC548 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		73D539171C8BA6AD006E80C9 /* BezierView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BezierView.swift; sourceTree = "<group>"; };
@@ -193,6 +197,32 @@
 				73ECB0671C8FE3EE00D673F0 /* OptionButton.swift */,
 			);
 			name = Views;
+			sourceTree = "<group>";
+		};
+		73257E291C965C07001625EC /* Interface Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				73257E211C965C05001625EC /* EntriesListInterfaceController.swift */,
+			);
+			name = "Interface Controllers";
+			sourceTree = "<group>";
+		};
+		73257E2A1C965C0C001625EC /* Interface Elements */ = {
+			isa = PBXGroup;
+			children = (
+				73257E2B1C965C12001625EC /* Rows */,
+				73257E241C965C05001625EC /* URLExtensions.swift */,
+			);
+			name = "Interface Elements";
+			sourceTree = "<group>";
+		};
+		73257E2B1C965C12001625EC /* Rows */ = {
+			isa = PBXGroup;
+			children = (
+				73257E221C965C05001625EC /* EntryRow.swift */,
+				73257E231C965C05001625EC /* Row.swift */,
+			);
+			name = Rows;
 			sourceTree = "<group>";
 		};
 		7327614E1C8EA252002C5A5B /* Foundation */ = {
@@ -272,9 +302,9 @@
 		73ADD1F51C890B0D000BC548 /* Poketch WatchKit Extension */ = {
 			isa = PBXGroup;
 			children = (
-				73ADD1F81C890B0D000BC548 /* InterfaceController.swift */,
 				73ADD1FA1C890B0D000BC548 /* ExtensionDelegate.swift */,
-				73ADD1FC1C890B0D000BC548 /* NotificationController.swift */,
+				73257E291C965C07001625EC /* Interface Controllers */,
+				73257E2A1C965C0C001625EC /* Interface Elements */,
 				73ADD1FE1C890B0D000BC548 /* Assets.xcassets */,
 				73ADD2001C890B0D000BC548 /* Info.plist */,
 				73ADD1F61C890B0D000BC548 /* Supporting Files */,
@@ -523,9 +553,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				73ADD1FD1C890B0D000BC548 /* NotificationController.swift in Sources */,
+				73257E271C965C05001625EC /* Row.swift in Sources */,
+				73257E251C965C05001625EC /* EntriesListInterfaceController.swift in Sources */,
+				73257E281C965C05001625EC /* URLExtensions.swift in Sources */,
 				73ADD1FB1C890B0D000BC548 /* ExtensionDelegate.swift in Sources */,
-				73ADD1F91C890B0D000BC548 /* InterfaceController.swift in Sources */,
+				73257E261C965C05001625EC /* EntryRow.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
