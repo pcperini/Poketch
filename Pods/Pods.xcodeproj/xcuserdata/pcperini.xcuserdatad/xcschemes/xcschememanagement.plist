@@ -14,7 +14,17 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>IGInterfaceDataTable.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>Ono.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>Pods-Poketch WatchKit App.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
@@ -42,6 +52,11 @@
 			<key>primary</key>
 			<true/>
 		</dict>
+		<key>1DAAD712BD111D651EB868FDCCA4D7FC</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>2079008752CE45DC5EA95D0C9D919D07</key>
 		<dict>
 			<key>primary</key>
@@ -58,6 +73,11 @@
 			<true/>
 		</dict>
 		<key>A20929BA38EBA05957C67C0FFF334640</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>AAB7886F5025699C2B9D2887C276C4D8</key>
 		<dict>
 			<key>primary</key>
 			<true/>

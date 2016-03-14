@@ -14,10 +14,10 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = 'primary'
-               BlueprintIdentifier = '73C3D30497E95BD464C270D6'
-               BlueprintName = 'AFNetworking'
+               BlueprintIdentifier = 'D17E054D032558B7FB8D762D'
+               BlueprintName = 'IGInterfaceDataTable'
                ReferencedContainer = 'container:Pods.xcodeproj'
-               BuildableName = 'AFNetworking.framework'>
+               BuildableName = 'IGInterfaceDataTable.framework'>
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>

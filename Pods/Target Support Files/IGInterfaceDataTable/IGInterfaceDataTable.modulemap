@@ -1,0 +1,6 @@
+framework module IGInterfaceDataTable {
+  umbrella header "IGInterfaceDataTable-umbrella.h"
+
+  export *
+  module * { export * }
+}

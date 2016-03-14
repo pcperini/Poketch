@@ -1,0 +1,1 @@
+../../../IGInterfaceDataTable/IGInterfaceDataTable/WKInterfaceTable+IGInterfaceDataTable.h

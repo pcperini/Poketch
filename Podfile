@@ -7,7 +7,7 @@ target 'Poketch' do
 end
 
 target 'Poketch WatchKit App' do
-
+    pod 'IGInterfaceDataTable'
 end
 
 target 'Poketch WatchKit Extension' do
