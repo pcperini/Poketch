@@ -31,12 +31,8 @@ class EntriesListInterfaceController: WKInterfaceController {
         return Array(self.entries[startIndex ..< endIndex])
     }
     
-    var pageSize: Int = 1
-    var page: Int = 0 {
-        didSet {
-            self.reloadData()
-        }
-    }
+    var pageSize: Int = 3 { didSet { self.reloadData() } }
+    var page: Int = 0 { didSet { self.reloadData() } }
     
     var onLastPage: Bool {
         return (self.page * self.pageSize) + self.pageSize
