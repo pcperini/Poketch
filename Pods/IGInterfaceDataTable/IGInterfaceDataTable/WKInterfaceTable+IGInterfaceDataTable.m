@@ -11,12 +11,39 @@
 #import "WKInterfaceTable+IGInterfaceDataTable.h"
 
 #import <objc/runtime.h>
+#import <Foundation/Foundation.h>
+
+@interface NSIndexPath (TableRows)
+
++ (instancetype)indexPathForRow:(NSInteger)row inSection:(NSInteger)section;
+
+@property (nonatomic, readonly) NSInteger section;
+@property (nonatomic, readonly) NSInteger row;
+
+@end
+
+@implementation NSIndexPath (TableRows)
+
++ (instancetype)indexPathForRow:(NSInteger)row inSection:(NSInteger)section {
+  NSUInteger indexes[2] = {section, row};
+  return [NSIndexPath indexPathWithIndexes:indexes length:2];
+}
+
+- (NSInteger)section {
+  return [self indexAtPosition:0];
+}
+
+- (NSInteger)row {
+  return [self indexAtPosition:1];
+}
+
+@end
 
 
 @interface IGTableRowData : NSObject
 @property (nonatomic, strong, readonly) NSString *identifier;
-@property (nonatomic, assign) NSUInteger section;
-@property (nonatomic, assign) NSUInteger row;
+@property (nonatomic, assign, readonly) NSUInteger section;
+@property (nonatomic, assign, readonly) NSUInteger row;
 @end
 
 @implementation IGTableRowData
@@ -41,15 +68,54 @@
 - (BOOL)isEqual:(id)object {
   if ([object isKindOfClass:IGTableRowData.class]) {
     IGTableRowData *data = (IGTableRowData *)object;
-    return [self.identifier isEqualToString:data.identifier] && self.section == data.section && self.row == data.row;
+    return ((!self.identifier && !data.identifier) || [self.identifier isEqualToString:data.identifier])
+    && self.section == data.section && self.row == data.row;
   } else {
     return NO;
   }
 }
 
+- (NSUInteger)hash {
+  return [self.identifier hash] ^ self.section ^ self.row;
+}
+
+- (NSString *)description {
+  return [NSString stringWithFormat:@"<%p %@: identifier = %@; section = %zi; row = %zi>",
+          self, NSStringFromClass(self.class), self.identifier, self.section, self.row];
+}
+
 @end
 
+
+#pragma mark - IGInterfaceDataTable
+
 @implementation WKInterfaceTable (IGInterfaceDataTable)
+
+- (BOOL)isUpdating {
+  NSNumber *number = objc_getAssociatedObject(self, @selector(isUpdating));
+  return [number boolValue];
+}
+
+- (void)setIsUpdating:(BOOL)updating {
+  NSNumber *number = [NSNumber numberWithBool:updating];
+  objc_setAssociatedObject(self, @selector(isUpdating), number, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+}
+
+- (NSMutableArray *)rowIndexesToAdd {
+  return objc_getAssociatedObject(self, @selector(rowIndexesToAdd));
+}
+
+- (void)setRowIndexesToAdd:(NSMutableArray *)rowIndexesToAdd {
+  objc_setAssociatedObject(self, @selector(rowIndexesToAdd), rowIndexesToAdd, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+}
+
+- (NSMutableDictionary *)rowTypesToAdd {
+  return objc_getAssociatedObject(self, @selector(rowTypesToAdd));
+}
+
+- (void)setRowTypesToAdd:(NSMutableDictionary *)rowTypesToAdd {
+  objc_setAssociatedObject(self, @selector(rowTypesToAdd), rowTypesToAdd, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+}
 
 - (void)reloadData {
   NSArray *rowSectionData = [self rowSectionDataForDataSource:[self ig_dataSource]];
@@ -134,7 +200,7 @@
     if (!indexPath) {
       if (idx == 0 && [dataSource respondsToSelector:@selector(table:configureHeaderController:)]) {
         [dataSource table:self configureHeaderController:controller];
-      } else if ([dataSource respondsToSelector:@selector(table:configureHeaderController:)]) {
+      } else if ([dataSource respondsToSelector:@selector(table:configureFooterController:)]) {
         [dataSource table:self configureFooterController:controller];
       }
     } else if (indexPath.row == NSNotFound
@@ -144,6 +210,46 @@
       [dataSource table:self configureRowController:controller forIndexPath:indexPath];
     }
   }];
+}
+
+- (NSArray *)smoothedRowSectionData:(NSArray *)rowSectionData {
+  NSMutableArray *mRowSectionData = [[NSMutableArray alloc] initWithCapacity:rowSectionData.count];
+  NSUInteger runningSection = 0, previousSection = 0, runningRow = 0, previousRow = 0;
+
+  IGTableRowData *firstRowData = [rowSectionData firstObject];
+  previousSection = firstRowData.section;
+  previousRow = firstRowData.row;
+
+  for (IGTableRowData *rowData in rowSectionData) {
+    NSUInteger section = rowData.section;
+    NSUInteger row = rowData.row;
+
+    // header-header trumps all
+    if (section < NSNotFound) {
+
+      // do not increment if previous was a header-header
+      if (section != previousSection && previousSection != NSNotFound) {
+        // starting a new section
+        runningSection++;
+        runningRow = 0;
+      }
+
+      section = runningSection;
+
+      // section-header trumps row
+      if (row < NSNotFound) {
+        row = runningRow;
+        runningRow++;
+      }
+    }
+
+    previousSection = rowData.section;
+    previousRow = rowData.row;
+
+    IGTableRowData *newRowData = [[IGTableRowData alloc] initWithIdentifier:rowData.identifier section:section row:row];
+    [mRowSectionData addObject:newRowData];
+  }
+  return [mRowSectionData copy];
 }
 
 
@@ -239,15 +345,22 @@
 
 #pragma mark - Editing
 
+- (void)updateRowWithIndexPath:(NSIndexPath *)indexPath {
+  NSInteger row = [self rowIndexFromIndexPath:indexPath];
+  NSObject *controller = [self rowControllerAtIndex:row];
+  [self.ig_dataSource table:self configureRowController:controller forIndexPath:indexPath];
+}
+
 - (void)insertSections:(NSIndexSet *)sections withSectionType:(NSString *)sectionType {
+  NSArray *rowSectionData = [self rowSectionDataForDataSource:[self ig_dataSource]];
+  [self setRowSectionData:rowSectionData];
+
   NSMutableIndexSet *rowIndexes = [[NSMutableIndexSet alloc] init];
-  NSMutableArray *insertedSections = [[NSMutableArray alloc] init];
 
   [sections enumerateIndexesUsingBlock:^(NSUInteger section, BOOL *stop) {
     NSInteger rowIndex = [self rowIndexFromSection:section];
     if (rowIndex != NSNotFound) {
       [rowIndexes addIndex:rowIndex];
-      [insertedSections addObject:@(section)];
     }
   }];
 
@@ -256,25 +369,30 @@
   if ([self.ig_dataSource respondsToSelector:@selector(table:configureSectionController:forSection:)]) {
     [rowIndexes enumerateIndexesUsingBlock:^(NSUInteger idx, BOOL *stop) {
       NSObject *controller = [self rowControllerAtIndex:idx];
-      NSUInteger section = [insertedSections[idx] integerValue];
-      [self.ig_dataSource table:self configureSectionController:controller forSection:section];
+      IGTableRowData *rowData = rowSectionData[idx];
+      [self.ig_dataSource table:self configureSectionController:controller forSection:rowData.section];
     }];
+  }
+}
+
+- (void)insertRowsAtIndexPaths:(NSArray *)indexPaths withRowType:(NSString *)rowType {
+  if(self.isUpdating) {
+    [self.rowIndexesToAdd addObjectsFromArray:indexPaths];
+    [indexPaths enumerateObjectsUsingBlock:^(NSIndexPath *indexPath, NSUInteger idx, BOOL *stop) {
+      [self.rowTypesToAdd setObject:rowType forKey:indexPath];
+    }];
+    return;
   }
 
   NSArray *rowSectionData = [self rowSectionDataForDataSource:[self ig_dataSource]];
   [self setRowSectionData:rowSectionData];
-}
 
-- (void)insertRowsAtIndexPaths:(NSArray *)indexPaths withRowType:(NSString *)rowType {
   NSMutableIndexSet *rowIndexes = [[NSMutableIndexSet alloc] init];
-  NSMutableArray *insertedRowData = [[NSMutableArray alloc] init];
 
   [indexPaths enumerateObjectsUsingBlock:^(NSIndexPath *indexPath, NSUInteger idx, BOOL *stop) {
     NSInteger rowIndex = [self rowIndexFromIndexPath:indexPath];
     if (rowIndex != NSNotFound) {
       [rowIndexes addIndex:rowIndex];
-      IGTableRowData *rowData = [[IGTableRowData alloc] initWithIdentifier:rowType section:indexPath.section row:indexPath.row];
-      [insertedRowData addObject:rowData];
     }
   }];
 
@@ -283,14 +401,46 @@
   if ([self.ig_dataSource respondsToSelector:@selector(table:configureRowController:forIndexPath:)]) {
     [rowIndexes enumerateIndexesUsingBlock:^(NSUInteger idx, BOOL *stop) {
       NSObject *controller = [self rowControllerAtIndex:idx];
-      IGTableRowData *rowData = insertedRowData[idx];
+      IGTableRowData *rowData = rowSectionData[idx];
       NSIndexPath *indexPath = [NSIndexPath indexPathForRow:rowData.row inSection:rowData.section];
       [self.ig_dataSource table:self configureRowController:controller forIndexPath:indexPath];
     }];
   }
+}
 
-  NSArray *rowSectionData = [self rowSectionDataForDataSource:[self ig_dataSource]];
-  [self setRowSectionData:rowSectionData];
+- (void)beginUpdates {
+  self.isUpdating = true;
+  self.rowIndexesToAdd = [[NSMutableArray alloc] init];
+  self.rowTypesToAdd = [[NSMutableDictionary alloc] init];
+}
+
+- (void)endUpdates {
+  NSAssert(self.isUpdating, @"Calling -endUpdates without first calling -beginUpdates.");
+
+  if(!self.isUpdating) {
+    return;
+  }
+
+  [self.rowIndexesToAdd sortUsingComparator:^NSComparisonResult(NSIndexPath *obj1, NSIndexPath *obj2) {
+    NSInteger r1 = [obj1 row];
+    NSInteger r2 = [obj2 row];
+    if (r1 > r2) {
+      return NSOrderedDescending;
+    }
+    if (r1 < r2) {
+      return NSOrderedAscending;
+    }
+    return NSOrderedSame;
+  }];
+
+  self.isUpdating = false;
+
+  [self.rowIndexesToAdd enumerateObjectsUsingBlock:^(NSIndexPath *indexPath, NSUInteger idx, BOOL *stop) {
+    [self insertRowsAtIndexPaths:@[indexPath] withRowType:self.rowTypesToAdd[indexPath]];
+  }];
+
+  self.rowIndexesToAdd = nil;
+  self.rowTypesToAdd = nil;
 }
 
 - (void)removeSections:(NSIndexSet *)sections {
@@ -309,7 +459,7 @@
         NSArray *subRowData = [originalRowSectionData subarrayWithRange:NSMakeRange(subArrayStart, count - subArrayStart)];
         [subRowData enumerateObjectsUsingBlock:^(IGTableRowData *row, NSUInteger idx, BOOL *stop2) {
           if (row.section == section) {
-            [rowIndexes addIndex:idx];
+            [rowIndexes addIndex:subArrayStart + idx];
           } else {
             *stop2 = YES;
           }
@@ -320,8 +470,10 @@
 
   [self removeRowsAtIndexes:rowIndexes];
 
-  NSArray *updatedSectionData = [self rowSectionDataForDataSource:[self ig_dataSource]];
-  [self setRowSectionData:updatedSectionData];
+  NSMutableArray *mRowSectionData = [[self rowSectionData] mutableCopy];
+  [mRowSectionData removeObjectsAtIndexes:rowIndexes];
+
+  [self setRowSectionData:[self smoothedRowSectionData:mRowSectionData]];
 }
 
 - (void)removeRowsAtIndexPaths:(NSArray *)indexPaths {
@@ -329,15 +481,15 @@
 
   [indexPaths enumerateObjectsUsingBlock:^(NSIndexPath *indexPath, NSUInteger idx, BOOL *stop) {
     NSInteger rowIndex = [self rowIndexFromIndexPath:indexPath];
-    if (rowIndex != NSNotFound) {
-      [rowIndexes addIndex:rowIndex];
-    }
+    [rowIndexes addIndex:rowIndex];
   }];
 
   [self removeRowsAtIndexes:rowIndexes];
 
-  NSArray *rowSectionData = [self rowSectionDataForDataSource:[self ig_dataSource]];
-  [self setRowSectionData:rowSectionData];
+  NSMutableArray *mRowSectionData = [[self rowSectionData] mutableCopy];
+  [mRowSectionData removeObjectsAtIndexes:rowIndexes];
+
+  [self setRowSectionData:[self smoothedRowSectionData:mRowSectionData]];
 }
 
 
@@ -357,6 +509,69 @@
 
 - (void)setRowSectionData:(NSArray *)rowSectionData {
   objc_setAssociatedObject(self, @selector(rowSectionData), rowSectionData, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+}
+
+@end
+
+
+#pragma mark - WKInterfaceController Swizzling
+
+@implementation WKInterfaceController (IGInterfaceDataTable)
+
++ (void)load {
+  Class klass = self.class;
+  SEL originalSelector = @selector(table:didSelectRowAtIndex:);
+  SEL swizzledSelector = @selector(ig_table:didSelectRowAtIndex:);
+
+  Method originalMethod = class_getInstanceMethod(klass, originalSelector);
+  Method swizzledMethod = class_getInstanceMethod(klass, swizzledSelector);
+
+  BOOL didAddMethod = class_addMethod(klass,
+                                      originalSelector,
+                                      method_getImplementation(swizzledMethod),
+                                      method_getTypeEncoding(swizzledMethod));
+
+  if (didAddMethod) {
+    class_replaceMethod(klass,
+                        swizzledSelector,
+                        method_getImplementation(originalMethod),
+                        method_getTypeEncoding(originalMethod));
+  } else {
+    method_exchangeImplementations(originalMethod, swizzledMethod);
+  }
+}
+
+- (void)ig_table:(WKInterfaceTable *)table didSelectRowAtIndex:(NSInteger)rowIndex {
+  [self ig_table:table didSelectRowAtIndex:rowIndex];
+
+  NSIndexPath *indexPath = [table indexPathFromRowIndex:rowIndex];
+  NSUInteger section = [table sectionFromRowIndex:rowIndex];
+
+  if (indexPath) {
+    [self table:table didSelectRowAtIndexPath:indexPath];
+  } else if (section != NSNotFound) {
+    [self table:table didSelectSection:section];
+  } else if ([table _hasHeader] && rowIndex == 0) {
+    [self tableDidSelectHeader:table];
+  } else if ([table _hasFooter] && rowIndex == [table numberOfRows]) {
+    [self tableDidSelectFooter:table];
+  }
+}
+
+- (void)table:(WKInterfaceTable *)table didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+  // for subclassing
+}
+
+- (void)table:(WKInterfaceTable *)table didSelectSection:(NSInteger)section {
+  // for subclassing
+}
+
+- (void)tableDidSelectHeader:(WKInterfaceTable *)table {
+  // for subclassing
+}
+
+- (void)tableDidSelectFooter:(WKInterfaceTable *)table {
+  // for subclassing
 }
 
 @end

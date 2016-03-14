@@ -1,0 +1,6 @@
+framework module Pods_Poketch_WatchKit_Extension {
+  umbrella header "Pods-Poketch WatchKit Extension-umbrella.h"
+
+  export *
+  module * { export * }
+}

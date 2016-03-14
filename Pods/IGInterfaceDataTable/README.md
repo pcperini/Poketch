@@ -3,7 +3,7 @@
 [![Version](http://img.shields.io/cocoapods/v/IGInterfaceDataTable.svg)](http://cocoapods.org/?q=IGInterfaceDataTable)
 [![Platform](http://img.shields.io/cocoapods/p/IGInterfaceDataTable.svg)]()
 [![License](http://img.shields.io/cocoapods/l/IGInterfaceDataTable.svg)](https://github.com/Instagram/IGInterfaceDataTable/blob/master/LICENSE)
-[![Build Status](https://travis-ci.org/Instagram/IGInterfaceDataTable.svg)](https://travis-ci.org/Instagram/IGInterfaceDataTable)
+<!--[![Build Status](https://travis-ci.org/Instagram/IGInterfaceDataTable.svg)](https://travis-ci.org/Instagram/IGInterfaceDataTable)-->
 
 IGInterfaceDataTable is a category on [WKInterfaceTable](https://developer.apple.com/library/prerelease/ios/documentation/WatchKit/Reference/WKInterfaceTable_class/index.html) that makes configuring tables with multi-dimensional data easier. Instead of flattening your data structures into an array, configure your watch tables using a data source pattern similar to `UITableViewDataSource`.
 
@@ -29,7 +29,18 @@ Import the framework header, or create an [Objective-C bridging header](https://
 
 ## Getting Started
 
-In order to start using IGInterfaceDataTable, you simply need to conform an object to `IGInterfaceTableDataSource` (defined [here](https://github.com/Instagram/IGInterfaceDataTable/blob/master/IGInterfaceDataTable/WKInterfaceTable%2BIGInterfaceDataTable.h)) and set it as your table's `ig_dataSource`.
+In order to start using IGInterfaceDataTable, you simply need to conform an object to `IGInterfaceTableDataSource` and set it as your table's `ig_dataSource`.
+
+The simplest place to setup your table and data source is in `-[WKInterfaceController awakeWithContext:]`:
+
+```objective-c
+- (void)awakeWithContext:(id)context {
+  [super awakeWithContext:context];
+
+  self.table.ig_dataSource = self;
+  [self.table reloadData];
+}
+```
 
 There are only two required methods that you need to implement to start displaying data. The first returns the number of rows for a section.
 
@@ -68,19 +79,30 @@ The following method will pass the data source a row controller for a row in the
 
 There are configure methods for headers, footers, and sections as well.
 
+## Handling Selection
+
+On top of making it easier to display your data, IGInterfaceDataTable also makes responding to tap events much simpler so you don't need to map a row index back to a section or piece of data.
+
+You must call `enableTableSelectCallbacks` on your controller subclass, which swizzles the original `table:didSelectRowAtIndex:` method but still calls the original implementation.
+
+There are four methods that you can override to respond to selection events:
+
+```objective-c
+- (void)table:(WKInterfaceTable *)table didSelectRowAtIndexPath:(NSIndexPath *)indexPath;
+- (void)table:(WKInterfaceTable *)table didSelectSection:(NSInteger)section;
+- (void)tableDidSelectHeader:(WKInterfaceTable *)table;
+- (void)tableDidSelectFooter:(WKInterfaceTable *)table;
+```
+
 ## Convenience
 
 IGInterfaceDataSource also provides methods to make bridging between `WKInterfaceTable` and your data structures more seamless.
 
-For example, in order to map a row selection back to the index path of your data, you call `-[WKInterfaceTable indexPathFromRowIndex:]`
+You can easily map from a table row index to a section or index path. Make sure to check for `NSNotFound` or `nil`!
 
 ```objective-c
-- (void)table:(WKInterfaceTable *)table didSelectRowAtIndex:(NSInteger)rowIndex {
-  NSIndexPath *indexPath = [table indexPathFromRowIndex:rowIndex];
-  if (indexPath) {
-    // do something with the index path or data
-  }
-}
+NSInteger section = [table sectionFromRowIndex:rowIndex];
+NSIndexPath *indexPath = [table indexPathFromRowIndex:rowIndex];
 ```
 
 Or, you can scroll straight to a section without having to lookup the row index of your data:

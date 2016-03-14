@@ -1,4 +1,4 @@
-#import <UIKit/UIKit.h>
+#import <Foundation/Foundation.h>
 
 #import "IGInterfaceDataTable.h"
 #import "WKInterfaceTable+IGInterfaceDataTable.h"

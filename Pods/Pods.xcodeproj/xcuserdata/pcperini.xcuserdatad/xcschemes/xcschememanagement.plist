@@ -24,7 +24,7 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
-		<key>Pods-Poketch WatchKit App.xcscheme</key>
+		<key>Pods-Poketch WatchKit Extension.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
@@ -52,11 +52,6 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>1DAAD712BD111D651EB868FDCCA4D7FC</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
 		<key>2079008752CE45DC5EA95D0C9D919D07</key>
 		<dict>
 			<key>primary</key>
@@ -78,6 +73,11 @@
 			<true/>
 		</dict>
 		<key>AAB7886F5025699C2B9D2887C276C4D8</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>E7974BCE8F161DBBBE23FF4741DDAC58</key>
 		<dict>
 			<key>primary</key>
 			<true/>

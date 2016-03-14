@@ -1,0 +1,28 @@
+{
+  "name": "IGInterfaceDataTable",
+  "version": "0.1.1",
+  "license": {
+    "type": "BSD"
+  },
+  "authors": {
+    "Ryan Nystrom": "rnystrom@fb.com"
+  },
+  "summary": "A category on WKInterfaceTable that makes configuring tables with multi-dimensional data easier.",
+  "source": {
+    "git": "https://github.com/instagram/IGInterfaceDataTable.git",
+    "tag": "0.1.1"
+  },
+  "homepage": "https://github.com/Instagram/IGInterfaceDataTable",
+  "public_header_files": [
+    "IGInterfaceDataTable/*.h"
+  ],
+  "source_files": [
+    "IGInterfaceDataTable/*.{h,m}"
+  ],
+  "frameworks": "WatchKit",
+  "social_media_url": "https://twitter.com/fbOpenSource",
+  "platforms": {
+    "ios": "8.2",
+    "watchos": "2.0"
+  }
+}

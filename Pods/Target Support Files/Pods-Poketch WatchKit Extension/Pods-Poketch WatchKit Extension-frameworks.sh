@@ -84,8 +84,8 @@ strip_invalid_archs() {
 
 
 if [[ "$CONFIGURATION" == "Debug" ]]; then
-  install_framework "Pods-Poketch WatchKit App/IGInterfaceDataTable.framework"
+  install_framework "Pods-Poketch WatchKit Extension/IGInterfaceDataTable.framework"
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
-  install_framework "Pods-Poketch WatchKit App/IGInterfaceDataTable.framework"
+  install_framework "Pods-Poketch WatchKit Extension/IGInterfaceDataTable.framework"
 fi

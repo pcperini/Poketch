@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4CE791D59B706E2380DF8C38 /* Pods_Poketch_WatchKit_Extension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 571500D9AA3F0E62BC8FC226 /* Pods_Poketch_WatchKit_Extension.framework */; };
 		7302EF4B1C8D2A4A0078E84B /* BubbleLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7302EF4A1C8D2A4A0078E84B /* BubbleLabel.swift */; };
 		730F744A1C8A9305008777BC /* UIColor_Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 730F74491C8A9305008777BC /* UIColor_Extensions.swift */; };
 		730F744E1C8B8FCD008777BC /* EntryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 730F744D1C8B8FCD008777BC /* EntryCell.swift */; };
@@ -45,8 +46,7 @@
 		73ECB06A1C8FE9AF00D673F0 /* ScratchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73ECB0691C8FE9AF00D673F0 /* ScratchViewController.swift */; };
 		73ECB06C1C9099C400D673F0 /* RoundViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73ECB06B1C9099C400D673F0 /* RoundViews.swift */; };
 		73ECB06E1C90A82600D673F0 /* KeyboardLayoutConstraint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73ECB06D1C90A82600D673F0 /* KeyboardLayoutConstraint.swift */; };
-		A345C6EAF34AE28D20E753C3 /* Pods_Poketch.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7A5B4A0F3C6E427E3CD272DF /* Pods_Poketch.framework */; };
-		E091B3CB6F0FCBC12D89F43A /* Pods_Poketch_WatchKit_App.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EC504B81F88008836D3A088E /* Pods_Poketch_WatchKit_App.framework */; };
+		DA66FDE28E374464C823F355 /* Pods_Poketch.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 11792BA8E440915096587EFA /* Pods_Poketch.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -92,7 +92,10 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		5F7A5A649D6CDC2A96D37C80 /* Pods-Poketch WatchKit App.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Poketch WatchKit App.release.xcconfig"; path = "Pods/Target Support Files/Pods-Poketch WatchKit App/Pods-Poketch WatchKit App.release.xcconfig"; sourceTree = "<group>"; };
+		11792BA8E440915096587EFA /* Pods_Poketch.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Poketch.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		2BDA6E890DAB23DBEFDB8FE0 /* Pods-Poketch.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Poketch.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Poketch/Pods-Poketch.debug.xcconfig"; sourceTree = "<group>"; };
+		4DF57E66A865BEA8A72CF86B /* Pods-Poketch WatchKit Extension.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Poketch WatchKit Extension.release.xcconfig"; path = "Pods/Target Support Files/Pods-Poketch WatchKit Extension/Pods-Poketch WatchKit Extension.release.xcconfig"; sourceTree = "<group>"; };
+		571500D9AA3F0E62BC8FC226 /* Pods_Poketch_WatchKit_Extension.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Poketch_WatchKit_Extension.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7302EF4A1C8D2A4A0078E84B /* BubbleLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BubbleLabel.swift; sourceTree = "<group>"; };
 		730F74491C8A9305008777BC /* UIColor_Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIColor_Extensions.swift; sourceTree = "<group>"; };
 		730F744D1C8B8FCD008777BC /* EntryCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EntryCell.swift; sourceTree = "<group>"; };
@@ -110,6 +113,7 @@
 		7327614A1C8E9DC0002C5A5B /* AppearanceSwizzling.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppearanceSwizzling.m; sourceTree = "<group>"; };
 		7327614C1C8EA250002C5A5B /* Display.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Display.swift; sourceTree = "<group>"; };
 		73528E321C8FAB3100BA64A0 /* EntryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EntryViewController.swift; sourceTree = "<group>"; };
+		7355A9D1B8B6294502D8C5D8 /* Pods-Poketch WatchKit Extension.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Poketch WatchKit Extension.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Poketch WatchKit Extension/Pods-Poketch WatchKit Extension.debug.xcconfig"; sourceTree = "<group>"; };
 		7379275E1C891FEE00208796 /* PokedexEntry.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PokedexEntry.swift; sourceTree = "<group>"; };
 		737927601C89206200208796 /* PokedexType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PokedexType.swift; sourceTree = "<group>"; };
 		73ADD1D01C890B0C000BC548 /* Poketch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Poketch.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -136,11 +140,7 @@
 		73ECB0691C8FE9AF00D673F0 /* ScratchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScratchViewController.swift; sourceTree = "<group>"; };
 		73ECB06B1C9099C400D673F0 /* RoundViews.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoundViews.swift; sourceTree = "<group>"; };
 		73ECB06D1C90A82600D673F0 /* KeyboardLayoutConstraint.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeyboardLayoutConstraint.swift; sourceTree = "<group>"; };
-		7A5B4A0F3C6E427E3CD272DF /* Pods_Poketch.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Poketch.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		923C5AE5CAA97431DA3D8DF3 /* Pods-Poketch WatchKit App.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Poketch WatchKit App.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Poketch WatchKit App/Pods-Poketch WatchKit App.debug.xcconfig"; sourceTree = "<group>"; };
-		932A54AD655C3EDEEC31B8AC /* Pods-Poketch.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Poketch.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Poketch/Pods-Poketch.debug.xcconfig"; sourceTree = "<group>"; };
-		AC5519F905CC812935C645CE /* Pods-Poketch.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Poketch.release.xcconfig"; path = "Pods/Target Support Files/Pods-Poketch/Pods-Poketch.release.xcconfig"; sourceTree = "<group>"; };
-		EC504B81F88008836D3A088E /* Pods_Poketch_WatchKit_App.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Poketch_WatchKit_App.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		7445BC549099AABE5E306F9F /* Pods-Poketch.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Poketch.release.xcconfig"; path = "Pods/Target Support Files/Pods-Poketch/Pods-Poketch.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -148,7 +148,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A345C6EAF34AE28D20E753C3 /* Pods_Poketch.framework in Frameworks */,
+				DA66FDE28E374464C823F355 /* Pods_Poketch.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -156,6 +156,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4CE791D59B706E2380DF8C38 /* Pods_Poketch_WatchKit_Extension.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -163,22 +164,12 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E091B3CB6F0FCBC12D89F43A /* Pods_Poketch_WatchKit_App.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		64DD872ABE244F669B2D4301 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				7A5B4A0F3C6E427E3CD272DF /* Pods_Poketch.framework */,
-				EC504B81F88008836D3A088E /* Pods_Poketch_WatchKit_App.framework */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
 		730F744B1C8A9307008777BC /* Foundational */ = {
 			isa = PBXGroup;
 			children = (
@@ -267,8 +258,8 @@
 				73ADD1E61C890B0D000BC548 /* Poketch WatchKit App */,
 				73ADD1F51C890B0D000BC548 /* Poketch WatchKit Extension */,
 				73ADD1D11C890B0C000BC548 /* Products */,
-				7D181857675062ED9811440F /* Pods */,
-				64DD872ABE244F669B2D4301 /* Frameworks */,
+				A7822DFF8BFBFDB3A67C406A /* Pods */,
+				9D8A0EF2F6A1FEBE0CC53BDE /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -342,13 +333,22 @@
 			name = Cells;
 			sourceTree = "<group>";
 		};
-		7D181857675062ED9811440F /* Pods */ = {
+		9D8A0EF2F6A1FEBE0CC53BDE /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				932A54AD655C3EDEEC31B8AC /* Pods-Poketch.debug.xcconfig */,
-				AC5519F905CC812935C645CE /* Pods-Poketch.release.xcconfig */,
-				923C5AE5CAA97431DA3D8DF3 /* Pods-Poketch WatchKit App.debug.xcconfig */,
-				5F7A5A649D6CDC2A96D37C80 /* Pods-Poketch WatchKit App.release.xcconfig */,
+				11792BA8E440915096587EFA /* Pods_Poketch.framework */,
+				571500D9AA3F0E62BC8FC226 /* Pods_Poketch_WatchKit_Extension.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		A7822DFF8BFBFDB3A67C406A /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				2BDA6E890DAB23DBEFDB8FE0 /* Pods-Poketch.debug.xcconfig */,
+				7445BC549099AABE5E306F9F /* Pods-Poketch.release.xcconfig */,
+				7355A9D1B8B6294502D8C5D8 /* Pods-Poketch WatchKit Extension.debug.xcconfig */,
+				4DF57E66A865BEA8A72CF86B /* Pods-Poketch WatchKit Extension.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -360,13 +360,13 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 73ADD20B1C890B0D000BC548 /* Build configuration list for PBXNativeTarget "Poketch" */;
 			buildPhases = (
-				E1E3E96D2CAA4AE1B57A904A /* Check Pods Manifest.lock */,
+				F1B35DBC9E8C1C468F5C10B4 /* Check Pods Manifest.lock */,
 				73ADD1CC1C890B0C000BC548 /* Sources */,
 				73ADD1CD1C890B0C000BC548 /* Frameworks */,
 				73ADD1CE1C890B0C000BC548 /* Resources */,
 				73ADD20A1C890B0D000BC548 /* Embed Watch Content */,
-				657101F56C86AF2C11D8D984 /* Embed Pods Frameworks */,
-				3898ED19F7A05156DADA73DA /* Copy Pods Resources */,
+				1B75FDCB48A3B206F2C1717F /* Embed Pods Frameworks */,
+				169EEDC4534F53770D60650B /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -382,11 +382,9 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 73ADD2071C890B0D000BC548 /* Build configuration list for PBXNativeTarget "Poketch WatchKit App" */;
 			buildPhases = (
-				0168802E8D2AAF70192CCCCA /* Check Pods Manifest.lock */,
 				73ADD1E01C890B0D000BC548 /* Resources */,
 				73ADD2061C890B0D000BC548 /* Embed App Extensions */,
 				FAAC485783E93669D34F850F /* Frameworks */,
-				AD4EB0BBB4C9F99060C6A03C /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -402,9 +400,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 73ADD2031C890B0D000BC548 /* Build configuration list for PBXNativeTarget "Poketch WatchKit Extension" */;
 			buildPhases = (
+				C72AF86CFD630D608B806551 /* Check Pods Manifest.lock */,
 				73ADD1ED1C890B0D000BC548 /* Sources */,
 				73ADD1EE1C890B0D000BC548 /* Frameworks */,
 				73ADD1EF1C890B0D000BC548 /* Resources */,
+				9D1BC471405E462CE3CB61E4 /* Embed Pods Frameworks */,
+				4611AE7864B76631EA24BF79 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -491,22 +492,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		0168802E8D2AAF70192CCCCA /* Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Check Pods Manifest.lock";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
-			showEnvVarsInLog = 0;
-		};
-		3898ED19F7A05156DADA73DA /* Copy Pods Resources */ = {
+		169EEDC4534F53770D60650B /* Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -521,7 +507,7 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Poketch/Pods-Poketch-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		657101F56C86AF2C11D8D984 /* Embed Pods Frameworks */ = {
+		1B75FDCB48A3B206F2C1717F /* Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -536,7 +522,7 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Poketch/Pods-Poketch-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		AD4EB0BBB4C9F99060C6A03C /* Copy Pods Resources */ = {
+		4611AE7864B76631EA24BF79 /* Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -548,10 +534,40 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Poketch WatchKit App/Pods-Poketch WatchKit App-resources.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Poketch WatchKit Extension/Pods-Poketch WatchKit Extension-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		E1E3E96D2CAA4AE1B57A904A /* Check Pods Manifest.lock */ = {
+		9D1BC471405E462CE3CB61E4 /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Poketch WatchKit Extension/Pods-Poketch WatchKit Extension-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C72AF86CFD630D608B806551 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		F1B35DBC9E8C1C468F5C10B4 /* Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -737,6 +753,7 @@
 		};
 		73ADD2041C890B0D000BC548 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7355A9D1B8B6294502D8C5D8 /* Pods-Poketch WatchKit Extension.debug.xcconfig */;
 			buildSettings = {
 				INFOPLIST_FILE = "Poketch WatchKit Extension/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
@@ -751,6 +768,7 @@
 		};
 		73ADD2051C890B0D000BC548 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4DF57E66A865BEA8A72CF86B /* Pods-Poketch WatchKit Extension.release.xcconfig */;
 			buildSettings = {
 				INFOPLIST_FILE = "Poketch WatchKit Extension/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
@@ -765,7 +783,6 @@
 		};
 		73ADD2081C890B0D000BC548 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 923C5AE5CAA97431DA3D8DF3 /* Pods-Poketch WatchKit App.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
@@ -782,7 +799,6 @@
 		};
 		73ADD2091C890B0D000BC548 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 5F7A5A649D6CDC2A96D37C80 /* Pods-Poketch WatchKit App.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
@@ -799,7 +815,7 @@
 		};
 		73ADD20C1C890B0D000BC548 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 932A54AD655C3EDEEC31B8AC /* Pods-Poketch.debug.xcconfig */;
+			baseConfigurationReference = 2BDA6E890DAB23DBEFDB8FE0 /* Pods-Poketch.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
@@ -816,7 +832,7 @@
 		};
 		73ADD20D1C890B0D000BC548 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = AC5519F905CC812935C645CE /* Pods-Poketch.release.xcconfig */;
+			baseConfigurationReference = 7445BC549099AABE5E306F9F /* Pods-Poketch.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;

@@ -23,7 +23,7 @@ PODS:
   - AFOnoResponseSerializer (1.0.0):
     - AFNetworking (~> 2.2)
     - Ono (~> 1.0)
-  - IGInterfaceDataTable (0.1.0)
+  - IGInterfaceDataTable (0.1.1)
   - Ono (1.2.2)
   - Realm (0.98.4):
     - Realm/Headers (= 0.98.4)
@@ -32,14 +32,28 @@ PODS:
     - Realm (= 0.98.4)
 
 DEPENDENCIES:
-  - AFOnoResponseSerializer
-  - IGInterfaceDataTable
+  - AFOnoResponseSerializer (from `https://github.com/pcperini/AFOnoResponseSerializer.git`)
+  - IGInterfaceDataTable (from `https://github.com/pcperini/IGInterfaceDataTable.git`)
   - RealmSwift
+
+EXTERNAL SOURCES:
+  AFOnoResponseSerializer:
+    :git: https://github.com/pcperini/AFOnoResponseSerializer.git
+  IGInterfaceDataTable:
+    :git: https://github.com/pcperini/IGInterfaceDataTable.git
+
+CHECKOUT OPTIONS:
+  AFOnoResponseSerializer:
+    :commit: 53b30bb7c8a6b60216b5c7d69b1e6a51b95586a8
+    :git: https://github.com/pcperini/AFOnoResponseSerializer.git
+  IGInterfaceDataTable:
+    :commit: 1ba166cc823b0a38a561a33ad728c74104a1d111
+    :git: https://github.com/pcperini/IGInterfaceDataTable.git
 
 SPEC CHECKSUMS:
   AFNetworking: cb8d14a848e831097108418f5d49217339d4eb60
   AFOnoResponseSerializer: c02c8bef1d6742ac68f33ecaed41826c9657bc33
-  IGInterfaceDataTable: 8f3ee6d5041c027e33b69705902573789975ef21
+  IGInterfaceDataTable: 71f5646cb4a7416e8f84d91ad028cef0ad0ac9c0
   Ono: 80b1c686777d3f6d5d5ce6fcac8a74afef4ca197
   Realm: 7745674cb1b7cb2a84a655bfd420b86efdaad36e
   RealmSwift: 18742f4f13f98117aeec53b92058918ac93bf38f
