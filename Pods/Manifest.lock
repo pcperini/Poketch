@@ -47,7 +47,7 @@ CHECKOUT OPTIONS:
     :commit: 53b30bb7c8a6b60216b5c7d69b1e6a51b95586a8
     :git: https://github.com/pcperini/AFOnoResponseSerializer.git
   IGInterfaceDataTable:
-    :commit: 1ba166cc823b0a38a561a33ad728c74104a1d111
+    :commit: 900bdbb1fbabd76048d6d8b13452e0098e4728e4
     :git: https://github.com/pcperini/IGInterfaceDataTable.git
 
 SPEC CHECKSUMS:

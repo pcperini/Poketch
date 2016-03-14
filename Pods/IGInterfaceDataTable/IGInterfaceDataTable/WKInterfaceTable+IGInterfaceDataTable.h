@@ -11,6 +11,15 @@
 #import <Foundation/Foundation.h>
 #import <WatchKit/WatchKit.h>
 
+@interface NSIndexPath (TableRows)
+
++ (instancetype)indexPathForRow:(NSInteger)row inSection:(NSInteger)section;
+
+@property (nonatomic, readonly) NSInteger section;
+@property (nonatomic, readonly) NSInteger row;
+
+@end
+
 
 @protocol IGInterfaceTableDataSource <NSObject>
 

@@ -255,7 +255,6 @@
 			isa = PBXGroup;
 			children = (
 				73ADD1D21C890B0C000BC548 /* Poketch */,
-				73ADD1E61C890B0D000BC548 /* Poketch WatchKit App */,
 				73ADD1F51C890B0D000BC548 /* Poketch WatchKit Extension */,
 				73ADD1D11C890B0C000BC548 /* Products */,
 				A7822DFF8BFBFDB3A67C406A /* Pods */,
@@ -293,19 +292,21 @@
 			path = Poketch;
 			sourceTree = "<group>";
 		};
-		73ADD1E61C890B0D000BC548 /* Poketch WatchKit App */ = {
+		73ADD1E61C890B0D000BC548 /* Storyboards */ = {
 			isa = PBXGroup;
 			children = (
 				73ADD1E71C890B0D000BC548 /* Interface.storyboard */,
 				73ADD1EA1C890B0D000BC548 /* Assets.xcassets */,
 				73ADD1EC1C890B0D000BC548 /* Info.plist */,
 			);
-			path = "Poketch WatchKit App";
+			name = Storyboards;
+			path = "../Poketch WatchKit App";
 			sourceTree = "<group>";
 		};
 		73ADD1F51C890B0D000BC548 /* Poketch WatchKit Extension */ = {
 			isa = PBXGroup;
 			children = (
+				73ADD1E61C890B0D000BC548 /* Storyboards */,
 				73ADD1FA1C890B0D000BC548 /* ExtensionDelegate.swift */,
 				73257E291C965C07001625EC /* Interface Controllers */,
 				73257E2A1C965C0C001625EC /* Interface Elements */,

@@ -8,7 +8,43 @@
         <!--Entries List Interface Controller-->
         <scene sceneID="aou-V4-d1y">
             <objects>
-                <controller id="AgC-eL-Hgc" customClass="EntriesListInterfaceController" customModule="Poketch_WatchKit_Extension"/>
+                <controller id="AgC-eL-Hgc" customClass="EntriesListInterfaceController" customModule="Poketch_WatchKit_Extension">
+                    <items>
+                        <table alignment="left" id="6qY-ns-y3O">
+                            <items>
+                                <tableRow identifier="Poketch_WatchKit_Extension.EntryRow" selectable="NO" id="Sh8-6Q-2DB" customClass="EntryRow" customModule="Poketch_WatchKit_Extension">
+                                    <group key="rootItem" width="1" alignment="left" id="GNA-pN-E3E">
+                                        <items>
+                                            <label alignment="left" text="Label" id="k7L-xq-dT2"/>
+                                        </items>
+                                    </group>
+                                    <connections>
+                                        <outlet property="titleLabel" destination="k7L-xq-dT2" id="csl-V9-2Lh"/>
+                                    </connections>
+                                </tableRow>
+                            </items>
+                        </table>
+                        <group width="1" alignment="center" verticalAlignment="bottom" id="98J-bZ-3Ln">
+                            <items>
+                                <button width="0.5" alignment="left" verticalAlignment="center" title="&lt;-" id="cpv-2R-Z31">
+                                    <connections>
+                                        <action selector="previousPageButtonWasPressed:" destination="AgC-eL-Hgc" id="LSz-pJ-Zf3"/>
+                                    </connections>
+                                </button>
+                                <button width="0.5" alignment="right" verticalAlignment="center" title="-&gt;" id="ucc-hm-utF">
+                                    <connections>
+                                        <action selector="nextPageButtonWasPressed:" destination="AgC-eL-Hgc" id="cOQ-ys-HfU"/>
+                                    </connections>
+                                </button>
+                            </items>
+                        </group>
+                    </items>
+                    <connections>
+                        <outlet property="nextPageButton" destination="ucc-hm-utF" id="SWe-o4-f0c"/>
+                        <outlet property="previousPageButton" destination="cpv-2R-Z31" id="Co5-Sy-QoS"/>
+                        <outlet property="table" destination="6qY-ns-y3O" id="il6-PP-hJ2"/>
+                    </connections>
+                </controller>
             </objects>
             <point key="canvasLocation" x="220" y="345"/>
         </scene>

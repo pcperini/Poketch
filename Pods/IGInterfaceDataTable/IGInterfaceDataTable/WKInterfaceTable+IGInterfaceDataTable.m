@@ -13,15 +13,6 @@
 #import <objc/runtime.h>
 #import <Foundation/Foundation.h>
 
-@interface NSIndexPath (TableRows)
-
-+ (instancetype)indexPathForRow:(NSInteger)row inSection:(NSInteger)section;
-
-@property (nonatomic, readonly) NSInteger section;
-@property (nonatomic, readonly) NSInteger row;
-
-@end
-
 @implementation NSIndexPath (TableRows)
 
 + (instancetype)indexPathForRow:(NSInteger)row inSection:(NSInteger)section {
