@@ -456,12 +456,15 @@
 				TargetAttributes = {
 					73ADD1CF1C890B0C000BC548 = {
 						CreatedOnToolsVersion = 7.2.1;
+						DevelopmentTeam = D9G4X7TP5Q;
 					};
 					73ADD1E11C890B0D000BC548 = {
 						CreatedOnToolsVersion = 7.2.1;
+						DevelopmentTeam = D9G4X7TP5Q;
 					};
 					73ADD1F01C890B0D000BC548 = {
 						CreatedOnToolsVersion = 7.2.1;
+						DevelopmentTeam = D9G4X7TP5Q;
 					};
 				};
 			};
@@ -792,6 +795,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 7355A9D1B8B6294502D8C5D8 /* Pods-Poketch WatchKit Extension.debug.xcconfig */;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = "Poketch WatchKit Extension/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.pcperini.Poketch.watchkitapp.watchkitextension;
@@ -807,6 +811,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 4DF57E66A865BEA8A72CF86B /* Pods-Poketch WatchKit Extension.release.xcconfig */;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = "Poketch WatchKit Extension/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.pcperini.Poketch.watchkitapp.watchkitextension;
@@ -822,6 +827,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				IBSC_MODULE = Poketch_WatchKit_Extension;
 				INFOPLIST_FILE = "Poketch WatchKit App/Info.plist";
@@ -838,6 +844,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				IBSC_MODULE = Poketch_WatchKit_Extension;
 				INFOPLIST_FILE = "Poketch WatchKit App/Info.plist";
@@ -856,6 +863,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				ENABLE_STRICT_OBJC_MSGSEND = NO;
 				INFOPLIST_FILE = Poketch/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -873,6 +881,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				ENABLE_STRICT_OBJC_MSGSEND = NO;
 				INFOPLIST_FILE = Poketch/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
