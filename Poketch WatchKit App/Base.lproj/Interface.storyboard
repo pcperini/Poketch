@@ -4,44 +4,134 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="9515"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <mutableArray key="PokemonGB.ttf">
+            <string>PokemonGB</string>
+            <string>PokemonGB</string>
+        </mutableArray>
+        <mutableArray key="PokemonUnownGB.ttf">
+            <string>PokemonUnownGB</string>
+        </mutableArray>
+    </customFonts>
     <scenes>
         <!--Entries List Interface Controller-->
         <scene sceneID="aou-V4-d1y">
             <objects>
                 <controller id="AgC-eL-Hgc" customClass="EntriesListInterfaceController" customModule="Poketch_WatchKit_Extension">
                     <items>
-                        <table alignment="left" id="6qY-ns-y3O">
+                        <group width="1" alignment="center" radius="0.0" id="98J-bZ-3Ln">
                             <items>
-                                <tableRow identifier="Poketch_WatchKit_Extension.EntryRow" selectable="NO" id="Sh8-6Q-2DB" customClass="EntryRow" customModule="Poketch_WatchKit_Extension">
-                                    <group key="rootItem" width="1" alignment="left" id="GNA-pN-E3E">
-                                        <items>
-                                            <label alignment="left" text="Label" id="k7L-xq-dT2"/>
-                                        </items>
-                                    </group>
+                                <button alignment="left" verticalAlignment="center" backgroundImage="ArrowDoubleLeft" id="i00-XC-BMG">
+                                    <color key="backgroundColor" red="0.97254901959999995" green="0.36078431370000003" blue="0.25098039220000001" alpha="1" colorSpace="calibratedRGB"/>
                                     <connections>
-                                        <outlet property="titleLabel" destination="k7L-xq-dT2" id="csl-V9-2Lh"/>
+                                        <action selector="previousSectionButtonWasPressed:" destination="AgC-eL-Hgc" id="z1A-kT-xxp"/>
                                     </connections>
-                                </tableRow>
-                            </items>
-                        </table>
-                        <group width="1" alignment="center" verticalAlignment="bottom" id="98J-bZ-3Ln">
-                            <items>
-                                <button width="0.5" alignment="left" verticalAlignment="center" title="&lt;-" id="cpv-2R-Z31">
+                                </button>
+                                <button alignment="left" verticalAlignment="center" backgroundImage="ArrowLeft" id="cpv-2R-Z31">
+                                    <color key="backgroundColor" red="0.97254901959999995" green="0.36078431370000003" blue="0.25098039220000001" alpha="1" colorSpace="calibratedRGB"/>
                                     <connections>
                                         <action selector="previousPageButtonWasPressed:" destination="AgC-eL-Hgc" id="LSz-pJ-Zf3"/>
                                     </connections>
                                 </button>
-                                <button width="0.5" alignment="right" verticalAlignment="center" title="-&gt;" id="ucc-hm-utF">
+                                <button alignment="right" verticalAlignment="center" backgroundImage="ArrowRight" id="ucc-hm-utF">
+                                    <color key="backgroundColor" red="0.97254901959999995" green="0.36078431370000003" blue="0.25098039220000001" alpha="1" colorSpace="calibratedRGB"/>
                                     <connections>
                                         <action selector="nextPageButtonWasPressed:" destination="AgC-eL-Hgc" id="cOQ-ys-HfU"/>
                                     </connections>
                                 </button>
+                                <button alignment="right" verticalAlignment="center" backgroundImage="ArrowDoubleRight" id="JGv-Qo-Dqc">
+                                    <color key="backgroundColor" red="0.97254901959999995" green="0.36078431370000003" blue="0.25098039220000001" alpha="1" colorSpace="calibratedRGB"/>
+                                    <connections>
+                                        <action selector="nextSectionButtonWasPressed:" destination="AgC-eL-Hgc" id="nbc-Pa-hkz"/>
+                                    </connections>
+                                </button>
                             </items>
+                            <color key="backgroundColor" red="0.2274509804" green="0.59999999999999998" blue="0.84705882349999995" alpha="1" colorSpace="calibratedRGB"/>
+                            <edgeInsets key="margins" left="2" right="2" top="2" bottom="2"/>
+                        </group>
+                        <group width="1" alignment="center" layout="vertical" radius="0.0" id="HAg-bh-EjN">
+                            <items>
+                                <table alignment="left" id="6qY-ns-y3O">
+                                    <items>
+                                        <tableRow identifier="Poketch_WatchKit_Extension.EntryRow" selectable="NO" id="Sh8-6Q-2DB" customClass="EntryRow" customModule="Poketch_WatchKit_Extension">
+                                            <group key="rootItem" width="1" alignment="left" radius="2" id="GNA-pN-E3E">
+                                                <items>
+                                                    <imageView width="40" height="40" alignment="left" id="eR9-RL-NMt"/>
+                                                    <group alignment="left" verticalAlignment="center" layout="vertical" id="8pd-Hz-tej">
+                                                        <items>
+                                                            <label alignment="left" text="#000" id="bdR-TZ-Ofe">
+                                                                <fontDescription key="font" name="PokemonGB" family="Pokemon GB" pointSize="6"/>
+                                                            </label>
+                                                            <label alignment="left" text="Name" id="GGT-os-pQ1">
+                                                                <fontDescription key="font" name="PokemonGB" family="Pokemon GB" pointSize="9"/>
+                                                            </label>
+                                                        </items>
+                                                    </group>
+                                                    <group alignment="right" verticalAlignment="center" layout="vertical" id="A8s-hM-ee0">
+                                                        <items>
+                                                            <group width="10" height="10" alignment="left" radius="2" id="fDT-rH-hdC">
+                                                                <color key="backgroundColor" red="0.97254901959999995" green="0.36078431370000003" blue="0.25098039220000001" alpha="1" colorSpace="calibratedRGB"/>
+                                                            </group>
+                                                            <group width="10" height="10" alignment="left" radius="2" id="Hrj-CG-5wc">
+                                                                <color key="backgroundColor" red="0.97254901959999995" green="0.36078431370000003" blue="0.25098039220000001" alpha="1" colorSpace="calibratedRGB"/>
+                                                            </group>
+                                                        </items>
+                                                    </group>
+                                                </items>
+                                                <color key="backgroundColor" red="0.17254901959999999" green="0.17254901959999999" blue="0.17254901959999999" alpha="1" colorSpace="calibratedRGB"/>
+                                                <edgeInsets key="margins" left="0.0" right="4" top="0.0" bottom="0.0"/>
+                                            </group>
+                                            <connections>
+                                                <outlet property="iconImage" destination="eR9-RL-NMt" id="NkW-N2-bhn"/>
+                                                <outlet property="nationalDexNumberLabel" destination="bdR-TZ-Ofe" id="KtW-0Q-MKF"/>
+                                                <outlet property="titleLabel" destination="GGT-os-pQ1" id="rzh-q0-nnR"/>
+                                                <outlet property="type1Indicator" destination="fDT-rH-hdC" id="7sf-5c-aVY"/>
+                                                <outlet property="type2Indicator" destination="Hrj-CG-5wc" id="I00-Jz-p8L"/>
+                                            </connections>
+                                        </tableRow>
+                                    </items>
+                                    <color key="backgroundColor" red="0.96946096420000005" green="0.98695337770000002" blue="0.99991977210000005" alpha="1" colorSpace="calibratedRGB"/>
+                                </table>
+                                <group width="1" alignment="left" hidden="YES" id="QXw-dW-4D2">
+                                    <items>
+                                        <label alignment="center" text="end of page" id="Bfh-UQ-a20">
+                                            <color key="textColor" red="0.17254901959999999" green="0.17254901959999999" blue="0.17254901959999999" alpha="1" colorSpace="calibratedRGB"/>
+                                            <fontDescription key="font" name="PokemonUnownGB" family="Pokemon Unown GB" pointSize="10"/>
+                                        </label>
+                                    </items>
+                                    <edgeInsets key="margins" left="0.0" right="0.0" top="20" bottom="0.0"/>
+                                </group>
+                            </items>
+                            <edgeInsets key="margins" left="2" right="2" top="0.0" bottom="2"/>
                         </group>
                     </items>
+                    <menu key="menu" id="Ise-ca-Ruz">
+                        <items>
+                            <menuItem title="ABC" image="ABC" id="V0g-sR-ryO">
+                                <connections>
+                                    <action selector="alphabeticalSortButtonWasPressed" destination="AgC-eL-Hgc" id="I5X-Vq-wYe"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem title="NUM" image="NUM" id="oiQ-Pf-WSk">
+                                <connections>
+                                    <action selector="regionSortButtonWasPressed" destination="AgC-eL-Hgc" id="6OE-Bb-bz3"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem title="TYPE" image="TYPE" id="wye-iC-yEl">
+                                <connections>
+                                    <action selector="typeSortButtonWasPressed" destination="AgC-eL-Hgc" id="ako-6S-PeZ"/>
+                                </connections>
+                            </menuItem>
+                        </items>
+                    </menu>
+                    <color key="backgroundColor" red="0.96946096420000005" green="0.98695337770000002" blue="0.99991977210000005" alpha="1" colorSpace="calibratedRGB"/>
+                    <edgeInsets key="margins" left="0.0" right="0.0" top="0.0" bottom="0.0"/>
                     <connections>
+                        <outlet property="endOfPageLabelContainer" destination="QXw-dW-4D2" id="Vha-D2-Z84"/>
                         <outlet property="nextPageButton" destination="ucc-hm-utF" id="SWe-o4-f0c"/>
+                        <outlet property="nextSectionButton" destination="JGv-Qo-Dqc" id="lHc-6Z-gyD"/>
                         <outlet property="previousPageButton" destination="cpv-2R-Z31" id="Co5-Sy-QoS"/>
+                        <outlet property="previousSectionButton" destination="i00-XC-BMG" id="ehd-k0-9ik"/>
                         <outlet property="table" destination="6qY-ns-y3O" id="il6-PP-hJ2"/>
                     </connections>
                 </controller>

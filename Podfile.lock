@@ -25,11 +25,11 @@ PODS:
     - Ono (~> 1.0)
   - IGInterfaceDataTable (0.1.1)
   - Ono (1.2.2)
-  - Realm (0.98.4):
-    - Realm/Headers (= 0.98.4)
-  - Realm/Headers (0.98.4)
-  - RealmSwift (0.98.4):
-    - Realm (= 0.98.4)
+  - Realm (0.98.5):
+    - Realm/Headers (= 0.98.5)
+  - Realm/Headers (0.98.5)
+  - RealmSwift (0.98.5):
+    - Realm (= 0.98.5)
 
 DEPENDENCIES:
   - AFOnoResponseSerializer (from `https://github.com/pcperini/AFOnoResponseSerializer.git`)
@@ -55,7 +55,7 @@ SPEC CHECKSUMS:
   AFOnoResponseSerializer: c02c8bef1d6742ac68f33ecaed41826c9657bc33
   IGInterfaceDataTable: 71f5646cb4a7416e8f84d91ad028cef0ad0ac9c0
   Ono: 80b1c686777d3f6d5d5ce6fcac8a74afef4ca197
-  Realm: 7745674cb1b7cb2a84a655bfd420b86efdaad36e
-  RealmSwift: 18742f4f13f98117aeec53b92058918ac93bf38f
+  Realm: db08379969e45cea2edd1c3c0a090fe9e22d2d2f
+  RealmSwift: cb11ad1c35e15dc982f2dbf5afe2a3124193a358
 
 COCOAPODS: 0.39.0

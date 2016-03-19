@@ -12,13 +12,6 @@ import QuartzCore
 
 @IBDesignable
 class EntriesListViewController: UIViewController {
-    // MARK: Types
-    enum SortState: String {
-        case Region = "NUM"
-        case Alphabetical = "ABC"
-        case Type = "TYPE"
-    }
-    
     // MARK: Properties
     weak var dataDelegate: FrameViewControllerDataDelegate?
     var sortState: SortState = .Region {

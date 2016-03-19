@@ -43,6 +43,23 @@ extension PokedexEntry: Hashable {
     }
 }
 
+// MARK: TransferableStructConvertible
+extension PokedexEntry {
+    // MARK: Types
+    typealias StructType = PokedexEntryStruct
+    
+    // MARK: Properties
+    var structValue: StructType {
+        return PokedexEntryStruct(identifier: self.identifier,
+            nationalDexNumber: self.nationalDexNumber,
+            localDexNumber: self.localDexNumber,
+            iconURL: self.iconURL,
+            name: self.name,
+            type1: self.type1!.structValue,
+            type2: self.type2?.structValue)
+    }
+}
+
 // MARK: Regions
 extension PokedexEntry {
     // MARK: Properties

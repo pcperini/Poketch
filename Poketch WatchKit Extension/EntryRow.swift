@@ -11,5 +11,10 @@ import WatchKit
 class EntryRow: Row {
     // MARK: Properties
     @IBOutlet var iconImage: WKInterfaceImage!
+    
+    @IBOutlet var nationalDexNumberLabel: WKInterfaceLabel!
     @IBOutlet var titleLabel: WKInterfaceLabel!
+    
+    @IBOutlet var type1Indicator: WKInterfaceGroup!
+    @IBOutlet var type2Indicator: WKInterfaceGroup!
 }

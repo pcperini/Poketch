@@ -40,3 +40,15 @@ class PokedexType: Object {
         return "name"
     }
 }
+
+// MARK: TransferableStructConvertible
+extension PokedexType {
+    // MARK: Types
+    typealias StructType = PokedexTypeStruct
+    
+    // MARK: Properties
+    var structValue: PokedexTypeStruct {
+        return PokedexTypeStruct(name: self.name,
+            color: self.color)
+    }
+}
