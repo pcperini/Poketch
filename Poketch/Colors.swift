@@ -1,5 +1,5 @@
 //
-//  UIColor_Extensions.swift
+//  Colors.swift
 //  Poketch
 //
 //  Created by PATRICK PERINI on 3/4/16.

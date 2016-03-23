@@ -26,6 +26,8 @@ class PokedexEntry: Object {
     dynamic var type1: PokedexType? = nil
     dynamic var type2: PokedexType? = nil
     
+    dynamic var details: PokedexEntryDetails? = nil
+    
     // MARK: Class Properties
     override static func primaryKey() -> String? {
         return "identifier"

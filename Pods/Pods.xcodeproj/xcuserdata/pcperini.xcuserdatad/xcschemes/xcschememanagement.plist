@@ -14,6 +14,11 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>APNGKit.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>IGInterfaceDataTable.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -47,7 +52,7 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>0A41C800F67FB1BDA64980B3BD1A59CC</key>
+		<key>1D9134BB8E757A6DCC04D2164C551377</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -57,12 +62,17 @@
 			<key>primary</key>
 			<true/>
 		</dict>
+		<key>2737B61583A3E6E6629CCD782026231D</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>4878C70B21CA37D7CB8A476BF986741B</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>50411C91EDD720BFDBC3ABF145C6A827</key>
+		<key>7BA1E2AC44F06DB0F8135FBACAC49732</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -82,7 +92,7 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>EEC721A2550E1784A067BFD1D8D72619</key>
+		<key>FAE7DCEFAC985A1FB81C7C6C770446EF</key>
 		<dict>
 			<key>primary</key>
 			<true/>

@@ -8,9 +8,22 @@
 
 import UIKit
 
-class Cell: UITableViewCell {
+class TableCell: UITableViewCell {
     // MARK: Properties
     override var reuseIdentifier: String? {
         return NSStringFromClass(self.dynamicType)
     }
+    
+    // MARK: Lifecycle
+    func setUp() { }
+}
+
+class CollectionCell: UICollectionViewCell {
+    // MARK: Properties
+    override var reuseIdentifier: String? {
+        return NSStringFromClass(self.dynamicType)
+    }
+    
+    // MARK: Lifecycle
+    func setUp() { }
 }

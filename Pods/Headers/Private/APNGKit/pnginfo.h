@@ -1,0 +1,1 @@
+../../../APNGKit/APNGKit/libpng-apng/pnginfo.h

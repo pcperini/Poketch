@@ -6,6 +6,7 @@ target 'Poketch' do
     
     pod 'AFOnoResponseSerializer', :git => 'https://github.com/pcperini/AFOnoResponseSerializer.git'
     pod 'RealmSwift'
+    pod 'APNGKit'
 end
 
 target 'Poketch WatchKit Extension' do

@@ -32,3 +32,16 @@ extension Int {
         return romanValue
     }
 }
+
+extension Float {
+    var fraction: String {
+        switch self {
+        case 0.25:
+            return "1/4"
+        case 0.5:
+            return "1/2"
+        default:
+            return "\(Int(self))"
+        }
+    }
+}

@@ -23,6 +23,7 @@ PODS:
   - AFOnoResponseSerializer (1.0.0):
     - AFNetworking (~> 2.2)
     - Ono (~> 1.0)
+  - APNGKit (0.2.0)
   - IGInterfaceDataTable (0.1.1)
   - Ono (1.2.2)
   - Realm (0.98.5):
@@ -33,6 +34,7 @@ PODS:
 
 DEPENDENCIES:
   - AFOnoResponseSerializer (from `https://github.com/pcperini/AFOnoResponseSerializer.git`)
+  - APNGKit
   - IGInterfaceDataTable (from `https://github.com/pcperini/IGInterfaceDataTable.git`)
   - RealmSwift
 
@@ -53,6 +55,7 @@ CHECKOUT OPTIONS:
 SPEC CHECKSUMS:
   AFNetworking: cb8d14a848e831097108418f5d49217339d4eb60
   AFOnoResponseSerializer: c02c8bef1d6742ac68f33ecaed41826c9657bc33
+  APNGKit: 20d43b78ae8f9fe2328f861837dfe20a18630890
   IGInterfaceDataTable: 71f5646cb4a7416e8f84d91ad028cef0ad0ac9c0
   Ono: 80b1c686777d3f6d5d5ce6fcac8a74afef4ca197
   Realm: db08379969e45cea2edd1c3c0a090fe9e22d2d2f

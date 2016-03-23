@@ -289,11 +289,11 @@ extension EntriesListViewController: UITableViewDelegate {
         self.dataDelegate?.reloadData(true)
     }
     
-//    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-//        let entry = self.entryForIndexPath(indexPath)
-//        self.performSegueWithIdentifier("ShowEntryDetail",
-//            sender: entry)
-//    }
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        let entry = self.entryForIndexPath(indexPath)
+        self.performSegueWithIdentifier("ShowEntryDetail",
+            sender: entry)
+    }
 }
 
 extension EntriesListViewController: FrameViewControllerDataType {

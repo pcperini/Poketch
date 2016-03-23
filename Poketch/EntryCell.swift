@@ -8,7 +8,7 @@
 
 import UIKit
 
-class EntryCell: Cell {
+class EntryCell: TableCell {
     // MARK: Properties
     @IBOutlet var iconBackgroundView: PolygonalView!
     @IBOutlet var iconImageView: UIImageView!
