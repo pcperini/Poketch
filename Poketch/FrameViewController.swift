@@ -9,6 +9,7 @@
 import UIKit
 
 // MARK: View Controller
+@IBDesignable
 class FrameViewController: UIViewController {
     // MARK: Properties
     @IBOutlet var titleLabel: UILabel!
@@ -30,6 +31,7 @@ class FrameViewController: UIViewController {
     
     @IBOutlet var indicatorImageView: UIImageView!
     @IBOutlet var indicatorImageGlossView: UIView!
+    @IBInspectable var indicatorImageViewBorderColor: UIColor = .clearColor()
     
     var dataSource: FrameViewControllerDataType?
     var navigationViewController: UINavigationController? {
@@ -48,7 +50,7 @@ class FrameViewController: UIViewController {
         ]
         
         self.indicatorImageGlossView.layer.addSublayer(gradientLayer)
-        self.indicatorImageView.superview?.layer.borderColor = UIColor(hexString: "#2875A8").CGColor
+        self.indicatorImageView.superview?.layer.borderColor = self.indicatorImageViewBorderColor.CGColor
         
         self.navigationViewController?.delegate = self
     }
