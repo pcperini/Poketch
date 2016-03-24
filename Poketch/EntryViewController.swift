@@ -23,7 +23,7 @@ class EntryViewController: UIViewController {
         return self.entry.details?.typeEffectivenesses
             .filter("effectiveness < 1.0")
             .map { $0 }
-            .sort { $0.0.effectiveness > $0.1.effectiveness } ?? []
+            .sort { $0.0.effectiveness < $0.1.effectiveness } ?? []
     }
     
     weak var dataDelegate: FrameViewControllerDataDelegate?
