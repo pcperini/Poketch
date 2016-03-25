@@ -176,7 +176,7 @@ class EntryViewController: UIViewController {
         if animated {
             UIView.animateWithDuration(0.33) {
                 flowLayout.invalidateLayout()
-                collectionView.superview?.layoutIfNeeded()
+                self.view.layoutIfNeeded()
             }
         } else {
             flowLayout.invalidateLayout()
