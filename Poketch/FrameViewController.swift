@@ -156,7 +156,7 @@ extension FrameViewController: FrameViewControllerDataDelegate {
         
         self.indicatorAudioView.audioFile = nil
         if let audioName = self.dataSource?.indicatorAudioFileName {
-            self.indicatorAudioView.audioFile = EZAudioFile(name: audioName)
+            self.indicatorAudioView.audioFile = EZAudioFile(fileName: audioName)
         }
         
         if let waveColor = self.dataSource?.indicatorAudioTintColor {

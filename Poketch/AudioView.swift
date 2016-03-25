@@ -90,11 +90,15 @@ extension AudioView: EZOutputDataSource {
 }
 
 extension EZAudioFile {
-    convenience init?(name: String) {
-        let types = ["wav", "mp3"]
-        let resourceURL = types.flatMap { NSBundle.mainBundle().URLForResource(name, withExtension: $0) }
-            .first
-        guard let audioFileURL = resourceURL else { return nil }
-        self.init(URL: audioFileURL)
+    convenience init?(fileName: String) {
+        for fileType in EZAudioFile.supportedAudioFileTypes() as! [String] {
+            guard let url = NSBundle.mainBundle().URLForResource(fileName, withExtension: fileType) else { continue }
+            
+            self.init(URL: url)
+            return
+        }
+        
+        self.init()
+        return nil
     }
 }
