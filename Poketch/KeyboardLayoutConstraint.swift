@@ -55,11 +55,11 @@ public class KeyboardLayoutConstraint: NSLayoutConstraint {
         self.offset = self.constant
         
         NSNotificationCenter.defaultCenter().addObserver(self,
-            selector: "keyboardWillShow:",
+            selector: #selector(KeyboardLayoutConstraint.keyboardWillShow(_:)),
             name: UIKeyboardWillShowNotification,
             object: nil)
         NSNotificationCenter.defaultCenter().addObserver(self,
-            selector: "keyboardWillHide:",
+            selector: #selector(KeyboardLayoutConstraint.keyboardWillHide(_:)),
             name: UIKeyboardWillHideNotification,
             object: nil)
     }

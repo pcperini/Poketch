@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import EZAudio
 
 // MARK: View Controller
 @IBDesignable
@@ -33,6 +34,8 @@ class FrameViewController: UIViewController {
     @IBOutlet var indicatorImageGlossView: UIView!
     @IBInspectable var indicatorImageViewBorderColor: UIColor = .clearColor()
     
+    @IBOutlet var indicatorAudioView: AudioView!
+    
     var dataSource: FrameViewControllerDataType?
     var navigationViewController: UINavigationController? {
         return self.childViewControllers.first as? UINavigationController
@@ -58,6 +61,10 @@ class FrameViewController: UIViewController {
     // MARK: Responders
     @IBAction func topBarTapGestureWasRecognized(sender: UITapGestureRecognizer?) {
         self.dataSource?.scrollView?.scrollRectToVisible(.zero, animated: true)
+    }
+    
+    @IBAction func indicatorAudioViewTapGestureWasRecognized(sender: UITapGestureRecognizer?) {
+        self.indicatorAudioView.start()
     }
     
     // MARK: Mutators
@@ -97,7 +104,7 @@ class FrameViewController: UIViewController {
 }
 
 extension FrameViewController: UINavigationControllerDelegate {
-    func navigationController(navigationController: UINavigationController, willShowViewController viewController: UIViewController, animated: Bool) {
+    func navigationController(navigationController: UINavigationController, didShowViewController viewController: UIViewController, animated: Bool) {
         guard let dataSource = viewController as? FrameViewControllerDataType else { return }
         
         self.dataSource = dataSource
@@ -110,6 +117,11 @@ extension FrameViewController: FrameViewControllerDataDelegate {
         self.reloadTitle(animated)
         self.reloadIndicatorImage(animated)
         self.reloadFilterButton(nil)
+        
+        self.indicatorAudioView.audioFile = nil
+        if let _ = self.dataSource?.indicatorAudioFileName {
+            self.reloadIndicatorAudio()
+        }
     }
     
     func reloadTitle(animated: Bool = false) {
@@ -120,6 +132,8 @@ extension FrameViewController: FrameViewControllerDataDelegate {
     func reloadIndicatorImage(animated: Bool = false) {
         self.indicatorImageView.image = self.dataSource?.indicatorImage
         self.indicatorImageView.backgroundColor = self.dataSource?.indiactorImageBackgroundColor
+        
+        self.indicatorAudioView.hidden = true
         
         if let imageURL = self.dataSource?.indicatorImageURL {
             self.indicatorImageView.setImageWithURL(imageURL, placeholderImage: nil)
@@ -134,6 +148,22 @@ extension FrameViewController: FrameViewControllerDataDelegate {
         }
         
         self.setIndicatorImageContentsRect(contentsRect, animated: animated)
+    }
+    
+    func reloadIndicatorAudio() {
+        self.indicatorAudioView.hidden = false
+        self.indicatorImageView.image = nil
+        
+        self.indicatorAudioView.audioFile = nil
+        if let audioName = self.dataSource?.indicatorAudioFileName {
+            self.indicatorAudioView.audioFile = EZAudioFile(name: audioName)
+        }
+        
+        if let waveColor = self.dataSource?.indicatorAudioTintColor {
+            self.indicatorAudioView.waveColor = waveColor
+        }
+        
+        self.indicatorAudioView.start()
     }
     
     func reloadFilterButton(swapIndex: Int? = nil) {
@@ -169,6 +199,9 @@ protocol FrameViewControllerDataType {
     var indicatorImageContentRect: CGRect? { get }
     var indiactorImageBackgroundColor: UIColor? { get }
     
+    var indicatorAudioFileName: String? { get }
+    var indicatorAudioTintColor: UIColor? { get }
+    
     var filterButtonHidden: Bool { get }
     var filterButtonOptionViews: [UIView] { get }
     
@@ -184,6 +217,9 @@ extension FrameViewControllerDataType {
     var indicatorImageContentRect: CGRect? { return nil }
     var indiactorImageBackgroundColor: UIColor? { return nil }
     
+    var indicatorAudioFileName: String? { return nil }
+    var indicatorAudioTintColor: UIColor? { return nil }
+    
     var filterButtonHidden: Bool { return false }
     var filterButtonOptionViews: [UIView] { return [] }
 }
@@ -193,5 +229,6 @@ protocol FrameViewControllerDataDelegate: class {
     func reloadData(animated: Bool) -> Void
     func reloadTitle(animated: Bool) -> Void
     func reloadIndicatorImage(animated: Bool) -> Void
+    func reloadIndicatorAudio() -> Void
     func reloadFilterButton(swapIndex: Int?) -> Void
 }

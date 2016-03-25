@@ -62,7 +62,7 @@ class EntriesListViewController: UIViewController {
             button.titleLabel?.shadowOffset = CGSize(width: 1, height: 1)
             
             button.addTarget(self,
-                action: "filterButtonWasPressed:",
+                action: #selector(EntriesListViewController.filterButtonWasPressed(_:)),
                 forControlEvents: .TouchUpInside)
             
             return button
@@ -93,7 +93,9 @@ class EntriesListViewController: UIViewController {
     
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
-        self.dataDelegate?.reloadData(true)
+        dispatch_after(0.5) {
+            self.dataDelegate?.reloadData(true)
+        }
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {

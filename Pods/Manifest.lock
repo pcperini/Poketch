@@ -24,19 +24,23 @@ PODS:
     - AFNetworking (~> 2.2)
     - Ono (~> 1.0)
   - APNGKit (0.2.0)
+  - EZAudio (0.0.6)
   - IGInterfaceDataTable (0.1.1)
   - Ono (1.2.2)
-  - Realm (0.98.5):
-    - Realm/Headers (= 0.98.5)
-  - Realm/Headers (0.98.5)
-  - RealmSwift (0.98.5):
-    - Realm (= 0.98.5)
+  - Realm (0.98.6):
+    - Realm/Headers (= 0.98.6)
+  - Realm/Headers (0.98.6)
+  - RealmSwift (0.98.6):
+    - Realm (= 0.98.6)
+  - ZLSinusWaveView (0.0.3):
+    - EZAudio (~> 0.0.6)
 
 DEPENDENCIES:
   - AFOnoResponseSerializer (from `https://github.com/pcperini/AFOnoResponseSerializer.git`)
   - APNGKit
   - IGInterfaceDataTable (from `https://github.com/pcperini/IGInterfaceDataTable.git`)
   - RealmSwift
+  - ZLSinusWaveView
 
 EXTERNAL SOURCES:
   AFOnoResponseSerializer:
@@ -56,9 +60,11 @@ SPEC CHECKSUMS:
   AFNetworking: cb8d14a848e831097108418f5d49217339d4eb60
   AFOnoResponseSerializer: c02c8bef1d6742ac68f33ecaed41826c9657bc33
   APNGKit: 20d43b78ae8f9fe2328f861837dfe20a18630890
+  EZAudio: feb8e1c3ec17d8933bc2efc66b59ead1f2e79e54
   IGInterfaceDataTable: 71f5646cb4a7416e8f84d91ad028cef0ad0ac9c0
   Ono: 80b1c686777d3f6d5d5ce6fcac8a74afef4ca197
-  Realm: db08379969e45cea2edd1c3c0a090fe9e22d2d2f
-  RealmSwift: cb11ad1c35e15dc982f2dbf5afe2a3124193a358
+  Realm: 44803f35418c5d89b27825a564247fcd190de37e
+  RealmSwift: c7239c52c83f8c43525a5269ba7be1694da33afc
+  ZLSinusWaveView: c0aa99ce88b674124d5ccae16bc87696e4f8318b
 
 COCOAPODS: 0.39.0

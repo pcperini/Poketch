@@ -19,6 +19,11 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>EZAudio.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>IGInterfaceDataTable.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -49,15 +54,25 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>ZLSinusWaveView.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>1D9134BB8E757A6DCC04D2164C551377</key>
+		<key>1C50A56F161C4591B37D082FC387DBD6</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
 		<key>2079008752CE45DC5EA95D0C9D919D07</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>254EA72DFADAB5F3286B8726A554C9E6</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -72,7 +87,7 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>7BA1E2AC44F06DB0F8135FBACAC49732</key>
+		<key>6E702E572FC8B5EF9C79AA7D104D99D5</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -87,12 +102,17 @@
 			<key>primary</key>
 			<true/>
 		</dict>
+		<key>E773E06FD254874CAFFC33F87D20D772</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>E7974BCE8F161DBBBE23FF4741DDAC58</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>FAE7DCEFAC985A1FB81C7C6C770446EF</key>
+		<key>E832D1DF86F673F0BD140F00E9DCD306</key>
 		<dict>
 			<key>primary</key>
 			<true/>

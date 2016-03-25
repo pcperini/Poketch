@@ -55,7 +55,7 @@ public class APNGImage: NSObject { // For ObjC compatibility
     public var repeatCount: Int
     
     let firstFrameHidden: Bool
-    var frames: [Frame]
+    internal private(set) var frames: [Frame]
     var bitDepth: Int
     
     // Strong refrence to another APNG to hold data if this image object is retrieved from cache

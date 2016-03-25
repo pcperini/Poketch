@@ -89,14 +89,14 @@ class EntryViewController: UIViewController {
     // MARK: Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.dataDelegate?.reloadData(true)
-        
         self.updateEntry()
     }
     
     override func viewDidAppear(animated: Bool){
         super.viewDidAppear(animated)
-        self.dataDelegate?.reloadData(true)
+        dispatch_after(0.5) {
+            self.dataDelegate?.reloadData(true)
+        }
     }
     
     // MARK: Mutators
@@ -230,12 +230,12 @@ extension EntryViewController: FrameViewControllerDataType {
         set {}
     }
     
-    var indicatorImageURL: NSURL? {
-        return self.entry.iconURL
+    var indicatorAudioFileName: String? {
+        return NSString(format: "%03d", self.entry.identifier) as String
     }
     
-    var indiactorImageBackgroundColor: UIColor? {
-        return UIColor.blackColor()
+    var indicatorAudioTintColor: UIColor? {
+        return self.entry.type1!.color
     }
     
     var filterButtonHidden: Bool {

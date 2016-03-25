@@ -18,7 +18,7 @@ protocol Transferable {
 
 protocol TransferableStructConvertible {
     // MARK: Types
-    typealias StructType: Transferable
+    associatedtype StructType: Transferable
     
     // MARK: Properties
     var structValue: StructType { get }

@@ -14,7 +14,7 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = 'primary'
-               BlueprintIdentifier = 'C4CE6008D895ADB2076625AD'
+               BlueprintIdentifier = '8B5195685090119013BC0BE6'
                BlueprintName = 'IGInterfaceDataTable'
                ReferencedContainer = 'container:Pods.xcodeproj'
                BuildableName = 'IGInterfaceDataTable.framework'>

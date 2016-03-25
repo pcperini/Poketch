@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="CXb-yk-o1B">
     <dependencies>
-        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
         <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
@@ -104,17 +103,17 @@
                                                     <rect key="frame" x="0.0" y="0.0" width="442" height="40"/>
                                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                     <subviews>
-                                                        <visualEffectView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="68V-m2-ONB">
+                                                        <visualEffectView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="68V-m2-ONB">
                                                             <rect key="frame" x="0.0" y="-523" width="0.0" height="0.0"/>
-                                                            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" ambiguous="YES" id="mUM-2e-VoQ">
+                                                            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="mUM-2e-VoQ">
                                                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                             </view>
                                                             <vibrancyEffect>
                                                                 <blurEffect style="light"/>
                                                             </vibrancyEffect>
                                                         </visualEffectView>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="Btl-tH-Mh9">
-                                                            <rect key="frame" x="18" y="10" width="381" height="20.5"/>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="Btl-tH-Mh9">
+                                                            <rect key="frame" x="18" y="20.5" width="381" height="0.0"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" priority="250" id="OrM-gJ-S3e"/>
                                                             </constraints>
@@ -176,6 +175,22 @@
                                                     <userDefinedRuntimeAttribute type="string" keyPath="layer.magnificationFilter" value="nearest"/>
                                                 </userDefinedRuntimeAttributes>
                                             </imageView>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2bM-6T-c4s" customClass="AudioView" customModule="Poketch" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="0.0" width="49" height="49"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                <gestureRecognizers/>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="color" keyPath="backingColor">
+                                                        <color key="value" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="color" keyPath="waveColor">
+                                                        <color key="value" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <outletCollection property="gestureRecognizers" destination="ZeF-YM-Xwv" appends="YES" id="DOI-bX-mJP"/>
+                                                </connections>
+                                            </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="q8l-rb-0dj" customClass="RoundView" customModule="Poketch" customModuleProvider="target">
                                                 <rect key="frame" x="4" y="2" width="42" height="21"/>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -189,14 +204,18 @@
                                         </subviews>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         <constraints>
+                                            <constraint firstItem="2bM-6T-c4s" firstAttribute="leading" secondItem="EpK-7p-OAW" secondAttribute="leading" id="6zd-Bh-Eu1"/>
                                             <constraint firstAttribute="top" secondItem="q8l-rb-0dj" secondAttribute="top" constant="-2" id="99p-vv-iAV"/>
                                             <constraint firstItem="EpK-7p-OAW" firstAttribute="leading" secondItem="s7A-mj-X3o" secondAttribute="leading" id="9YG-65-3lg"/>
                                             <constraint firstItem="q8l-rb-0dj" firstAttribute="centerX" secondItem="EpK-7p-OAW" secondAttribute="centerX" id="DM3-Zg-hPu"/>
                                             <constraint firstAttribute="bottom" secondItem="EpK-7p-OAW" secondAttribute="bottom" id="LnH-aN-uPT"/>
+                                            <constraint firstItem="2bM-6T-c4s" firstAttribute="trailing" secondItem="EpK-7p-OAW" secondAttribute="trailing" id="RId-pY-bCB"/>
+                                            <constraint firstItem="2bM-6T-c4s" firstAttribute="bottom" secondItem="EpK-7p-OAW" secondAttribute="bottom" id="aPw-j5-HeQ"/>
                                             <constraint firstItem="EpK-7p-OAW" firstAttribute="top" secondItem="s7A-mj-X3o" secondAttribute="top" id="nGg-k1-YoI"/>
                                             <constraint firstAttribute="width" secondItem="s7A-mj-X3o" secondAttribute="height" multiplier="1:1" id="pOs-nU-Gco"/>
                                             <constraint firstAttribute="trailing" secondItem="EpK-7p-OAW" secondAttribute="trailing" id="pev-SQ-Bfs"/>
                                             <constraint firstItem="q8l-rb-0dj" firstAttribute="width" secondItem="EpK-7p-OAW" secondAttribute="width" multiplier="17:20" id="uVV-Wf-0Fs"/>
+                                            <constraint firstItem="2bM-6T-c4s" firstAttribute="top" secondItem="EpK-7p-OAW" secondAttribute="top" id="wh9-Rv-965"/>
                                         </constraints>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="number" keyPath="layer.borderWidth">
@@ -251,6 +270,7 @@
                         </userDefinedRuntimeAttribute>
                     </userDefinedRuntimeAttributes>
                     <connections>
+                        <outlet property="indicatorAudioView" destination="2bM-6T-c4s" id="1Wc-4p-KRY"/>
                         <outlet property="indicatorImageGlossView" destination="q8l-rb-0dj" id="MOS-KZ-EPf"/>
                         <outlet property="indicatorImageView" destination="EpK-7p-OAW" id="LMZ-fj-GeO"/>
                         <outlet property="sortFilterButton" destination="WIb-xZ-Sb9" id="0Fu-qu-5bk"/>
@@ -263,6 +283,11 @@
                 <tapGestureRecognizer id="je1-6d-Ah9">
                     <connections>
                         <action selector="topBarTapGestureWasRecognized:" destination="CXb-yk-o1B" id="mdo-SZ-DVc"/>
+                    </connections>
+                </tapGestureRecognizer>
+                <tapGestureRecognizer id="ZeF-YM-Xwv">
+                    <connections>
+                        <action selector="indicatorAudioViewTapGestureWasRecognized:" destination="CXb-yk-o1B" id="SJz-Yb-wal"/>
                     </connections>
                 </tapGestureRecognizer>
             </objects>
@@ -280,28 +305,23 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="V0U-ao-rNI" customClass="OptionButton" customModule="Poketch" customModuleProvider="target">
-                                <rect key="frame" x="215" y="285" width="170" height="30"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BrW-yg-A6k" customClass="ZLSinusWaveView">
+                                <rect key="frame" x="200" y="200" width="200" height="200"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="30" id="Nc3-Ys-iva"/>
-                                    <constraint firstAttribute="width" constant="170" id="WnX-XK-1Nf"/>
+                                    <constraint firstAttribute="width" constant="200" id="Cqw-XS-9E7"/>
+                                    <constraint firstAttribute="height" constant="200" id="eJz-7Y-TEg"/>
                                 </constraints>
-                                <state key="normal" title="Button"/>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="optionsDirection">
-                                        <real key="value" value="1"/>
-                                    </userDefinedRuntimeAttribute>
-                                </userDefinedRuntimeAttributes>
-                            </button>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="V0U-ao-rNI" firstAttribute="centerY" secondItem="moe-gh-Zkt" secondAttribute="centerY" id="UX1-97-KkY"/>
-                            <constraint firstItem="V0U-ao-rNI" firstAttribute="centerX" secondItem="moe-gh-Zkt" secondAttribute="centerX" id="pkb-YZ-HrT"/>
+                            <constraint firstItem="BrW-yg-A6k" firstAttribute="centerY" secondItem="moe-gh-Zkt" secondAttribute="centerY" id="XUK-N2-PzT"/>
+                            <constraint firstItem="BrW-yg-A6k" firstAttribute="centerX" secondItem="moe-gh-Zkt" secondAttribute="centerX" id="ydd-Pz-3ta"/>
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="optionButton" destination="V0U-ao-rNI" id="KlI-nW-emR"/>
+                        <outlet property="audioView" destination="BrW-yg-A6k" id="cLq-Rv-HX0"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qDH-jq-kmu" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -938,7 +958,7 @@
                                                                         <constraint firstAttribute="width" constant="30" id="uk0-47-TuT"/>
                                                                     </constraints>
                                                                     <fontDescription key="fontDescription" name="PokemonGB" family="Pokemon GB" pointSize="8"/>
-                                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                                     <nil key="highlightedColor"/>
                                                                     <userDefinedRuntimeAttributes>
                                                                         <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
@@ -1039,7 +1059,7 @@
                                                                         <constraint firstAttribute="width" constant="30" id="Mjq-eS-dmk"/>
                                                                     </constraints>
                                                                     <fontDescription key="fontDescription" name="PokemonGB" family="Pokemon GB" pointSize="8"/>
-                                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                                     <nil key="highlightedColor"/>
                                                                     <userDefinedRuntimeAttributes>
                                                                         <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
