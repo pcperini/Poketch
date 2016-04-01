@@ -98,6 +98,7 @@ extension PokedexEntry {
         let name = self.name.stringByReplacingOccurrencesOfString("♂", withString: "M")
             .stringByReplacingOccurrencesOfString("♀", withString: "F")
             .stringByReplacingOccurrencesOfString("é", withString: "e")
+            .stringByAddingPercentEncodingWithAllowedCharacters(.URLQueryAllowedCharacterSet())!
         
         return NSURL(string: "http://bulbapedia.bulbagarden.net/wiki/\(name)_(Pokemon)")!
     }

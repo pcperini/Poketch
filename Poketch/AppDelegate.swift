@@ -33,8 +33,8 @@ extension AppDelegate: WCSessionDelegate {
         
         if let fetch = message["fetch"] {
             guard let typeName = fetch["class"] as? String else {
-                    response = ["error": "invalid type"]
-                    return
+                response = ["error": "invalid type"]
+                return
             }
             
             let sortStateString = (fetch["sort"] as? String) ?? ""

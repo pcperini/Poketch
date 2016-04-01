@@ -86,8 +86,12 @@ class EntriesListViewController: UIViewController {
         self.searchTextFieldContainer.layer.borderColor = self.filterButtonColor?.CGColor
         
         self.dataDelegate?.reloadData(true)
-        BulbapediaClient().fetchEntries() { (_) -> Void in
-            self.reloadData()
+        
+        self.reloadData()
+        BulbapediaClient().fetchEntries() { (entries, _) in
+            if entries.count != self.allEntries.count {
+                self.reloadData()
+            }
         }
     }
     
@@ -278,7 +282,7 @@ extension EntriesListViewController: UITableViewDataSource {
             
         case .Type:
             sectionTitles = self.sortedEntries.enumerate()
-                .map({ $0.element.1[0].type1!.name })
+                .map({ $0.element.1[0].type1!.abbreviatedName })
         }
         
         return sectionTitles
