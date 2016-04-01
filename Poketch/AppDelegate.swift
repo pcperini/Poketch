@@ -31,7 +31,7 @@ extension AppDelegate: WCSessionDelegate {
         var response: [String: AnyObject] = [:]
         defer { replyHandler(response) }
         
-        if let fetch = message["fetch"] {
+        if let fetch = message["fetch"] as? [String: AnyObject] {
             guard let typeName = fetch["class"] as? String else {
                 response = ["error": "invalid type"]
                 return

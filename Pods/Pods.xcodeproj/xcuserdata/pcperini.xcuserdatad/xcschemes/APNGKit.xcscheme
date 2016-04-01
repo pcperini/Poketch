@@ -14,7 +14,7 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = 'primary'
-               BlueprintIdentifier = '11D70449FA56C122BC20AA0C'
+               BlueprintIdentifier = 'F38E0C65B5A32B2D54E6D1EB'
                BlueprintName = 'APNGKit'
                ReferencedContainer = 'container:Pods.xcodeproj'
                BuildableName = 'APNGKit.framework'>

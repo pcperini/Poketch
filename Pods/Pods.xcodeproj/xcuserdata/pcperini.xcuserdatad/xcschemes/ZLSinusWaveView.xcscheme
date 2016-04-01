@@ -14,7 +14,7 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = 'primary'
-               BlueprintIdentifier = 'BA3184FB8DA4B6DA5CD6FA17'
+               BlueprintIdentifier = 'EA3FEED26A89CDC37849A943'
                BlueprintName = 'ZLSinusWaveView'
                ReferencedContainer = 'container:Pods.xcodeproj'
                BuildableName = 'ZLSinusWaveView.framework'>
