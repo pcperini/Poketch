@@ -1,5 +1,5 @@
 # ![](readme/icon.png) Pokétch
-__It's a hi-tech encyclopedia!__
+[__It's a hi-tech encyclopedia!__](http://poketch.pcperini.com)
 In honor of Pokémon's 20th Anniversary, Pokétch is a fan-made Pokémon reference app for iOS and watchOS.
 
 &nbsp;
