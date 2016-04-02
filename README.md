@@ -1,6 +1,5 @@
 # ![](readme/icon.png) Pokétch
-It's a hi-tech encyclopedia!
-
+__It's a hi-tech encyclopedia!__
 In honor of Pokémon's 20th Anniversary, Pokétch is a fan-made Pokémon reference app for iOS and watchOS.
 
 :fire: Quickly scroll through all Pokémon in their National Dex order.
@@ -10,6 +9,9 @@ In honor of Pokémon's 20th Anniversary, Pokétch is a fan-made Pokémon referen
 :leaves: Take a spin around the world of Pokémon with the Live Region Indicator.
 
 :zap: Always know which types trump which Pokémon with quick Weak and Resistant references.
+
+
+&nbsp;
 
 
 ![](readme/shot_0.jpg)
