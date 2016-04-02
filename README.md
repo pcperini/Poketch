@@ -2,6 +2,13 @@
 __It's a hi-tech encyclopedia!__
 In honor of Pokémon's 20th Anniversary, Pokétch is a fan-made Pokémon reference app for iOS and watchOS.
 
+
+![](readme/devices.png)
+
+
+&nbsp;
+
+
 :fire: Quickly scroll through all Pokémon in their National Dex order.
 
 :droplet: Sort by name, number, or type, and filter to search on your iPhone or Apple Watch.
