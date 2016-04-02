@@ -6,8 +6,6 @@ In honor of Pokémon's 20th Anniversary, Pokétch is a fan-made Pokémon referen
 ![](readme/devices.png)
 
 
-&nbsp;
-
 
 :fire: Quickly scroll through all Pokémon in their National Dex order.
 
