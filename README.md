@@ -1,4 +1,5 @@
-# ![](readme/icon.png) Pokétch
+![](readme/icon.png)
+# Pokétch
 
 [![](readme/appstore.png)](https://itunes.apple.com/us/app/poketch/id1095060059?ls=1&mt=8)
 
