@@ -2,7 +2,7 @@
 [__It's a hi-tech encyclopedia!__](http://poketch.pcperini.com)
 In honor of Pokémon's 20th Anniversary, Pokétch is a fan-made Pokémon reference app for iOS and watchOS.
 
-[![](http://www.edmartin.com/Media/Default/Page/appstore_button_iphone.png)](https://itunes.apple.com/us/app/poketch/id1095060059?ls=1&mt=8)
+[![](readme/appstore.png)](https://itunes.apple.com/us/app/poketch/id1095060059?ls=1&mt=8)
 
 ![](readme/devices.png)
 
