@@ -13,6 +13,8 @@ import EZAudio
 @IBDesignable
 class FrameViewController: UIViewController {
     // MARK: Properties
+    @IBOutlet var headerContainer: UIView!
+    
     @IBOutlet var titleLabel: UILabel!
     @IBOutlet var titleLabelHeightConstraint: NSLayoutConstraint!
     final override var title: String? {
@@ -104,16 +106,19 @@ class FrameViewController: UIViewController {
 }
 
 extension FrameViewController: UINavigationControllerDelegate {
-    func navigationController(navigationController: UINavigationController, didShowViewController viewController: UIViewController, animated: Bool) {
+    func navigationController(navigationController: UINavigationController, willShowViewController viewController: UIViewController, animated: Bool) {
         guard let dataSource = viewController as? FrameViewControllerDataType else { return }
         
         self.dataSource = dataSource
         self.dataSource?.dataDelegate = self
+        
+        self.reloadData()
     }
 }
 
 extension FrameViewController: FrameViewControllerDataDelegate {
     func reloadData(animated: Bool = false) {
+        self.reloadHeaderView()
         self.reloadTitle(animated)
         self.reloadIndicatorImage(animated)
         self.reloadFilterButton(nil)
@@ -121,6 +126,25 @@ extension FrameViewController: FrameViewControllerDataDelegate {
         self.indicatorAudioView.audioFile = nil
         if let _ = self.dataSource?.indicatorAudioFileName {
             self.reloadIndicatorAudio()
+        }
+    }
+    
+    func reloadHeaderView() {
+        if let headerView = self.dataSource?.headerView {
+            if headerView.superview == self.headerContainer {
+                return
+            }
+            
+            headerView.translatesAutoresizingMaskIntoConstraints = false
+            self.headerContainer.addSubview(headerView)
+            
+            let attributes: [NSLayoutAttribute] = [.Top, .Right, .Bottom, .Left]
+            attributes.forEach {
+                self.headerContainer.setEqualAttributes($0,
+                    toView: headerView)
+            }
+        } else {
+            self.headerContainer.subviews.forEach { $0.removeFromSuperview() }
         }
     }
     
@@ -191,6 +215,8 @@ extension FrameViewController: FrameViewControllerDataDelegate {
 // MARK: Data Source
 protocol FrameViewControllerDataType {
     // MARK: Properties
+    var headerView: UIView? { get }
+    
     var title: String? { get }
     var scrollView: UIScrollView? { get }
     
@@ -209,6 +235,8 @@ protocol FrameViewControllerDataType {
 }
 
 extension FrameViewControllerDataType {
+    var headerView: UIView? { return nil }
+    
     var title: String? { return nil }
     var scrollView: UIScrollView? { return nil }
     
@@ -227,6 +255,7 @@ extension FrameViewControllerDataType {
 // MARK: Data Delegation
 protocol FrameViewControllerDataDelegate: class {
     func reloadData(animated: Bool) -> Void
+    func reloadHeaderView() -> Void
     func reloadTitle(animated: Bool) -> Void
     func reloadIndicatorImage(animated: Bool) -> Void
     func reloadIndicatorAudio() -> Void

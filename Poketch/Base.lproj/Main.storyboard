@@ -81,6 +81,13 @@
                                             <outletCollection property="gestureRecognizers" destination="je1-6d-Ah9" appends="YES" id="DkA-zL-jXO"/>
                                         </connections>
                                     </imageView>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NpL-nY-9O0">
+                                        <rect key="frame" x="91" y="5" width="418" height="25"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="25" id="Ofi-aC-bT6"/>
+                                        </constraints>
+                                    </view>
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <constraints>
@@ -88,7 +95,10 @@
                                     <constraint firstItem="07B-Po-Ij5" firstAttribute="height" secondItem="bf1-jz-EqU" secondAttribute="height" id="Cml-Yj-LJi"/>
                                     <constraint firstItem="07B-Po-Ij5" firstAttribute="top" secondItem="bf1-jz-EqU" secondAttribute="top" id="bEA-hY-xpD"/>
                                     <constraint firstAttribute="height" constant="37" id="eRh-XU-r4r"/>
+                                    <constraint firstItem="NpL-nY-9O0" firstAttribute="leading" secondItem="bf1-jz-EqU" secondAttribute="leading" constant="91" id="hDb-f0-b7d"/>
+                                    <constraint firstAttribute="trailing" secondItem="NpL-nY-9O0" secondAttribute="trailing" constant="91" id="jXA-4b-EoA"/>
                                     <constraint firstAttribute="trailing" secondItem="07B-Po-Ij5" secondAttribute="trailing" id="uA9-5Q-EQZ"/>
+                                    <constraint firstItem="NpL-nY-9O0" firstAttribute="top" secondItem="bf1-jz-EqU" secondAttribute="top" constant="5" id="xLc-lH-CZS"/>
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iip-9o-o9y" customClass="ExternalHitView" customModule="Poketch" customModuleProvider="target">
@@ -270,6 +280,7 @@
                         </userDefinedRuntimeAttribute>
                     </userDefinedRuntimeAttributes>
                     <connections>
+                        <outlet property="headerContainer" destination="NpL-nY-9O0" id="ngC-IX-km3"/>
                         <outlet property="indicatorAudioView" destination="2bM-6T-c4s" id="1Wc-4p-KRY"/>
                         <outlet property="indicatorImageGlossView" destination="q8l-rb-0dj" id="MOS-KZ-EPf"/>
                         <outlet property="indicatorImageView" destination="EpK-7p-OAW" id="LMZ-fj-GeO"/>
@@ -291,7 +302,7 @@
                     </connections>
                 </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="-1200" y="335"/>
+            <point key="canvasLocation" x="-1200" y="340"/>
         </scene>
         <!--Scratch View Controller-->
         <scene sceneID="RPu-fg-izF">
@@ -512,6 +523,9 @@
                         <userDefinedRuntimeAttribute type="color" keyPath="filterButtonColor">
                             <color key="value" red="0.97254901959999995" green="0.36078431370000003" blue="0.25098039220000001" alpha="1" colorSpace="calibratedRGB"/>
                         </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="color" keyPath="searchFieldBorderColor">
+                            <color key="value" red="0.17254901960784313" green="0.17254901960784313" blue="0.17254901960784313" alpha="1" colorSpace="calibratedRGB"/>
+                        </userDefinedRuntimeAttribute>
                     </userDefinedRuntimeAttributes>
                     <connections>
                         <outlet property="searchTextField" destination="zYc-cS-IU0" id="aIO-l2-Ose"/>
@@ -524,10 +538,10 @@
                     <rect key="frame" x="0.0" y="0.0" width="97" height="30"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <subviews>
-                        <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="zYc-cS-IU0">
-                            <rect key="frame" x="2" y="2" width="93" height="26"/>
+                        <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Search" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="zYc-cS-IU0">
+                            <rect key="frame" x="5" y="5" width="87" height="20"/>
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                            <fontDescription key="fontDescription" name="PokemonGB" family="Pokemon GB" pointSize="9"/>
+                            <fontDescription key="fontDescription" name="PokemonGB" family="Pokemon GB" pointSize="12"/>
                             <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no"/>
                             <connections>
                                 <action selector="searchTextFieldDidChange:" destination="BYZ-38-t0r" eventType="editingChanged" id="5Ag-DD-luX"/>
@@ -536,10 +550,10 @@
                     </subviews>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <constraints>
-                        <constraint firstItem="zYc-cS-IU0" firstAttribute="top" secondItem="Xqi-uq-VBJ" secondAttribute="top" constant="2" id="31L-uJ-Git"/>
-                        <constraint firstItem="zYc-cS-IU0" firstAttribute="leading" secondItem="Xqi-uq-VBJ" secondAttribute="leading" constant="2" id="RSX-Fg-cEn"/>
-                        <constraint firstAttribute="trailing" secondItem="zYc-cS-IU0" secondAttribute="trailing" constant="2" id="sGc-UN-tKM"/>
-                        <constraint firstAttribute="bottom" secondItem="zYc-cS-IU0" secondAttribute="bottom" constant="2" id="uRa-4I-kcI"/>
+                        <constraint firstItem="zYc-cS-IU0" firstAttribute="top" secondItem="Xqi-uq-VBJ" secondAttribute="top" constant="5" id="31L-uJ-Git"/>
+                        <constraint firstItem="zYc-cS-IU0" firstAttribute="leading" secondItem="Xqi-uq-VBJ" secondAttribute="leading" constant="5" id="RSX-Fg-cEn"/>
+                        <constraint firstAttribute="trailing" secondItem="zYc-cS-IU0" secondAttribute="trailing" constant="5" id="sGc-UN-tKM"/>
+                        <constraint firstAttribute="bottom" secondItem="zYc-cS-IU0" secondAttribute="bottom" constant="5" id="uRa-4I-kcI"/>
                     </constraints>
                     <userDefinedRuntimeAttributes>
                         <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>

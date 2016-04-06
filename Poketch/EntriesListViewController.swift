@@ -48,6 +48,8 @@ class EntriesListViewController: UIViewController {
     @IBOutlet var tableView: UITableView!
     
     @IBInspectable var filterButtonColor: UIColor?
+    @IBInspectable var searchFieldBorderColor: UIColor?
+    
     @IBOutlet var searchTextFieldContainer: UIView!
     @IBOutlet var searchTextField: UITextField!
     private lazy var sortFilterViews: [UIView] = {
@@ -70,8 +72,7 @@ class EntriesListViewController: UIViewController {
         
         return [
             buttonWithTitle("ABC"),
-            buttonWithTitle("TYPE"),
-            self.searchTextFieldContainer
+            buttonWithTitle("TYPE")
         ]
     }()
     
@@ -83,7 +84,7 @@ class EntriesListViewController: UIViewController {
         self.tableView.contentInset = UIEdgeInsets(top: 30.0, left: 0, bottom: 79.0, right: 0)
         self.tableView.sectionIndexBackgroundColor = UIColor.clearColor()
         
-        self.searchTextFieldContainer.layer.borderColor = self.filterButtonColor?.CGColor
+        self.searchTextFieldContainer.layer.borderColor = self.searchFieldBorderColor?.CGColor
         
         self.dataDelegate?.reloadData(true)
         
@@ -304,6 +305,10 @@ extension EntriesListViewController: UITableViewDelegate {
 
 extension EntriesListViewController: FrameViewControllerDataType {
     // MARK: Properties
+    var headerView: UIView? {
+        return self.searchTextFieldContainer
+    }
+    
     override var title: String? {
         get {
             switch self.sortState {

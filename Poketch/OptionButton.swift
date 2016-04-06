@@ -139,7 +139,7 @@ class OptionButton: ToggleButton {
     }
 }
 
-private extension UIView {
+internal extension UIView {
     // MARK: Constraint Improvements
     func setEqualAttributes(attribute: NSLayoutAttribute, toView view: UIView) {
         self.addConstraint(NSLayoutConstraint(item: view,
