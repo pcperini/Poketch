@@ -50,6 +50,9 @@ class EntriesListViewController: UIViewController {
     @IBInspectable var filterButtonColor: UIColor?
     @IBInspectable var searchFieldBorderColor: UIColor?
     
+    @IBInspectable var searchTextFieldCoverAnimationDuration: NSTimeInterval = 0.10
+    @IBOutlet var searchTextFieldCoverTopConstraint: NSLayoutConstraint!
+    
     @IBOutlet var searchTextFieldContainer: UIView!
     @IBOutlet var searchTextField: UITextField!
     private lazy var sortFilterViews: [UIView] = {
@@ -96,6 +99,15 @@ class EntriesListViewController: UIViewController {
         }
     }
     
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        self.searchTextFieldCoverTopConstraint.constant = -CGRectGetHeight(self.searchTextFieldContainer.bounds)
+        UIView.animateWithDuration(self.searchTextFieldCoverAnimationDuration) {
+            self.searchTextFieldContainer.layoutIfNeeded()
+        }
+    }
+    
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
         dispatch_after(0.5) {
@@ -110,7 +122,10 @@ class EntriesListViewController: UIViewController {
         switch identifier {
         case "ShowEntryDetail":
             let entry = sender as? PokedexEntry
-            (segue.destinationViewController as? EntryViewController)?.entry = entry
+            let entryVC = segue.destinationViewController as? EntryViewController
+            
+            entryVC?.entry = entry
+            entryVC?.headerView = self.headerView
         
         default:
             break
@@ -297,6 +312,11 @@ extension EntriesListViewController: UITableViewDelegate {
     }
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        self.searchTextFieldCoverTopConstraint.constant = 0
+        UIView.animateWithDuration(self.searchTextFieldCoverAnimationDuration) {
+            self.searchTextFieldContainer.layoutIfNeeded()
+        }
+
         let entry = self.entryForIndexPath(indexPath)
         self.performSegueWithIdentifier("ShowEntryDetail",
             sender: entry)

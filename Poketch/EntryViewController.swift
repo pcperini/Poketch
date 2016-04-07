@@ -44,6 +44,8 @@ class EntryViewController: UIViewController {
     @IBOutlet var spDefenseBar: UIProgressView!
     @IBOutlet var speedBar: UIProgressView!
     
+    var headerView: UIView?
+    
     private lazy var statCouplings: [UIProgressView: () -> Float] = [
         self.hpBar: { Float(self.entry.details!.baseHP) / self.statMax },
         self.attackBar: { Float(self.entry.details!.baseAttack) / self.statMax },
