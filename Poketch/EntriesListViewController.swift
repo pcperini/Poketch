@@ -115,6 +115,16 @@ class EntriesListViewController: UIViewController {
         }
     }
     
+    override func viewWillDisappear(animated: Bool) {
+        super.viewWillDisappear(animated)
+        self.searchTextField.resignFirstResponder()
+        
+        self.searchTextFieldCoverTopConstraint.constant = 0
+        UIView.animateWithDuration(self.searchTextFieldCoverAnimationDuration) {
+            self.searchTextFieldContainer.layoutIfNeeded()
+        }
+    }
+    
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         super.prepareForSegue(segue, sender: sender)
         guard let identifier = segue.identifier else { return }
@@ -312,11 +322,6 @@ extension EntriesListViewController: UITableViewDelegate {
     }
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        self.searchTextFieldCoverTopConstraint.constant = 0
-        UIView.animateWithDuration(self.searchTextFieldCoverAnimationDuration) {
-            self.searchTextFieldContainer.layoutIfNeeded()
-        }
-
         let entry = self.entryForIndexPath(indexPath)
         self.performSegueWithIdentifier("ShowEntryDetail",
             sender: entry)
@@ -335,8 +340,8 @@ extension EntriesListViewController: FrameViewControllerDataType {
             case .Region:
                 return self.currentSectionRepresentativeEntry?.regionName
             case .Alphabetical:
-                let name = ((self.currentSectionRepresentativeEntry?.name) ?? "")
-                return name.substringToIndex(name.startIndex.advancedBy(1))
+                let name = self.currentSectionRepresentativeEntry?.name
+                return name?.substringToIndex(name!.startIndex.advancedBy(1))
             case .Type:
                 return self.currentSectionRepresentativeEntry?.type1?.name
             }
