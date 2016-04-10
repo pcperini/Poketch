@@ -52,6 +52,16 @@ extension AppDelegate: WCSessionDelegate {
                 results = entries.0.map { $0.structValue.transferableObject }
                 total = entries.1
                 
+            case "PokedexEntryDetails":
+                if let identifier = fetch["identifier"] as? Int,
+                    let details = self.handlePokedexEntryDetailsFetch(identifier) {
+                    results = [details.structValue.transferableObject]
+                    total = 1
+                } else {
+                    results = []
+                    total = -1
+                }
+                                
             default:
                 results = []
                 total = 0
@@ -64,13 +74,19 @@ extension AppDelegate: WCSessionDelegate {
         }
     }
     
-    func handlePokedexEntriesFetch(sort: SortState? = nil, limit: Int = -1, offset: Int = 0) -> ([PokedexEntry], Int) {
+    private func handlePokedexEntryDetailsFetch(identifier: Int) -> PokedexEntryDetails? {
+        let realm = try! Realm()
+        let results = realm.objects(PokedexEntry).filter("identifier == \(identifier)")
+        return results.first?.details
+    }
+    
+    private func handlePokedexEntriesFetch(sort: SortState? = nil, limit: Int = -1, offset: Int = 0) -> ([PokedexEntry], Int) {
         let realm = try! Realm()
         var results = realm.objects(PokedexEntry).map { $0 }
         let total = results.count
         
-        let stringCompare: (String, String) -> Bool = { (_0, _1) in
-            _0.localizedCaseInsensitiveCompare(_1) == .OrderedAscending
+        let stringCompare: (String, String) -> Bool = {
+            $0.localizedCaseInsensitiveCompare($1) == .OrderedAscending
         }
         
         if let sort = sort {

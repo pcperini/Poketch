@@ -35,3 +35,14 @@ extension PokedexTypeStruct: Transferable {
         ]
     }
 }
+
+func ==(lhs: PokedexTypeStruct, rhs: PokedexTypeStruct) -> Bool {
+    return lhs.name == rhs.name
+}
+
+extension PokedexTypeStruct: Hashable {
+    // MARK: Properties
+    var hashValue: Int {
+        return self.name.hashValue
+    }
+}

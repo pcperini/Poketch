@@ -52,6 +52,18 @@ class EntriesListInterfaceController: WKInterfaceController {
         return self.totalEntries / self.pageSize
     }
     
+    // MARK: Accessors
+    override func contextForSegueWithIdentifier(segueIdentifier: String, inTable table: WKInterfaceTable, rowIndex: Int) -> AnyObject? {
+        switch segueIdentifier {
+        case "ShowDetails":
+            let entry = self.entriesOnPage[rowIndex]
+            return entry.transferableObject
+            
+        default:
+            return nil
+        }
+    }
+    
     // MARK: Lifecycle
     override func awakeWithContext(context: AnyObject?) {
         super.awakeWithContext(context)

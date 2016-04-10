@@ -25,3 +25,20 @@ class PokedexEntryDetails: Object {
     
     let typeEffectivenesses = List<PokedexTypeEffectiveness>()
 }
+
+// MARK: TransferableStructConvertible
+extension PokedexEntryDetails {
+    // MARK: Types
+    typealias StructType = PokedexEntryDetailsStruct
+    
+    // MARK: Properties
+    var structValue: StructType {
+        var typeEffectivenesses: [PokedexTypeStruct: Float] = [:]
+        self.typeEffectivenesses.forEach {
+            typeEffectivenesses[$0.type.structValue] = $0.effectiveness
+        }
+        
+        return PokedexEntryDetailsStruct(detailImageURL: self.detailImageURL,
+            typeEffectivenesses: typeEffectivenesses)
+    }
+}

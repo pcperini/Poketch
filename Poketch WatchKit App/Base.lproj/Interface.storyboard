@@ -8,6 +8,8 @@
         <mutableArray key="PokemonGB.ttf">
             <string>PokemonGB</string>
             <string>PokemonGB</string>
+            <string>PokemonGB</string>
+            <string>PokemonGB</string>
         </mutableArray>
         <mutableArray key="PokemonUnownGB.ttf">
             <string>PokemonUnownGB</string>
@@ -63,7 +65,7 @@
                                                                 <fontDescription key="font" name="PokemonGB" family="Pokemon GB" pointSize="6"/>
                                                             </label>
                                                             <label width="70" alignment="left" text="Name" id="GGT-os-pQ1">
-                                                                <fontDescription key="font" name="PokemonGB" family="Pokemon GB" pointSize="9"/>
+                                                                <fontDescription key="font" name="PokemonGB" family="Pokemon GB" pointSize="8"/>
                                                             </label>
                                                         </items>
                                                     </group>
@@ -80,6 +82,9 @@
                                                 </items>
                                                 <color key="backgroundColor" red="0.17254901959999999" green="0.17254901959999999" blue="0.17254901959999999" alpha="1" colorSpace="calibratedRGB"/>
                                                 <edgeInsets key="margins" left="0.0" right="4" top="0.0" bottom="0.0"/>
+                                                <connections>
+                                                    <segue destination="pV6-oF-dov" kind="push" identifier="ShowDetails" id="Bvk-2K-Xxw"/>
+                                                </connections>
                                             </group>
                                             <connections>
                                                 <outlet property="iconImage" destination="eR9-RL-NMt" id="NkW-N2-bhn"/>
@@ -136,7 +141,34 @@
                     </connections>
                 </controller>
             </objects>
-            <point key="canvasLocation" x="220" y="345"/>
+            <point key="canvasLocation" x="-58" y="344"/>
+        </scene>
+        <!--Interface Controller-->
+        <scene sceneID="8jY-UW-LdA">
+            <objects>
+                <controller id="pV6-oF-dov">
+                    <items>
+                        <table alignment="left" id="TvY-WM-0pj">
+                            <items>
+                                <tableRow id="bQh-GQ-TUl">
+                                    <group key="rootItem" width="1" alignment="left" id="J0J-UL-tkB">
+                                        <items>
+                                            <label height="1" alignment="left" verticalAlignment="center" text="TYPE" textAlignment="left" id="duY-FC-wyF">
+                                                <fontDescription key="font" name="PokemonGB" family="Pokemon GB" pointSize="10"/>
+                                            </label>
+                                            <label height="1" alignment="right" verticalAlignment="center" text="2.0x" textAlignment="right" id="ZZo-eY-ps4">
+                                                <fontDescription key="font" name="PokemonGB" family="Pokemon GB" pointSize="10"/>
+                                            </label>
+                                        </items>
+                                    </group>
+                                </tableRow>
+                            </items>
+                        </table>
+                        <imageView alignment="left" contentMode="scaleAspectFit" id="WJz-kE-2aC"/>
+                    </items>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="198" y="344"/>
         </scene>
     </scenes>
 </document>
