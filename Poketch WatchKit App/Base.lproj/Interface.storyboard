@@ -13,6 +13,7 @@
         </mutableArray>
         <mutableArray key="PokemonUnownGB.ttf">
             <string>PokemonUnownGB</string>
+            <string>PokemonUnownGB</string>
         </mutableArray>
     </customFonts>
     <scenes>
@@ -55,7 +56,7 @@
                             <items>
                                 <table alignment="left" id="6qY-ns-y3O">
                                     <items>
-                                        <tableRow identifier="Poketch_WatchKit_Extension.EntryRow" selectable="NO" id="Sh8-6Q-2DB" customClass="EntryRow" customModule="Poketch_WatchKit_Extension">
+                                        <tableRow identifier="Poketch_WatchKit_Extension.EntryRow" id="Sh8-6Q-2DB" customClass="EntryRow" customModule="Poketch_WatchKit_Extension">
                                             <group key="rootItem" width="1" alignment="left" radius="2" id="GNA-pN-E3E">
                                                 <items>
                                                     <imageView width="40" height="40" alignment="left" id="eR9-RL-NMt"/>
@@ -82,9 +83,6 @@
                                                 </items>
                                                 <color key="backgroundColor" red="0.17254901959999999" green="0.17254901959999999" blue="0.17254901959999999" alpha="1" colorSpace="calibratedRGB"/>
                                                 <edgeInsets key="margins" left="0.0" right="4" top="0.0" bottom="0.0"/>
-                                                <connections>
-                                                    <segue destination="pV6-oF-dov" kind="push" identifier="ShowDetails" id="Bvk-2K-Xxw"/>
-                                                </connections>
                                             </group>
                                             <connections>
                                                 <outlet property="iconImage" destination="eR9-RL-NMt" id="NkW-N2-bhn"/>
@@ -92,6 +90,7 @@
                                                 <outlet property="titleLabel" destination="GGT-os-pQ1" id="rzh-q0-nnR"/>
                                                 <outlet property="type1Indicator" destination="fDT-rH-hdC" id="7sf-5c-aVY"/>
                                                 <outlet property="type2Indicator" destination="Hrj-CG-5wc" id="I00-Jz-p8L"/>
+                                                <segue destination="pV6-oF-dov" kind="push" identifier="ShowDetails" id="pOh-Dn-E0C"/>
                                             </connections>
                                         </tableRow>
                                     </items>
@@ -129,7 +128,7 @@
                             </menuItem>
                         </items>
                     </menu>
-                    <color key="backgroundColor" red="0.96946096420000005" green="0.98695337770000002" blue="0.99991977210000005" alpha="1" colorSpace="calibratedRGB"/>
+                    <color key="backgroundColor" red="0.96862745098039216" green="0.9882352941176471" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                     <edgeInsets key="margins" left="0.0" right="0.0" top="0.0" bottom="0.0"/>
                     <connections>
                         <outlet property="endOfPageLabelContainer" destination="QXw-dW-4D2" id="Vha-D2-Z84"/>
@@ -143,29 +142,54 @@
             </objects>
             <point key="canvasLocation" x="-58" y="344"/>
         </scene>
-        <!--Interface Controller-->
+        <!--Entry Details Interface Controller-->
         <scene sceneID="8jY-UW-LdA">
             <objects>
-                <controller id="pV6-oF-dov">
+                <controller id="pV6-oF-dov" customClass="EntryDetailsInterfaceController" customModule="Poketch_WatchKit_Extension">
                     <items>
+                        <label width="1" alignment="center" text="loading..." textAlignment="center" numberOfLines="0" id="LYS-Ln-XQw">
+                            <color key="textColor" red="0.17254901959999999" green="0.17254901959999999" blue="0.17254901959999999" alpha="1" colorSpace="calibratedRGB"/>
+                            <fontDescription key="font" name="PokemonUnownGB" family="Pokemon Unown GB" pointSize="15"/>
+                        </label>
+                        <imageView width="75" height="75" alignment="center" contentMode="scaleAspectFit" id="WJz-kE-2aC"/>
                         <table alignment="left" id="TvY-WM-0pj">
                             <items>
-                                <tableRow id="bQh-GQ-TUl">
-                                    <group key="rootItem" width="1" alignment="left" id="J0J-UL-tkB">
+                                <tableRow identifier="Poketch_WatchKit_Extension.TypeEffectivenessRow" selectable="NO" id="bQh-GQ-TUl" customClass="TypeEffectivenessRow" customModule="Poketch_WatchKit_Extension">
+                                    <group key="rootItem" width="1" alignment="left" radius="2" id="J0J-UL-tkB">
                                         <items>
                                             <label height="1" alignment="left" verticalAlignment="center" text="TYPE" textAlignment="left" id="duY-FC-wyF">
                                                 <fontDescription key="font" name="PokemonGB" family="Pokemon GB" pointSize="10"/>
                                             </label>
-                                            <label height="1" alignment="right" verticalAlignment="center" text="2.0x" textAlignment="right" id="ZZo-eY-ps4">
-                                                <fontDescription key="font" name="PokemonGB" family="Pokemon GB" pointSize="10"/>
-                                            </label>
+                                            <group height="1" heightAdjustment="-8" alignment="right" verticalAlignment="center" radius="2" id="L1B-jO-Gaq">
+                                                <items>
+                                                    <label height="1" alignment="center" verticalAlignment="center" text="2.0x" textAlignment="right" id="ZZo-eY-ps4">
+                                                        <color key="textColor" red="0.17254901959999999" green="0.17254901959999999" blue="0.17254901959999999" alpha="1" colorSpace="calibratedRGB"/>
+                                                        <fontDescription key="font" name="PokemonGB" family="Pokemon GB" pointSize="10"/>
+                                                    </label>
+                                                </items>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                <edgeInsets key="margins" left="4" right="4" top="0.0" bottom="0.0"/>
+                                            </group>
                                         </items>
+                                        <color key="backgroundColor" red="0.17254901959999999" green="0.17254901959999999" blue="0.17254901959999999" alpha="1" colorSpace="calibratedRGB"/>
                                     </group>
+                                    <connections>
+                                        <outlet property="background" destination="J0J-UL-tkB" id="apn-ia-7cP"/>
+                                        <outlet property="effectivenessLabel" destination="ZZo-eY-ps4" id="UO7-5p-hPY"/>
+                                        <outlet property="effectivenessLabelBackground" destination="L1B-jO-Gaq" id="Pqm-2M-EV5"/>
+                                        <outlet property="nameLabel" destination="duY-FC-wyF" id="19T-hr-mK3"/>
+                                    </connections>
                                 </tableRow>
                             </items>
                         </table>
-                        <imageView alignment="left" contentMode="scaleAspectFit" id="WJz-kE-2aC"/>
                     </items>
+                    <color key="backgroundColor" red="0.96862745100000003" green="0.98823529409999999" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                    <edgeInsets key="margins" left="2" right="2" top="0.0" bottom="2"/>
+                    <connections>
+                        <outlet property="image" destination="WJz-kE-2aC" id="OeN-hg-dwj"/>
+                        <outlet property="loadLabel" destination="LYS-Ln-XQw" id="Y4U-7k-vU9"/>
+                        <outlet property="typeEffectivenessesTable" destination="TvY-WM-0pj" id="Ub5-PP-B7U"/>
+                    </connections>
                 </controller>
             </objects>
             <point key="canvasLocation" x="198" y="344"/>

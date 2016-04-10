@@ -13,6 +13,10 @@ struct PokedexTypeStruct {
     // MARK: Properties
     let name: String
     let color: UIColor
+    
+    var abbreviatedName: String {
+        return self.name.dexAbbreviation
+    }
 }
 
 extension PokedexTypeStruct: Transferable {
@@ -44,5 +48,25 @@ extension PokedexTypeStruct: Hashable {
     // MARK: Properties
     var hashValue: Int {
         return self.name.hashValue
+    }
+}
+
+extension String {
+    var dexAbbreviation: String {
+        var name = self
+        switch name {
+        case "Fighting":
+            name = "Fight"
+        case "Electric":
+            name = "Electr"
+        case "Psychic":
+            name = "Psychc"
+        case "Unknown":
+            name = "???"
+        default:
+            break
+        }
+        
+        return name.uppercaseString
     }
 }

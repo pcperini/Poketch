@@ -19,7 +19,7 @@ extension PokedexEntryDetailsStruct: Transferable {
     init?(transferableObject: NSDictionary) {
         guard let detailImageURLString = transferableObject["detailImageURL"] as? String,
             let detailImageURL = NSURL(string: detailImageURLString),
-            let typeEffectivenessDicts = transferableObject["typeEffectivenessess"] as? [NSDictionary: NSNumber] else {
+            let typeEffectivenessDicts = transferableObject["typeEffectivenesses"] as? [NSDictionary: NSNumber] else {
                 return nil
         }
         

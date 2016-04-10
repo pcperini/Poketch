@@ -13,21 +13,7 @@ class PokedexType: Object {
     // MARK: Properties
     dynamic var name: String = ""
     var abbreviatedName: String {
-        var name = self.name
-        switch name {
-        case "Fighting":
-            name = "Fight"
-        case "Electric":
-            name = "Electr"
-        case "Psychic":
-            name = "Psychc"
-        case "Unknown":
-            name = "???"
-        default:
-            break
-        }
-        
-        return name.uppercaseString
+        return self.name.dexAbbreviation
     }
     
     dynamic var colorString: String = ""
