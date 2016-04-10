@@ -10,9 +10,9 @@
             <string>PokemonGB</string>
             <string>PokemonGB</string>
             <string>PokemonGB</string>
+            <string>PokemonGB</string>
         </mutableArray>
         <mutableArray key="PokemonUnownGB.ttf">
-            <string>PokemonUnownGB</string>
             <string>PokemonUnownGB</string>
         </mutableArray>
     </customFonts>
@@ -147,15 +147,17 @@
             <objects>
                 <controller id="pV6-oF-dov" customClass="EntryDetailsInterfaceController" customModule="Poketch_WatchKit_Extension">
                     <items>
-                        <label width="1" alignment="center" text="loading..." textAlignment="center" numberOfLines="0" id="LYS-Ln-XQw">
+                        <label width="1" alignment="center" textAlignment="center" numberOfLines="0" id="LYS-Ln-XQw">
+                            <string key="text">
+loading...</string>
                             <color key="textColor" red="0.17254901959999999" green="0.17254901959999999" blue="0.17254901959999999" alpha="1" colorSpace="calibratedRGB"/>
-                            <fontDescription key="font" name="PokemonUnownGB" family="Pokemon Unown GB" pointSize="15"/>
+                            <fontDescription key="font" name="PokemonGB" family="Pokemon GB" pointSize="12"/>
                         </label>
                         <imageView width="75" height="75" alignment="center" contentMode="scaleAspectFit" id="WJz-kE-2aC"/>
                         <table alignment="left" id="TvY-WM-0pj">
                             <items>
                                 <tableRow identifier="Poketch_WatchKit_Extension.TypeEffectivenessRow" selectable="NO" id="bQh-GQ-TUl" customClass="TypeEffectivenessRow" customModule="Poketch_WatchKit_Extension">
-                                    <group key="rootItem" width="1" alignment="left" radius="2" id="J0J-UL-tkB">
+                                    <group key="rootItem" width="1" height="30" alignment="left" radius="2" id="J0J-UL-tkB">
                                         <items>
                                             <label height="1" alignment="left" verticalAlignment="center" text="TYPE" textAlignment="left" id="duY-FC-wyF">
                                                 <fontDescription key="font" name="PokemonGB" family="Pokemon GB" pointSize="10"/>
@@ -184,7 +186,7 @@
                         </table>
                     </items>
                     <color key="backgroundColor" red="0.96862745100000003" green="0.98823529409999999" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                    <edgeInsets key="margins" left="2" right="2" top="0.0" bottom="2"/>
+                    <edgeInsets key="margins" left="4" right="4" top="0.0" bottom="4"/>
                     <connections>
                         <outlet property="image" destination="WJz-kE-2aC" id="OeN-hg-dwj"/>
                         <outlet property="loadLabel" destination="LYS-Ln-XQw" id="Y4U-7k-vU9"/>

@@ -56,7 +56,7 @@ class EntryDetailsInterfaceController: WKInterfaceController {
         self.session.activateSession()
         self.session.sendMessage(request, replyHandler: { (resp: [String : AnyObject]) in
             guard let entryDetailsObject = (resp["results"] as! [NSDictionary]).first else {
-                self.loadLabel.setText("\nload on phone")
+                self.loadLabel.setText("\nNot found. Please load on iPhone.")
                 dispatch_after(5.0) {
                     self.popController()
                 }
