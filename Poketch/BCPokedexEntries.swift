@@ -84,6 +84,12 @@ extension BulbapediaClient {
                 }
                 
                 realm.add(entry)
+                
+                // Spin off a request to fetch entry details.
+                // We don't care if it's successful,
+                // as the app is designed to lazy-load anyway.
+                self.fetchDetailsForEntry(entry, callback: { (_, _) in })
+                
                 return entry
             }
         }, failure: { (_, error: NSError) in
