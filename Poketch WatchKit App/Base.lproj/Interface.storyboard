@@ -66,7 +66,7 @@
                                                                 <fontDescription key="font" name="PokemonGB" family="Pokemon GB" pointSize="6"/>
                                                             </label>
                                                             <label width="70" alignment="left" text="Name" id="GGT-os-pQ1">
-                                                                <fontDescription key="font" name="PokemonGB" family="Pokemon GB" pointSize="8"/>
+                                                                <fontDescription key="font" name="PokemonGB" family="Pokemon GB" pointSize="7"/>
                                                             </label>
                                                         </items>
                                                     </group>
