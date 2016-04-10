@@ -149,11 +149,25 @@
                     <items>
                         <label width="1" alignment="center" textAlignment="center" numberOfLines="0" id="LYS-Ln-XQw">
                             <string key="text">
-loading...</string>
+Loading...</string>
                             <color key="textColor" red="0.17254901959999999" green="0.17254901959999999" blue="0.17254901959999999" alpha="1" colorSpace="calibratedRGB"/>
                             <fontDescription key="font" name="PokemonGB" family="Pokemon GB" pointSize="12"/>
                         </label>
-                        <imageView width="75" height="75" alignment="center" contentMode="scaleAspectFit" id="WJz-kE-2aC"/>
+                        <group alignment="center" id="HXR-zU-7dL">
+                            <items>
+                                <imageView width="75" height="75" alignment="center" contentMode="scaleAspectFit" id="WJz-kE-2aC"/>
+                                <group width="10" height="24" alignment="right" verticalAlignment="center" layout="vertical" id="Cxk-qZ-SXB">
+                                    <items>
+                                        <group width="10" height="10" alignment="left" verticalAlignment="center" radius="2" id="9hR-Ho-XZG">
+                                            <color key="backgroundColor" red="0.59607843140000005" green="0.99215686270000003" blue="0.62745098040000002" alpha="0.75" colorSpace="calibratedRGB"/>
+                                        </group>
+                                        <group width="10" height="10" alignment="left" verticalAlignment="center" radius="2" id="S7w-vh-4aW">
+                                            <color key="backgroundColor" red="0.59607843140000005" green="0.99215686270000003" blue="0.62745098040000002" alpha="0.75" colorSpace="calibratedRGB"/>
+                                        </group>
+                                    </items>
+                                </group>
+                            </items>
+                        </group>
                         <table alignment="left" id="TvY-WM-0pj">
                             <items>
                                 <tableRow identifier="Poketch_WatchKit_Extension.TypeEffectivenessRow" selectable="NO" id="bQh-GQ-TUl" customClass="TypeEffectivenessRow" customModule="Poketch_WatchKit_Extension">
@@ -189,7 +203,9 @@ loading...</string>
                     <edgeInsets key="margins" left="4" right="4" top="0.0" bottom="4"/>
                     <connections>
                         <outlet property="image" destination="WJz-kE-2aC" id="OeN-hg-dwj"/>
-                        <outlet property="loadLabel" destination="LYS-Ln-XQw" id="Y4U-7k-vU9"/>
+                        <outlet property="titleLabel" destination="LYS-Ln-XQw" id="pvG-t7-pW7"/>
+                        <outlet property="type1Indicator" destination="9hR-Ho-XZG" id="nh3-b7-qik"/>
+                        <outlet property="type2Indicator" destination="S7w-vh-4aW" id="65P-28-5kK"/>
                         <outlet property="typeEffectivenessesTable" destination="TvY-WM-0pj" id="Ub5-PP-B7U"/>
                     </connections>
                 </controller>

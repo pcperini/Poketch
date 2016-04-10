@@ -13,9 +13,12 @@ import WatchConnectivity
 
 class EntryDetailsInterfaceController: WKInterfaceController {
     // MARK: Properties
-    @IBOutlet var loadLabel: WKInterfaceLabel!
+    @IBOutlet var titleLabel: WKInterfaceLabel!
     @IBOutlet var typeEffectivenessesTable: WKInterfaceTable!
+    
     @IBOutlet var image: WKInterfaceImage!
+    @IBOutlet var type1Indicator: WKInterfaceGroup!
+    @IBOutlet var type2Indicator: WKInterfaceGroup!
 
     var session: WCSession!
     
@@ -56,7 +59,7 @@ class EntryDetailsInterfaceController: WKInterfaceController {
         self.session.activateSession()
         self.session.sendMessage(request, replyHandler: { (resp: [String : AnyObject]) in
             guard let entryDetailsObject = (resp["results"] as! [NSDictionary]).first else {
-                self.loadLabel.setText("\nNot found. Please load on iPhone.")
+                self.titleLabel.setText("\nNot found. Please load on iPhone.")
                 dispatch_after(5.0) {
                     self.popController()
                 }
@@ -64,9 +67,16 @@ class EntryDetailsInterfaceController: WKInterfaceController {
                 return
             }
             
-            self.loadLabel.setHidden(true)
-            self.entryDetails = PokedexEntryDetailsStruct(transferableObject: entryDetailsObject)
+            self.titleLabel.setText("\n\(self.entry.name)")
+            self.type1Indicator.setBackgroundColor(self.entry.type1.color)
+            if let type2 = self.entry.type2 {
+                self.type2Indicator.setHidden(false)
+                self.type2Indicator.setBackgroundColor(type2.color)
+            } else {
+                self.type2Indicator.setHidden(true)
+            }
             
+            self.entryDetails = PokedexEntryDetailsStruct(transferableObject: entryDetailsObject)
             if let entryDetails = self.entryDetails {
                 self.typeEffectivenessesTable.reloadData()
                 self.image.setImageWithURL(entryDetails.detailImageURL, placeholderImage: nil)
