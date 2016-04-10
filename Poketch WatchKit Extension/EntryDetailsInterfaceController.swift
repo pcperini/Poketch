@@ -59,7 +59,7 @@ class EntryDetailsInterfaceController: WKInterfaceController {
         self.session.activateSession()
         self.session.sendMessage(request, replyHandler: { (resp: [String : AnyObject]) in
             guard let entryDetailsObject = (resp["results"] as! [NSDictionary]).first else {
-                self.titleLabel.setText("\nNot found. Please load on iPhone.")
+                self.titleLabel.setText("Load on iPhone")
                 dispatch_after(5.0) {
                     self.popController()
                 }
@@ -67,7 +67,7 @@ class EntryDetailsInterfaceController: WKInterfaceController {
                 return
             }
             
-            self.titleLabel.setText("\n\(self.entry.name)")
+            self.titleLabel.setText(self.entry.name)
             self.type1Indicator.setBackgroundColor(self.entry.type1.color)
             if let type2 = self.entry.type2 {
                 self.type2Indicator.setHidden(false)
