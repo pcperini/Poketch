@@ -44,6 +44,7 @@ extension _ArrayType where Generator.Element: Equatable {
 
 extension CollectionType {
     public var middle: Generator.Element? {
+        guard self.count > 0 else { return nil }
         guard self.count > 2 else { return self[self.startIndex] }
         return self[self.startIndex.advancedBy(self.count / 2)]
     }
