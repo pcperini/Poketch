@@ -8,12 +8,13 @@
 
 import UIKit
 import RealmSwift
+import AFNetworking
 import Ono
 
 // MARK: Entries
 extension BulbapediaClient {
     // MARK: Accessors
-    func fetchDetailsForEntry(entry: PokedexEntry, callback: (PokedexEntryDetails, NSError?) -> Void) {
+    func fetchDetailsForEntry(entry: PokedexEntry, priority: Bool = true, callback: (PokedexEntryDetails, NSError?) -> Void) {
         guard entry.details == nil else {
             callback(entry.details!, nil)
             return
@@ -23,7 +24,7 @@ extension BulbapediaClient {
         var entryDetails: PokedexEntryDetails = PokedexEntryDetails()
         var error: NSError?
         
-        self.requestManager.GET(entry.sourceURL.absoluteString, parameters: nil, success: { (_, resp: AnyObject) in
+        self.GET(entry.sourceURL.absoluteString, priority: priority, success: { (_, resp: AnyObject) in
             realm.beginWrite()
             defer {
                 entry.details = entryDetails

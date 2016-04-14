@@ -8,6 +8,7 @@
 
 import UIKit
 import RealmSwift
+import AFNetworking
 import Ono
 
 // MARK: Entries
@@ -16,8 +17,8 @@ extension BulbapediaClient {
     private static let entriesPath = "wiki/List_of_Pokemon_by_National_Pokedex_number"
     
     // MARK: Accessors
-    func fetchEntries(callback: ([PokedexEntry], NSError?) -> Void) {
-        self.requestManager.GET(BulbapediaClient.entriesPath, parameters: nil, success: { (_, resp: AnyObject) in
+    func fetchEntries(priority: Bool = true, callback: ([PokedexEntry], NSError?) -> Void) {
+        self.GET(BulbapediaClient.entriesPath, priority: priority, success: { (_, resp: AnyObject) in
             let realm = try! Realm()
             
             var entries: [PokedexEntry] = []

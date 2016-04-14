@@ -22,6 +22,8 @@ class EntriesListInterfaceController: WKInterfaceController {
     @IBOutlet var nextPageButton: WKInterfaceButton!
     @IBOutlet var nextSectionButton: WKInterfaceButton!
     
+    @IBOutlet var loadingLabel: WKInterfaceLabel!
+    
     var session: WCSession!
     
     var entriesOnPage: [PokedexEntryStruct] = []
@@ -95,6 +97,9 @@ class EntriesListInterfaceController: WKInterfaceController {
     
     // MARK: Data Handlers
     func reloadData() {
+        self.loadingLabel.setText("Loading...")
+        self.loadingLabel.setHidden(false)
+        
         let request = ["fetch": [
             "class": "PokedexEntry",
             "limit": self.pageSize,
@@ -113,9 +118,17 @@ class EntriesListInterfaceController: WKInterfaceController {
             self.previousPageButton.setEnabled(self.page != 0)
             self.previousSectionButton.setEnabled(self.page != 0)
             
-            self.table.reloadData()
-            self.endOfPageLabelContainer.setHidden(false)
-        }, errorHandler: nil)
+            if self.entriesOnPage.isEmpty {
+                self.loadingLabel.setText("Please load on iPhone.")
+            } else {
+                self.loadingLabel.setHidden(true)
+                
+                self.table.reloadData()
+                self.endOfPageLabelContainer.setHidden(false)
+            }
+        }, errorHandler: { (_) in
+            self.loadingLabel.setText("Error. Please reload.")
+        })
     }
 }
 

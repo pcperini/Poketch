@@ -16,11 +16,41 @@ struct BulbapediaClient {
     private static let baseURLString = "http://bulbapedia.bulbagarden.net"
     
     // MARK: Properties
-    let requestManager: AFHTTPRequestOperationManager = {
-        let manager = AFHTTPRequestOperationManager(baseURL: NSURL(string: baseURLString)!)
-        manager.responseSerializer = AFOnoResponseSerializer.HTMLResponseSerializer()
-        return manager
+    private let requestQueue: NSOperationQueue = {
+        let queue = NSOperationQueue()
+        
+        queue.underlyingQueue = dispatch_queue_create("Network Requests", DISPATCH_QUEUE_CONCURRENT)
+        queue.maxConcurrentOperationCount = 5
+        
+        return queue
     }()
+    
+    // MARK: Handlers
+    func GET(url: String, priority: Bool = false, success: ((AFHTTPRequestOperation, AnyObject) -> Void)?, failure: ((AFHTTPRequestOperation, NSError) -> Void)?) {
+        self.request(url,
+            method: "GET",
+            priority: priority,
+            success: success,
+            failure: failure)
+    }
+    
+    func request(url: String, method: String,  priority: Bool = false, success: ((AFHTTPRequestOperation, AnyObject) -> Void)?, failure: ((AFHTTPRequestOperation, NSError) -> Void)?) {
+        let fullURL = "\(BulbapediaClient.baseURLString)/\(url)"
+        
+        let request = NSMutableURLRequest(URL: NSURL(string: fullURL)!)
+        request.HTTPMethod = method
+        
+        let operation = AFHTTPRequestOperation(request: request)
+        operation.responseSerializer = AFOnoResponseSerializer.HTMLResponseSerializer()
+        
+        operation.setCompletionBlockWithSuccess(success, failure: failure)
+        
+        if priority {
+            NSOperationQueue().addOperation(operation)
+        } else {
+            self.requestQueue.addOperation(operation)
+        }
+    }
 }
 
 // MARK: Extractors
