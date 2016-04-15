@@ -28,7 +28,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 extension AppDelegate: WCSessionDelegate {
     func session(session: WCSession, didReceiveMessage message: [String: AnyObject], replyHandler: ([String : AnyObject]) -> Void) {
-        var response: [String: AnyObject] = [:]
+        var response: [String: AnyObject] = ["error": "no response"]
         defer { replyHandler(response) }
         
         if let fetch = message["fetch"] as? [String: AnyObject] {

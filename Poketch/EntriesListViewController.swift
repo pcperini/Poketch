@@ -62,7 +62,7 @@ class EntriesListViewController: UIViewController {
             button.backgroundColor = self.filterButtonColor
             
             button.setTitle(title, forState: .Normal)
-            button.titleLabel?.font = UIFont(name: "PokemonGB", size: 15.0)
+            button.titleLabel?.font = UIFont.init(name: "PokemonGB", size: 15.0)
             button.setTitleShadowColor(UIColor(white: 0.0, alpha: 0.50), forState: .Normal)
             button.titleLabel?.shadowOffset = CGSize(width: 1, height: 1)
             

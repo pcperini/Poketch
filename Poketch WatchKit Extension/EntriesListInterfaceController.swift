@@ -35,8 +35,8 @@ class EntriesListInterfaceController: WKInterfaceController {
         }
     }
     
-    let sectionSize: Int = 60
-    let pageSize: Int = 6
+    let sectionSize: Int = 90
+    let pageSize: Int = 9
     var page: Int = 0 {
         willSet {
             [
@@ -126,7 +126,8 @@ class EntriesListInterfaceController: WKInterfaceController {
                 self.table.reloadData()
                 self.endOfPageLabelContainer.setHidden(false)
             }
-        }, errorHandler: { (_) in
+        }, errorHandler: { (error: NSError) in
+            print(error)
             self.loadingLabel.setText("Error. Please reload.")
         })
     }

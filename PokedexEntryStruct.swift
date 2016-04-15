@@ -24,7 +24,7 @@ struct PokedexEntryStruct {
 extension PokedexEntryStruct: Transferable {
     // MARK: Initializers
     init?(transferableObject: NSDictionary) {
-        guard let identifier = transferableObject["identifier"] as? NSNumber,
+        guard let identifierString = transferableObject["identifier"] as? NSString,
             let nationalDexNumber = transferableObject["nationalDexNumber"] as? String,
             let localDexNumber = transferableObject["localDexNumber"] as? String,
             let iconURLString = transferableObject["iconURL"] as? String,
@@ -35,7 +35,7 @@ extension PokedexEntryStruct: Transferable {
                 return nil
         }
         
-        self.identifier = identifier.integerValue
+        self.identifier = identifierString.integerValue
         self.nationalDexNumber = nationalDexNumber
         self.localDexNumber = localDexNumber
         
@@ -54,7 +54,7 @@ extension PokedexEntryStruct: Transferable {
     // MARK: Properties
     var transferableObject: NSDictionary {
         return [
-            "identifier": NSNumber(integer: self.identifier),
+            "identifier": "\(self.identifier)",
             "nationalDexNumber": self.nationalDexNumber as NSString,
             "localDexNumber": self.localDexNumber as NSString,
             
