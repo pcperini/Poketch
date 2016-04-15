@@ -184,6 +184,11 @@ class EntryViewController: UIViewController {
             flowLayout.invalidateLayout()
         }
     }
+    
+    // MARK: Responders
+    @IBAction func doneButtonWasPressed(sender: UIButton?) {
+        self.navigationController?.popViewControllerAnimated(true)
+    }
 }
 
 extension EntryViewController: UICollectionViewDataSource {

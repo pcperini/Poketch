@@ -32,6 +32,7 @@
             <string>PokemonGB</string>
             <string>PokemonGB</string>
             <string>PokemonGB</string>
+            <string>PokemonGB</string>
         </mutableArray>
     </customFonts>
     <scenes>
@@ -593,7 +594,7 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Background" translatesAutoresizingMaskIntoConstraints="NO" id="sSk-h2-aB8">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                             </imageView>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" directionalLockEnabled="YES" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Oo3-n7-9rk">
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" directionalLockEnabled="YES" alwaysBounceVertical="YES" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Oo3-n7-9rk">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="X8e-Da-13p">
@@ -622,7 +623,7 @@
                                                 <rect key="frame" x="8" y="6" width="478" height="116"/>
                                                 <subviews>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rkD-W6-EaQ">
-                                                        <rect key="frame" x="0.0" y="0.0" width="478" height="20"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="478" height="19.5"/>
                                                         <subviews>
                                                             <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progressViewStyle="bar" translatesAutoresizingMaskIntoConstraints="NO" id="uen-LK-XSV">
                                                                 <rect key="frame" x="0.0" y="2" width="478" height="16.5"/>
@@ -630,7 +631,7 @@
                                                                 <color key="trackTintColor" red="0.17254901959999999" green="0.17254901959999999" blue="0.17254901959999999" alpha="0.20000000000000001" colorSpace="calibratedRGB"/>
                                                             </progressView>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="HP" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aap-o0-sJI">
-                                                                <rect key="frame" x="8" y="2" width="24" height="17.5"/>
+                                                                <rect key="frame" x="8" y="2" width="24" height="17"/>
                                                                 <fontDescription key="fontDescription" name="PokemonGB" family="Pokemon GB" pointSize="12"/>
                                                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                                 <nil key="highlightedColor"/>
@@ -647,7 +648,7 @@
                                                         </constraints>
                                                     </view>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wgD-I2-mUc">
-                                                        <rect key="frame" x="0.0" y="20" width="478" height="19"/>
+                                                        <rect key="frame" x="0.0" y="19.5" width="478" height="19"/>
                                                         <subviews>
                                                             <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progressViewStyle="bar" translatesAutoresizingMaskIntoConstraints="NO" id="48E-s5-yz2">
                                                                 <rect key="frame" x="0.0" y="2" width="478" height="16"/>
@@ -672,7 +673,7 @@
                                                         </constraints>
                                                     </view>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="S1W-gc-o0v">
-                                                        <rect key="frame" x="0.0" y="39" width="478" height="20"/>
+                                                        <rect key="frame" x="0.0" y="38.5" width="478" height="19.5"/>
                                                         <subviews>
                                                             <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progressViewStyle="bar" translatesAutoresizingMaskIntoConstraints="NO" id="Vex-Rd-6c5">
                                                                 <rect key="frame" x="0.0" y="2" width="478" height="16.5"/>
@@ -680,7 +681,7 @@
                                                                 <color key="trackTintColor" red="0.17254901959999999" green="0.17254901959999999" blue="0.17254901959999999" alpha="0.20000000000000001" colorSpace="calibratedRGB"/>
                                                             </progressView>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="DEF" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IpL-od-sNN">
-                                                                <rect key="frame" x="8" y="2" width="36" height="17"/>
+                                                                <rect key="frame" x="8" y="2" width="36" height="17.5"/>
                                                                 <fontDescription key="fontDescription" name="PokemonGB" family="Pokemon GB" pointSize="12"/>
                                                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                                 <nil key="highlightedColor"/>
@@ -697,7 +698,7 @@
                                                         </constraints>
                                                     </view>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zuy-pi-WLb">
-                                                        <rect key="frame" x="0.0" y="58" width="478" height="20"/>
+                                                        <rect key="frame" x="0.0" y="58" width="478" height="19.5"/>
                                                         <subviews>
                                                             <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progressViewStyle="bar" translatesAutoresizingMaskIntoConstraints="NO" id="d8M-Ga-J7R">
                                                                 <rect key="frame" x="0.0" y="2" width="478" height="16.5"/>
@@ -705,7 +706,7 @@
                                                                 <color key="trackTintColor" red="0.17254901959999999" green="0.17254901959999999" blue="0.17254901959999999" alpha="0.20000000000000001" colorSpace="calibratedRGB"/>
                                                             </progressView>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sp.ATK" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="d3L-S3-6vq">
-                                                                <rect key="frame" x="8" y="2" width="72" height="17"/>
+                                                                <rect key="frame" x="8" y="2" width="72" height="17.5"/>
                                                                 <fontDescription key="fontDescription" name="PokemonGB" family="Pokemon GB" pointSize="12"/>
                                                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                                 <nil key="highlightedColor"/>
@@ -722,7 +723,7 @@
                                                         </constraints>
                                                     </view>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="n4J-T9-UJg">
-                                                        <rect key="frame" x="0.0" y="78" width="478" height="19"/>
+                                                        <rect key="frame" x="0.0" y="77.5" width="478" height="19"/>
                                                         <subviews>
                                                             <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progressViewStyle="bar" translatesAutoresizingMaskIntoConstraints="NO" id="goY-sW-2D1">
                                                                 <rect key="frame" x="0.0" y="2" width="478" height="16"/>
@@ -747,7 +748,7 @@
                                                         </constraints>
                                                     </view>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2dM-Rj-eFr">
-                                                        <rect key="frame" x="0.0" y="97" width="478" height="20"/>
+                                                        <rect key="frame" x="0.0" y="96.5" width="478" height="19.5"/>
                                                         <subviews>
                                                             <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progressViewStyle="bar" translatesAutoresizingMaskIntoConstraints="NO" id="50v-wK-xqx">
                                                                 <rect key="frame" x="0.0" y="2" width="478" height="16.5"/>
@@ -755,7 +756,7 @@
                                                                 <color key="trackTintColor" red="0.17254901959999999" green="0.17254901959999999" blue="0.17254901959999999" alpha="0.20000000000000001" colorSpace="calibratedRGB"/>
                                                             </progressView>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SPD" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ymC-9k-e2L">
-                                                                <rect key="frame" x="8" y="2" width="36" height="17.5"/>
+                                                                <rect key="frame" x="8" y="2" width="36" height="17"/>
                                                                 <fontDescription key="fontDescription" name="PokemonGB" family="Pokemon GB" pointSize="12"/>
                                                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                                 <nil key="highlightedColor"/>
@@ -861,12 +862,12 @@
                                         </userDefinedRuntimeAttributes>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="P4w-UN-xFJ">
-                                        <rect key="frame" x="76" y="285.5" width="494" height="148.5"/>
+                                        <rect key="frame" x="76" y="285.5" width="494" height="185.5"/>
                                         <subviews>
                                             <visualEffectView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1VZ-d4-JdE">
-                                                <rect key="frame" x="0.0" y="0.5" width="494" height="148.5"/>
+                                                <rect key="frame" x="0.0" y="0.5" width="494" height="185"/>
                                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="Xhu-gJ-Dzl">
-                                                    <rect key="frame" x="0.0" y="0.0" width="494" height="148.5"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="494" height="185"/>
                                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                     <subviews>
                                                         <visualEffectView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fcJ-90-sFL">
@@ -1133,6 +1134,41 @@
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                     </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YTr-zC-Lnf">
+                                        <rect key="frame" x="28" y="441.5" width="560" height="29.5"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BXz-nR-SAS">
+                                                <rect key="frame" x="2" y="2" width="556" height="25"/>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                                <fontDescription key="fontDescription" name="PokemonGB" family="Pokemon GB" pointSize="15"/>
+                                                <inset key="titleEdgeInsets" minX="2" minY="0.0" maxX="2" maxY="0.0"/>
+                                                <size key="titleShadowOffset" width="1" height="1"/>
+                                                <state key="normal" title="DONE">
+                                                    <color key="titleShadowColor" red="0.0" green="0.0" blue="0.0" alpha="0.5" colorSpace="calibratedRGB"/>
+                                                </state>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="titleLabel.adjustsFontSizeToFitWidth" value="YES"/>
+                                                </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <action selector="doneButtonWasPressed:" destination="IuE-5U-YSb" eventType="touchUpInside" id="FyG-NI-F7D"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                        <color key="backgroundColor" red="0.97254901959999995" green="0.36078431370000003" blue="0.25098039220000001" alpha="1" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="29" id="WHN-MS-kt8"/>
+                                            <constraint firstAttribute="bottom" secondItem="BXz-nR-SAS" secondAttribute="bottom" constant="2" id="gZd-Ip-piA"/>
+                                            <constraint firstAttribute="trailing" secondItem="BXz-nR-SAS" secondAttribute="trailing" constant="2" id="hqP-1z-Ayi"/>
+                                            <constraint firstItem="BXz-nR-SAS" firstAttribute="leading" secondItem="YTr-zC-Lnf" secondAttribute="leading" constant="2" id="j6C-5X-Ly1"/>
+                                            <constraint firstItem="BXz-nR-SAS" firstAttribute="top" secondItem="YTr-zC-Lnf" secondAttribute="top" constant="2" id="xB9-1T-ZOW"/>
+                                        </constraints>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                <integer key="value" value="4"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
+                                        </userDefinedRuntimeAttributes>
+                                    </view>
                                 </subviews>
                                 <constraints>
                                     <constraint firstItem="54z-SG-m90" firstAttribute="centerY" secondItem="bKT-H3-xkG" secondAttribute="centerY" id="0XX-pR-ecQ"/>
@@ -1141,16 +1177,18 @@
                                     <constraint firstItem="nal-0T-izN" firstAttribute="leading" secondItem="eTs-a3-F6v" secondAttribute="centerX" id="6uV-l5-AHM"/>
                                     <constraint firstItem="54z-SG-m90" firstAttribute="height" secondItem="bKT-H3-xkG" secondAttribute="height" id="89v-xA-KEz"/>
                                     <constraint firstItem="uMm-Xm-ueA" firstAttribute="top" secondItem="X8e-Da-13p" secondAttribute="bottom" id="8ga-SQ-BzK"/>
+                                    <constraint firstItem="YTr-zC-Lnf" firstAttribute="trailing" secondItem="iqb-AL-5re" secondAttribute="trailing" id="AJo-Uz-Ylh"/>
                                     <constraint firstItem="iqb-AL-5re" firstAttribute="leading" secondItem="uMm-Xm-ueA" secondAttribute="leading" id="Ayj-c1-gaC"/>
                                     <constraint firstItem="nal-0T-izN" firstAttribute="centerY" secondItem="eTs-a3-F6v" secondAttribute="centerY" id="BIh-dW-Mww"/>
                                     <constraint firstItem="uMm-Xm-ueA" firstAttribute="trailing" secondItem="nal-0T-izN" secondAttribute="trailing" id="HUX-Of-KnW"/>
                                     <constraint firstItem="iqb-AL-5re" firstAttribute="trailing" secondItem="uMm-Xm-ueA" secondAttribute="trailing" id="Ia7-HV-VlU"/>
                                     <constraint firstAttribute="trailing" secondItem="eTs-a3-F6v" secondAttribute="trailing" constant="8" id="IoE-Rd-pQF"/>
-                                    <constraint firstItem="P4w-UN-xFJ" firstAttribute="bottom" secondItem="iqb-AL-5re" secondAttribute="bottom" id="K5T-fy-gAe"/>
                                     <constraint firstItem="X8e-Da-13p" firstAttribute="leading" secondItem="nal-0T-izN" secondAttribute="leading" constant="18" id="OUr-54-5X7"/>
-                                    <constraint firstAttribute="bottom" secondItem="iqb-AL-5re" secondAttribute="bottom" constant="89" id="R52-ee-MlH"/>
+                                    <constraint firstAttribute="bottom" secondItem="YTr-zC-Lnf" secondAttribute="bottom" constant="80" id="aib-ag-Jkq" customClass="KeyboardLayoutConstraint" customModule="Poketch" customModuleProvider="target"/>
                                     <constraint firstItem="X8e-Da-13p" firstAttribute="trailing" secondItem="nal-0T-izN" secondAttribute="trailing" constant="-18" id="bXc-Xd-0XE"/>
+                                    <constraint firstItem="P4w-UN-xFJ" firstAttribute="bottom" secondItem="YTr-zC-Lnf" secondAttribute="bottom" id="brf-qE-El4"/>
                                     <constraint firstItem="54z-SG-m90" firstAttribute="centerX" secondItem="bKT-H3-xkG" secondAttribute="centerX" id="cRK-t4-b7D"/>
+                                    <constraint firstItem="YTr-zC-Lnf" firstAttribute="leading" secondItem="iqb-AL-5re" secondAttribute="leading" id="e9k-Tw-aio"/>
                                     <constraint firstItem="bKT-H3-xkG" firstAttribute="centerX" secondItem="eTs-a3-F6v" secondAttribute="centerX" id="ef8-kh-1be"/>
                                     <constraint firstItem="P4w-UN-xFJ" firstAttribute="trailing" secondItem="X8e-Da-13p" secondAttribute="trailing" id="gBI-gi-Kmm"/>
                                     <constraint firstItem="bKT-H3-xkG" firstAttribute="centerY" secondItem="eTs-a3-F6v" secondAttribute="centerY" id="ixy-CF-3gd"/>
@@ -1159,6 +1197,7 @@
                                     <constraint firstItem="eTs-a3-F6v" firstAttribute="leading" secondItem="Oo3-n7-9rk" secondAttribute="leading" constant="8" id="jPZ-jR-Qla"/>
                                     <constraint firstItem="eTs-a3-F6v" firstAttribute="top" secondItem="Oo3-n7-9rk" secondAttribute="top" constant="68" id="ki4-K7-fHn"/>
                                     <constraint firstItem="54z-SG-m90" firstAttribute="width" secondItem="bKT-H3-xkG" secondAttribute="width" id="msF-ac-5KO"/>
+                                    <constraint firstItem="YTr-zC-Lnf" firstAttribute="top" secondItem="iqb-AL-5re" secondAttribute="bottom" constant="8.5" id="rgr-Pe-Zhm"/>
                                     <constraint firstItem="P4w-UN-xFJ" firstAttribute="top" secondItem="uMm-Xm-ueA" secondAttribute="top" id="waq-Jr-8At"/>
                                     <constraint firstItem="iqb-AL-5re" firstAttribute="top" secondItem="uMm-Xm-ueA" secondAttribute="bottom" constant="8" id="ynt-FK-p4w"/>
                                 </constraints>
