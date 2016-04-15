@@ -20,11 +20,11 @@ struct BulbapediaClient {
         let queue = NSOperationQueue()
         
         queue.underlyingQueue = dispatch_queue_create("Network Requests", DISPATCH_QUEUE_CONCURRENT)
-        queue.maxConcurrentOperationCount = 5
+        queue.maxConcurrentOperationCount = 2
         
         return queue
     }()
-    
+
     // MARK: Handlers
     func GET(url: String, priority: Bool = false, success: ((AFHTTPRequestOperation, AnyObject) -> Void)?, failure: ((AFHTTPRequestOperation, NSError) -> Void)?) {
         self.request(url,
@@ -35,14 +35,16 @@ struct BulbapediaClient {
     }
     
     func request(url: String, method: String,  priority: Bool = false, success: ((AFHTTPRequestOperation, AnyObject) -> Void)?, failure: ((AFHTTPRequestOperation, NSError) -> Void)?) {
-        let fullURL = "\(BulbapediaClient.baseURLString)/\(url)"
+        var fullURL = url
+        if !url.hasPrefix("http") {
+            fullURL = "\(BulbapediaClient.baseURLString)/\(url)"
+        }
         
         let request = NSMutableURLRequest(URL: NSURL(string: fullURL)!)
         request.HTTPMethod = method
         
         let operation = AFHTTPRequestOperation(request: request)
         operation.responseSerializer = AFOnoResponseSerializer.HTMLResponseSerializer()
-        
         operation.setCompletionBlockWithSuccess(success, failure: failure)
         
         if priority {

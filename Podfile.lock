@@ -27,11 +27,11 @@ PODS:
   - EZAudio (0.0.6)
   - IGInterfaceDataTable (0.1.1)
   - Ono (1.2.2)
-  - Realm (0.98.6):
-    - Realm/Headers (= 0.98.6)
-  - Realm/Headers (0.98.6)
-  - RealmSwift (0.98.6):
-    - Realm (= 0.98.6)
+  - Realm (0.98.7):
+    - Realm/Headers (= 0.98.7)
+  - Realm/Headers (0.98.7)
+  - RealmSwift (0.98.7):
+    - Realm (= 0.98.7)
   - ZLSinusWaveView (0.0.3):
     - EZAudio (~> 0.0.6)
 
@@ -63,8 +63,8 @@ SPEC CHECKSUMS:
   EZAudio: feb8e1c3ec17d8933bc2efc66b59ead1f2e79e54
   IGInterfaceDataTable: 71f5646cb4a7416e8f84d91ad028cef0ad0ac9c0
   Ono: 80b1c686777d3f6d5d5ce6fcac8a74afef4ca197
-  Realm: 44803f35418c5d89b27825a564247fcd190de37e
-  RealmSwift: c7239c52c83f8c43525a5269ba7be1694da33afc
+  Realm: 46df2178359b6b57812e6cf957956febaba513a5
+  RealmSwift: 3056e6d7ad30ed50dd866185a615fccea73db5f5
   ZLSinusWaveView: c0aa99ce88b674124d5ccae16bc87696e4f8318b
 
 COCOAPODS: 0.39.0

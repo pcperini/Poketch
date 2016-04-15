@@ -10,18 +10,6 @@
 	<string>46</string>
 	<key>objects</key>
 	<dict>
-		<key>0036BD0925DA85349FD182BBF0F2450C</key>
-		<dict>
-			<key>fileRef</key>
-			<string>EA6D9C5155435489044CAA6D6DABD1C7</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-			<key>settings</key>
-			<dict>
-				<key>COMPILER_FLAGS</key>
-				<string>-DREALM_HAVE_CONFIG -DREALM_COCOA_VERSION='@"0.98.6"' -D__ASSERTMACROS__ -w -Xanalyzer -analyzer-disable-all-checks</string>
-			</dict>
-		</dict>
 		<key>0038A7EAD5034011E4F5464C26FA2D75</key>
 		<dict>
 			<key>includeInIndex</key>
@@ -126,18 +114,6 @@
 			<string>XCBuildConfiguration</string>
 			<key>name</key>
 			<string>Release</string>
-		</dict>
-		<key>023DC6B2BE4848F9E4EE9B65AF7B617B</key>
-		<dict>
-			<key>fileRef</key>
-			<string>4014169F2053E4097778B6D3B56EB2C7</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-			<key>settings</key>
-			<dict>
-				<key>COMPILER_FLAGS</key>
-				<string>-DREALM_HAVE_CONFIG -DREALM_COCOA_VERSION='@"0.98.6"' -D__ASSERTMACROS__ -w -Xanalyzer -analyzer-disable-all-checks</string>
-			</dict>
 		</dict>
 		<key>037894CCB4F4112197D871575E0ACA6A</key>
 		<dict>
@@ -327,18 +303,6 @@
 			<dict>
 				<key>COMPILER_FLAGS</key>
 				<string>-w -Xanalyzer -analyzer-disable-all-checks</string>
-			</dict>
-		</dict>
-		<key>092324413A8AF417B7C87A3BDEA3B12A</key>
-		<dict>
-			<key>fileRef</key>
-			<string>9EAF2C82EF496ED3670DD488E2168B8B</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-			<key>settings</key>
-			<dict>
-				<key>COMPILER_FLAGS</key>
-				<string>-DREALM_HAVE_CONFIG -DREALM_COCOA_VERSION='@"0.98.6"' -D__ASSERTMACROS__ -w -Xanalyzer -analyzer-disable-all-checks</string>
 			</dict>
 		</dict>
 		<key>098CD84DA1DC7353AFD82D32C53F6998</key>
@@ -654,6 +618,18 @@
 			<key>sourceTree</key>
 			<string>&lt;group&gt;</string>
 		</dict>
+		<key>102F9891C7170547EAB92AABCE67841B</key>
+		<dict>
+			<key>fileRef</key>
+			<string>FECFDE479FD4B9AD11FE24B6F27A2326</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+			<key>settings</key>
+			<dict>
+				<key>COMPILER_FLAGS</key>
+				<string>-DREALM_HAVE_CONFIG -DREALM_COCOA_VERSION='@"0.98.7"' -D__ASSERTMACROS__ -w -Xanalyzer -analyzer-disable-all-checks</string>
+			</dict>
+		</dict>
 		<key>109C908D61C75B63715AF7CA113CDC1E</key>
 		<dict>
 			<key>includeInIndex</key>
@@ -762,18 +738,6 @@
 			<key>name</key>
 			<string>Debug</string>
 		</dict>
-		<key>11AE51E98BB62EEDA1654EED0A1CEBFC</key>
-		<dict>
-			<key>fileRef</key>
-			<string>8B796449208A5BCCB5918820D151D43F</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-			<key>settings</key>
-			<dict>
-				<key>COMPILER_FLAGS</key>
-				<string>-DREALM_HAVE_CONFIG -DREALM_COCOA_VERSION='@"0.98.6"' -D__ASSERTMACROS__ -w -Xanalyzer -analyzer-disable-all-checks</string>
-			</dict>
-		</dict>
 		<key>11E23EA131238C9A3127E20DB46D676B</key>
 		<dict>
 			<key>isa</key>
@@ -842,18 +806,6 @@
 			<string>AFNetworking/AFSecurityPolicy.m</string>
 			<key>sourceTree</key>
 			<string>&lt;group&gt;</string>
-		</dict>
-		<key>138B653B74CF9164C4BA4E9E183D1655</key>
-		<dict>
-			<key>fileRef</key>
-			<string>79A1AD4837333B90AF6CAD60B526D1E8</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-			<key>settings</key>
-			<dict>
-				<key>COMPILER_FLAGS</key>
-				<string>-DREALM_HAVE_CONFIG -DREALM_COCOA_VERSION='@"0.98.6"' -D__ASSERTMACROS__ -w -Xanalyzer -analyzer-disable-all-checks</string>
-			</dict>
 		</dict>
 		<key>145D00330A43748507B3AC2A6891D8B2</key>
 		<dict>
@@ -1382,18 +1334,6 @@
 			<key>remoteInfo</key>
 			<string>EZAudio</string>
 		</dict>
-		<key>21738CC4CD6C3128C7FF1F40B3434B26</key>
-		<dict>
-			<key>fileRef</key>
-			<string>B7F0EF4DB8183D914309D2897D10FD0D</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-			<key>settings</key>
-			<dict>
-				<key>COMPILER_FLAGS</key>
-				<string>-DREALM_HAVE_CONFIG -DREALM_COCOA_VERSION='@"0.98.6"' -D__ASSERTMACROS__ -w -Xanalyzer -analyzer-disable-all-checks</string>
-			</dict>
-		</dict>
 		<key>21B08AE3440E57A635BFB14ADE11E1B4</key>
 		<dict>
 			<key>fileRef</key>
@@ -1812,6 +1752,18 @@
 			<key>sourceTree</key>
 			<string>BUILT_PRODUCTS_DIR</string>
 		</dict>
+		<key>2AA4B6CCC18D842BD5C0675C0C7C1465</key>
+		<dict>
+			<key>fileRef</key>
+			<string>80B6B61EEE6BE56892C8FA25BFB850D5</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+			<key>settings</key>
+			<dict>
+				<key>COMPILER_FLAGS</key>
+				<string>-DREALM_HAVE_CONFIG -DREALM_COCOA_VERSION='@"0.98.7"' -D__ASSERTMACROS__ -w -Xanalyzer -analyzer-disable-all-checks</string>
+			</dict>
+		</dict>
 		<key>2AF94A561B6D805395684A57A18C9442</key>
 		<dict>
 			<key>fileRef</key>
@@ -1844,6 +1796,18 @@
 			<key>sourceTree</key>
 			<string>&lt;group&gt;</string>
 		</dict>
+		<key>2B8E2081E45F5825F7355E058F0E0629</key>
+		<dict>
+			<key>fileRef</key>
+			<string>9EAF2C82EF496ED3670DD488E2168B8B</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+			<key>settings</key>
+			<dict>
+				<key>COMPILER_FLAGS</key>
+				<string>-DREALM_HAVE_CONFIG -DREALM_COCOA_VERSION='@"0.98.7"' -D__ASSERTMACROS__ -w -Xanalyzer -analyzer-disable-all-checks</string>
+			</dict>
+		</dict>
 		<key>2B8F2BA0D2F2EA19CF077338ED83E168</key>
 		<dict>
 			<key>fileRef</key>
@@ -1856,6 +1820,18 @@
 				<array>
 					<string>Public</string>
 				</array>
+			</dict>
+		</dict>
+		<key>2C040742B9E4A59E0E84AED84A42C507</key>
+		<dict>
+			<key>fileRef</key>
+			<string>F59E17B8B1B46DD697362BA1B1D8A3A3</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+			<key>settings</key>
+			<dict>
+				<key>COMPILER_FLAGS</key>
+				<string>-DREALM_HAVE_CONFIG -DREALM_COCOA_VERSION='@"0.98.7"' -D__ASSERTMACROS__ -w -Xanalyzer -analyzer-disable-all-checks</string>
 			</dict>
 		</dict>
 		<key>2C3B81DC9D3B732C83E7D75649E43A27</key>
@@ -2268,6 +2244,18 @@
 			<key>sourceTree</key>
 			<string>&lt;group&gt;</string>
 		</dict>
+		<key>3578CC0B0F0AD2B7167583B28C09A459</key>
+		<dict>
+			<key>fileRef</key>
+			<string>D91888FBB7B3F5E614B738CB4862A3D0</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+			<key>settings</key>
+			<dict>
+				<key>COMPILER_FLAGS</key>
+				<string>-DREALM_HAVE_CONFIG -DREALM_COCOA_VERSION='@"0.98.7"' -D__ASSERTMACROS__ -w -Xanalyzer -analyzer-disable-all-checks</string>
+			</dict>
+		</dict>
 		<key>358F2357EA116BBA4C916A29D688E18F</key>
 		<dict>
 			<key>includeInIndex</key>
@@ -2280,6 +2268,18 @@
 			<string>Pods-Poketch WatchKit Extension.release.xcconfig</string>
 			<key>sourceTree</key>
 			<string>&lt;group&gt;</string>
+		</dict>
+		<key>367FA8844936FA56BBA150453823278C</key>
+		<dict>
+			<key>fileRef</key>
+			<string>4162AC513444C0F8DC710D2FFBE3B435</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+			<key>settings</key>
+			<dict>
+				<key>COMPILER_FLAGS</key>
+				<string>-DREALM_HAVE_CONFIG -DREALM_COCOA_VERSION='@"0.98.7"' -D__ASSERTMACROS__ -w -Xanalyzer -analyzer-disable-all-checks</string>
+			</dict>
 		</dict>
 		<key>36F9DFFC79ABC91573E45DA7F1001A84</key>
 		<dict>
@@ -2321,18 +2321,6 @@
 			<string>include/Realm/RLMObject.h</string>
 			<key>sourceTree</key>
 			<string>&lt;group&gt;</string>
-		</dict>
-		<key>37D3CC0839C8AFB1F42C58A477F96070</key>
-		<dict>
-			<key>fileRef</key>
-			<string>4FDC79903DB1A8CB51C931DCC367FF22</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-			<key>settings</key>
-			<dict>
-				<key>COMPILER_FLAGS</key>
-				<string>-DREALM_HAVE_CONFIG -DREALM_COCOA_VERSION='@"0.98.6"' -D__ASSERTMACROS__ -w -Xanalyzer -analyzer-disable-all-checks</string>
-			</dict>
 		</dict>
 		<key>38793605A0B8215312832D42617A4DF0</key>
 		<dict>
@@ -2401,6 +2389,18 @@
 			<key>name</key>
 			<string>Release</string>
 		</dict>
+		<key>3922F7223711A6B89D0C39AA2C335146</key>
+		<dict>
+			<key>fileRef</key>
+			<string>E5482CA2183551A9D9FAF4471D88842A</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+			<key>settings</key>
+			<dict>
+				<key>COMPILER_FLAGS</key>
+				<string>-DREALM_HAVE_CONFIG -DREALM_COCOA_VERSION='@"0.98.7"' -D__ASSERTMACROS__ -w -Xanalyzer -analyzer-disable-all-checks</string>
+			</dict>
+		</dict>
 		<key>39B34F50587ECBF8D3346D89FE7100EC</key>
 		<dict>
 			<key>includeInIndex</key>
@@ -2416,18 +2416,6 @@
 			<key>sourceTree</key>
 			<string>&lt;group&gt;</string>
 		</dict>
-		<key>39EBABB2471B1E7EC526DF9076D795B1</key>
-		<dict>
-			<key>fileRef</key>
-			<string>2C461A4F73DB1CA941B24EABB76A0D55</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-			<key>settings</key>
-			<dict>
-				<key>COMPILER_FLAGS</key>
-				<string>-DREALM_HAVE_CONFIG -DREALM_COCOA_VERSION='@"0.98.6"' -D__ASSERTMACROS__ -w -Xanalyzer -analyzer-disable-all-checks</string>
-			</dict>
-		</dict>
 		<key>3A23E8182E5948E6BD8625DD7BA96AAC</key>
 		<dict>
 			<key>fileRef</key>
@@ -2438,6 +2426,18 @@
 			<dict>
 				<key>COMPILER_FLAGS</key>
 				<string>-w -Xanalyzer -analyzer-disable-all-checks</string>
+			</dict>
+		</dict>
+		<key>3A40C61955FF2D079FAEBEBA21FB5EFB</key>
+		<dict>
+			<key>fileRef</key>
+			<string>562722345B00BC5174B074CBE6ADCF3B</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+			<key>settings</key>
+			<dict>
+				<key>COMPILER_FLAGS</key>
+				<string>-DREALM_HAVE_CONFIG -DREALM_COCOA_VERSION='@"0.98.7"' -D__ASSERTMACROS__ -w -Xanalyzer -analyzer-disable-all-checks</string>
 			</dict>
 		</dict>
 		<key>3A7FE81FF3C97DDFA9F5D7B692369683</key>
@@ -2549,6 +2549,18 @@
 			<key>sourceTree</key>
 			<string>&lt;group&gt;</string>
 		</dict>
+		<key>3D3E80E63869E1FEDF564957A989DCE7</key>
+		<dict>
+			<key>fileRef</key>
+			<string>F52A8A08AA4A70D99CE9A558996F1028</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+			<key>settings</key>
+			<dict>
+				<key>COMPILER_FLAGS</key>
+				<string>-DREALM_HAVE_CONFIG -DREALM_COCOA_VERSION='@"0.98.7"' -D__ASSERTMACROS__ -w -Xanalyzer -analyzer-disable-all-checks</string>
+			</dict>
+		</dict>
 		<key>3D9B99B89637098D9DADEAC8ABF67114</key>
 		<dict>
 			<key>isa</key>
@@ -2644,18 +2656,6 @@
 			<string>PBXSourcesBuildPhase</string>
 			<key>runOnlyForDeploymentPostprocessing</key>
 			<string>0</string>
-		</dict>
-		<key>3FFB2BA0D6EE3D54085DC80A06046EFA</key>
-		<dict>
-			<key>fileRef</key>
-			<string>5FA3C8A652D3813EC7B08CF0E12CFCC2</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-			<key>settings</key>
-			<dict>
-				<key>COMPILER_FLAGS</key>
-				<string>-DREALM_HAVE_CONFIG -DREALM_COCOA_VERSION='@"0.98.6"' -D__ASSERTMACROS__ -w -Xanalyzer -analyzer-disable-all-checks</string>
-			</dict>
 		</dict>
 		<key>4014169F2053E4097778B6D3B56EB2C7</key>
 		<dict>
@@ -2892,18 +2892,6 @@
 			<key>sourceTree</key>
 			<string>&lt;group&gt;</string>
 		</dict>
-		<key>44574DA1457E7BA0A35B35D974545825</key>
-		<dict>
-			<key>fileRef</key>
-			<string>F59E17B8B1B46DD697362BA1B1D8A3A3</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-			<key>settings</key>
-			<dict>
-				<key>COMPILER_FLAGS</key>
-				<string>-DREALM_HAVE_CONFIG -DREALM_COCOA_VERSION='@"0.98.6"' -D__ASSERTMACROS__ -w -Xanalyzer -analyzer-disable-all-checks</string>
-			</dict>
-		</dict>
 		<key>449B22124DE39FB0B1CED098D9DB9D63</key>
 		<dict>
 			<key>includeInIndex</key>
@@ -3055,18 +3043,6 @@
 				<string>-w -Xanalyzer -analyzer-disable-all-checks</string>
 			</dict>
 		</dict>
-		<key>4769D3D65FD770C1EA6CD90E7855BBEA</key>
-		<dict>
-			<key>fileRef</key>
-			<string>FECFDE479FD4B9AD11FE24B6F27A2326</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-			<key>settings</key>
-			<dict>
-				<key>COMPILER_FLAGS</key>
-				<string>-DREALM_HAVE_CONFIG -DREALM_COCOA_VERSION='@"0.98.6"' -D__ASSERTMACROS__ -w -Xanalyzer -analyzer-disable-all-checks</string>
-			</dict>
-		</dict>
 		<key>479332FE7D2107824EB18220BBEF1BCF</key>
 		<dict>
 			<key>includeInIndex</key>
@@ -3147,18 +3123,6 @@
 			<string>Pods-Poketch WatchKit Extension-frameworks.sh</string>
 			<key>sourceTree</key>
 			<string>&lt;group&gt;</string>
-		</dict>
-		<key>497F8A84309272F9E8B57CFEDC31C191</key>
-		<dict>
-			<key>fileRef</key>
-			<string>E5482CA2183551A9D9FAF4471D88842A</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-			<key>settings</key>
-			<dict>
-				<key>COMPILER_FLAGS</key>
-				<string>-DREALM_HAVE_CONFIG -DREALM_COCOA_VERSION='@"0.98.6"' -D__ASSERTMACROS__ -w -Xanalyzer -analyzer-disable-all-checks</string>
-			</dict>
 		</dict>
 		<key>49BD8EC92852909CE60184B3100304BB</key>
 		<dict>
@@ -3272,18 +3236,6 @@
 			<key>sourceTree</key>
 			<string>BUILT_PRODUCTS_DIR</string>
 		</dict>
-		<key>4D18EA657669DCB0BE15408A57D6577D</key>
-		<dict>
-			<key>fileRef</key>
-			<string>8422EEA00AAC28A319B395566B40380E</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-			<key>settings</key>
-			<dict>
-				<key>COMPILER_FLAGS</key>
-				<string>-DREALM_HAVE_CONFIG -DREALM_COCOA_VERSION='@"0.98.6"' -D__ASSERTMACROS__ -w -Xanalyzer -analyzer-disable-all-checks</string>
-			</dict>
-		</dict>
 		<key>4D7F81969953582F60CC9FD9646FEAEF</key>
 		<dict>
 			<key>baseConfigurationReference</key>
@@ -3365,6 +3317,18 @@
 			<string>Pods-Poketch WatchKit Extension-dummy.m</string>
 			<key>sourceTree</key>
 			<string>&lt;group&gt;</string>
+		</dict>
+		<key>4ED504971104D7462CDBB2E54B4FBD75</key>
+		<dict>
+			<key>fileRef</key>
+			<string>B7F0EF4DB8183D914309D2897D10FD0D</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+			<key>settings</key>
+			<dict>
+				<key>COMPILER_FLAGS</key>
+				<string>-DREALM_HAVE_CONFIG -DREALM_COCOA_VERSION='@"0.98.7"' -D__ASSERTMACROS__ -w -Xanalyzer -analyzer-disable-all-checks</string>
+			</dict>
 		</dict>
 		<key>4F093F6FBA6E6B060CF66145CF214E14</key>
 		<dict>
@@ -3571,18 +3535,6 @@
 			<string>9A947FE622CAE9A6472FC5D2153E10D3</string>
 			<key>isa</key>
 			<string>PBXBuildFile</string>
-		</dict>
-		<key>558DD78E58CC34BF0026713EDFBA1095</key>
-		<dict>
-			<key>fileRef</key>
-			<string>8242653634000FAAA5B602F4ACF082C1</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-			<key>settings</key>
-			<dict>
-				<key>COMPILER_FLAGS</key>
-				<string>-DREALM_HAVE_CONFIG -DREALM_COCOA_VERSION='@"0.98.6"' -D__ASSERTMACROS__ -w -Xanalyzer -analyzer-disable-all-checks</string>
-			</dict>
 		</dict>
 		<key>55D28E36699D5A623E6FCD01627810CD</key>
 		<dict>
@@ -4183,6 +4135,18 @@
 				</array>
 			</dict>
 		</dict>
+		<key>6700628BE8C23412E3875B7D37B0D261</key>
+		<dict>
+			<key>fileRef</key>
+			<string>DF4630B97BCCD3997F8664E18631B60E</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+			<key>settings</key>
+			<dict>
+				<key>COMPILER_FLAGS</key>
+				<string>-DREALM_HAVE_CONFIG -DREALM_COCOA_VERSION='@"0.98.7"' -D__ASSERTMACROS__ -w -Xanalyzer -analyzer-disable-all-checks</string>
+			</dict>
+		</dict>
 		<key>67752DF3947A32A363360988DDCA85CE</key>
 		<dict>
 			<key>buildActionMask</key>
@@ -4518,18 +4482,6 @@
 				</array>
 			</dict>
 		</dict>
-		<key>7012CB98A0E6EAC81DE7E9A5FC96D5CC</key>
-		<dict>
-			<key>fileRef</key>
-			<string>562722345B00BC5174B074CBE6ADCF3B</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-			<key>settings</key>
-			<dict>
-				<key>COMPILER_FLAGS</key>
-				<string>-DREALM_HAVE_CONFIG -DREALM_COCOA_VERSION='@"0.98.6"' -D__ASSERTMACROS__ -w -Xanalyzer -analyzer-disable-all-checks</string>
-			</dict>
-		</dict>
 		<key>701EB9EF777E5BDDF1632405825F4A23</key>
 		<dict>
 			<key>includeInIndex</key>
@@ -4643,6 +4595,18 @@
 				<array>
 					<string>Public</string>
 				</array>
+			</dict>
+		</dict>
+		<key>757597790F587219DE9D02B7F52CAE29</key>
+		<dict>
+			<key>fileRef</key>
+			<string>4FDC79903DB1A8CB51C931DCC367FF22</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+			<key>settings</key>
+			<dict>
+				<key>COMPILER_FLAGS</key>
+				<string>-DREALM_HAVE_CONFIG -DREALM_COCOA_VERSION='@"0.98.7"' -D__ASSERTMACROS__ -w -Xanalyzer -analyzer-disable-all-checks</string>
 			</dict>
 		</dict>
 		<key>75FAD4BC818A9F9484DDFF217E50508E</key>
@@ -4878,6 +4842,18 @@
 			<key>runOnlyForDeploymentPostprocessing</key>
 			<string>0</string>
 		</dict>
+		<key>7BD7816A4620C4C5242B4F38D0C24BA0</key>
+		<dict>
+			<key>fileRef</key>
+			<string>B15A05AA1DE9D03AD0CFD911EC65FFF0</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+			<key>settings</key>
+			<dict>
+				<key>COMPILER_FLAGS</key>
+				<string>-DREALM_HAVE_CONFIG -DREALM_COCOA_VERSION='@"0.98.7"' -D__ASSERTMACROS__ -w -Xanalyzer -analyzer-disable-all-checks</string>
+			</dict>
+		</dict>
 		<key>7C8BDAA7BD7B63C95F7F98F1A9DD76BE</key>
 		<dict>
 			<key>buildActionMask</key>
@@ -4953,18 +4929,6 @@
 			<key>sourceTree</key>
 			<string>&lt;group&gt;</string>
 		</dict>
-		<key>7E0BFF9B58FFEAE9384A1F2013CA6480</key>
-		<dict>
-			<key>fileRef</key>
-			<string>8C836D33DD085E30F6C4512EB0DBD406</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-			<key>settings</key>
-			<dict>
-				<key>COMPILER_FLAGS</key>
-				<string>-DREALM_HAVE_CONFIG -DREALM_COCOA_VERSION='@"0.98.6"' -D__ASSERTMACROS__ -w -Xanalyzer -analyzer-disable-all-checks</string>
-			</dict>
-		</dict>
 		<key>7E372F2B3024175D3AB4D1AFD407BD85</key>
 		<dict>
 			<key>buildConfigurations</key>
@@ -4978,6 +4942,30 @@
 			<string>Release</string>
 			<key>isa</key>
 			<string>XCConfigurationList</string>
+		</dict>
+		<key>7E7CD9024857121689F642C62040827E</key>
+		<dict>
+			<key>fileRef</key>
+			<string>6B61BA91FDA4CF4864286123E7E232F1</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+			<key>settings</key>
+			<dict>
+				<key>COMPILER_FLAGS</key>
+				<string>-DREALM_HAVE_CONFIG -DREALM_COCOA_VERSION='@"0.98.7"' -D__ASSERTMACROS__ -w -Xanalyzer -analyzer-disable-all-checks</string>
+			</dict>
+		</dict>
+		<key>7E873C06F6D7C3CCCED64BA3898D9DEA</key>
+		<dict>
+			<key>fileRef</key>
+			<string>79A1AD4837333B90AF6CAD60B526D1E8</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+			<key>settings</key>
+			<dict>
+				<key>COMPILER_FLAGS</key>
+				<string>-DREALM_HAVE_CONFIG -DREALM_COCOA_VERSION='@"0.98.7"' -D__ASSERTMACROS__ -w -Xanalyzer -analyzer-disable-all-checks</string>
+			</dict>
 		</dict>
 		<key>7F3FFCD40A84EA2FA7513DA0C5D58BAF</key>
 		<dict>
@@ -4993,18 +4981,6 @@
 			<string>Source/ONOXMLDocument.m</string>
 			<key>sourceTree</key>
 			<string>&lt;group&gt;</string>
-		</dict>
-		<key>7FFA3D8F2CCB8B04FA204BAC2F01310C</key>
-		<dict>
-			<key>fileRef</key>
-			<string>B15A05AA1DE9D03AD0CFD911EC65FFF0</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-			<key>settings</key>
-			<dict>
-				<key>COMPILER_FLAGS</key>
-				<string>-DREALM_HAVE_CONFIG -DREALM_COCOA_VERSION='@"0.98.6"' -D__ASSERTMACROS__ -w -Xanalyzer -analyzer-disable-all-checks</string>
-			</dict>
 		</dict>
 		<key>80B1304BA5467E6B41070505CCF12BFF</key>
 		<dict>
@@ -5032,7 +5008,7 @@
 			<key>sourceTree</key>
 			<string>&lt;group&gt;</string>
 		</dict>
-		<key>816007D734E4CEECAC4C9C9F5E02E13E</key>
+		<key>81720D590CDA8D58C11B495218800D81</key>
 		<dict>
 			<key>fileRef</key>
 			<string>E459AC2891FFB7C29C754F31C580821A</string>
@@ -5041,7 +5017,7 @@
 			<key>settings</key>
 			<dict>
 				<key>COMPILER_FLAGS</key>
-				<string>-DREALM_HAVE_CONFIG -DREALM_COCOA_VERSION='@"0.98.6"' -D__ASSERTMACROS__ -w -Xanalyzer -analyzer-disable-all-checks</string>
+				<string>-DREALM_HAVE_CONFIG -DREALM_COCOA_VERSION='@"0.98.7"' -D__ASSERTMACROS__ -w -Xanalyzer -analyzer-disable-all-checks</string>
 			</dict>
 		</dict>
 		<key>81D4A2D5A9255A7B37993AFC5B909CD1</key>
@@ -5144,6 +5120,18 @@
 			<key>sourceTree</key>
 			<string>&lt;group&gt;</string>
 		</dict>
+		<key>83E64E209B454E84D45D766E70FCBBE8</key>
+		<dict>
+			<key>fileRef</key>
+			<string>EA6D9C5155435489044CAA6D6DABD1C7</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+			<key>settings</key>
+			<dict>
+				<key>COMPILER_FLAGS</key>
+				<string>-DREALM_HAVE_CONFIG -DREALM_COCOA_VERSION='@"0.98.7"' -D__ASSERTMACROS__ -w -Xanalyzer -analyzer-disable-all-checks</string>
+			</dict>
+		</dict>
 		<key>8422EEA00AAC28A319B395566B40380E</key>
 		<dict>
 			<key>includeInIndex</key>
@@ -5205,18 +5193,6 @@
 			<string>Reachability</string>
 			<key>sourceTree</key>
 			<string>&lt;group&gt;</string>
-		</dict>
-		<key>86DB76D717433C1242815F343109ACB5</key>
-		<dict>
-			<key>fileRef</key>
-			<string>45A67C1530BDED6BEC65EB10CF25D483</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-			<key>settings</key>
-			<dict>
-				<key>COMPILER_FLAGS</key>
-				<string>-DREALM_HAVE_CONFIG -DREALM_COCOA_VERSION='@"0.98.6"' -D__ASSERTMACROS__ -w -Xanalyzer -analyzer-disable-all-checks</string>
-			</dict>
 		</dict>
 		<key>86E06D55F3A70FBF60E7C51D3DEBD824</key>
 		<dict>
@@ -5471,6 +5447,18 @@
 				</array>
 			</dict>
 		</dict>
+		<key>9181A0228474A85BE036B417D8583093</key>
+		<dict>
+			<key>fileRef</key>
+			<string>4014169F2053E4097778B6D3B56EB2C7</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+			<key>settings</key>
+			<dict>
+				<key>COMPILER_FLAGS</key>
+				<string>-DREALM_HAVE_CONFIG -DREALM_COCOA_VERSION='@"0.98.7"' -D__ASSERTMACROS__ -w -Xanalyzer -analyzer-disable-all-checks</string>
+			</dict>
+		</dict>
 		<key>919900163BBEDB7E7D0DB9193CF2943D</key>
 		<dict>
 			<key>fileRef</key>
@@ -5569,18 +5557,6 @@
 			<key>runOnlyForDeploymentPostprocessing</key>
 			<string>0</string>
 		</dict>
-		<key>93729E9413E82C4D7666C86D32150C65</key>
-		<dict>
-			<key>fileRef</key>
-			<string>D91888FBB7B3F5E614B738CB4862A3D0</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-			<key>settings</key>
-			<dict>
-				<key>COMPILER_FLAGS</key>
-				<string>-DREALM_HAVE_CONFIG -DREALM_COCOA_VERSION='@"0.98.6"' -D__ASSERTMACROS__ -w -Xanalyzer -analyzer-disable-all-checks</string>
-			</dict>
-		</dict>
 		<key>939A272FE6B8A7E4E0491D7D54E6CF5D</key>
 		<dict>
 			<key>fileRef</key>
@@ -5607,18 +5583,6 @@
 			<string>APNGKit/libpng-apng/filter_neon_intrinsics.c</string>
 			<key>sourceTree</key>
 			<string>&lt;group&gt;</string>
-		</dict>
-		<key>947D33C357F334FF94047D42AE4B8F11</key>
-		<dict>
-			<key>fileRef</key>
-			<string>4162AC513444C0F8DC710D2FFBE3B435</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-			<key>settings</key>
-			<dict>
-				<key>COMPILER_FLAGS</key>
-				<string>-DREALM_HAVE_CONFIG -DREALM_COCOA_VERSION='@"0.98.6"' -D__ASSERTMACROS__ -w -Xanalyzer -analyzer-disable-all-checks</string>
-			</dict>
 		</dict>
 		<key>9484B7CB6D00915ED3B1B52D57F37233</key>
 		<dict>
@@ -5801,6 +5765,18 @@
 			<string>23E8ACD7341F50F634FE002DCC8B4A93</string>
 			<key>isa</key>
 			<string>PBXBuildFile</string>
+		</dict>
+		<key>992051DF93867FBAD2786CFEF0AF11A5</key>
+		<dict>
+			<key>fileRef</key>
+			<string>8C836D33DD085E30F6C4512EB0DBD406</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+			<key>settings</key>
+			<dict>
+				<key>COMPILER_FLAGS</key>
+				<string>-DREALM_HAVE_CONFIG -DREALM_COCOA_VERSION='@"0.98.7"' -D__ASSERTMACROS__ -w -Xanalyzer -analyzer-disable-all-checks</string>
+			</dict>
 		</dict>
 		<key>997550332B0399303B1C113C1E575714</key>
 		<dict>
@@ -5990,6 +5966,18 @@
 				<string>-w -Xanalyzer -analyzer-disable-all-checks</string>
 			</dict>
 		</dict>
+		<key>9C9F1054A0FB1F0111E61704CF8E9C2A</key>
+		<dict>
+			<key>fileRef</key>
+			<string>B22F45E9FDC31D0184B4B96512A6F306</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+			<key>settings</key>
+			<dict>
+				<key>COMPILER_FLAGS</key>
+				<string>-DREALM_HAVE_CONFIG -DREALM_COCOA_VERSION='@"0.98.7"' -D__ASSERTMACROS__ -w -Xanalyzer -analyzer-disable-all-checks</string>
+			</dict>
+		</dict>
 		<key>9D95D716CD3394D39DD540EBE106F838</key>
 		<dict>
 			<key>includeInIndex</key>
@@ -6018,16 +6006,28 @@
 			<key>remoteInfo</key>
 			<string>Ono</string>
 		</dict>
-		<key>9E758D89958BA7194BAF8D1935DFE436</key>
+		<key>9E57E91DE30CF5F21811D2F65CF3DE59</key>
 		<dict>
 			<key>fileRef</key>
-			<string>DF4630B97BCCD3997F8664E18631B60E</string>
+			<string>49BD8EC92852909CE60184B3100304BB</string>
 			<key>isa</key>
 			<string>PBXBuildFile</string>
 			<key>settings</key>
 			<dict>
 				<key>COMPILER_FLAGS</key>
-				<string>-DREALM_HAVE_CONFIG -DREALM_COCOA_VERSION='@"0.98.6"' -D__ASSERTMACROS__ -w -Xanalyzer -analyzer-disable-all-checks</string>
+				<string>-DREALM_HAVE_CONFIG -DREALM_COCOA_VERSION='@"0.98.7"' -D__ASSERTMACROS__ -w -Xanalyzer -analyzer-disable-all-checks</string>
+			</dict>
+		</dict>
+		<key>9E773FD93CEF6F652E7B2EB098D90342</key>
+		<dict>
+			<key>fileRef</key>
+			<string>0C2C81C9594F8F83D5081DD43CAACDCB</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+			<key>settings</key>
+			<dict>
+				<key>COMPILER_FLAGS</key>
+				<string>-DREALM_HAVE_CONFIG -DREALM_COCOA_VERSION='@"0.98.7"' -D__ASSERTMACROS__ -w -Xanalyzer -analyzer-disable-all-checks</string>
 			</dict>
 		</dict>
 		<key>9E795055729E8F398250A5687BB00AE2</key>
@@ -6392,18 +6392,6 @@
 			<key>sourceTree</key>
 			<string>BUILT_PRODUCTS_DIR</string>
 		</dict>
-		<key>A603A22FFC1396DA2D6AD5593B4C28EB</key>
-		<dict>
-			<key>fileRef</key>
-			<string>B799CF6ABFFFC92E195AC0C583FA7AEB</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-			<key>settings</key>
-			<dict>
-				<key>COMPILER_FLAGS</key>
-				<string>-DREALM_HAVE_CONFIG -DREALM_COCOA_VERSION='@"0.98.6"' -D__ASSERTMACROS__ -w -Xanalyzer -analyzer-disable-all-checks</string>
-			</dict>
-		</dict>
 		<key>A649DB9C1BA97666A258BF97308BFC42</key>
 		<dict>
 			<key>includeInIndex</key>
@@ -6495,18 +6483,6 @@
 				<string>-w -Xanalyzer -analyzer-disable-all-checks</string>
 			</dict>
 		</dict>
-		<key>A9007FB5AA562DD41E1B787D6051F220</key>
-		<dict>
-			<key>fileRef</key>
-			<string>E03F62D19F18B77868A5E62D29F748ED</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-			<key>settings</key>
-			<dict>
-				<key>COMPILER_FLAGS</key>
-				<string>-DREALM_HAVE_CONFIG -DREALM_COCOA_VERSION='@"0.98.6"' -D__ASSERTMACROS__ -w -Xanalyzer -analyzer-disable-all-checks</string>
-			</dict>
-		</dict>
 		<key>A94CDBCCB8C79F22232A9D03E5D9749F</key>
 		<dict>
 			<key>fileRef</key>
@@ -6519,6 +6495,18 @@
 				<string>-w -Xanalyzer -analyzer-disable-all-checks</string>
 			</dict>
 		</dict>
+		<key>A956DAB4ACB7B9480D145FAB5003785A</key>
+		<dict>
+			<key>fileRef</key>
+			<string>2C461A4F73DB1CA941B24EABB76A0D55</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+			<key>settings</key>
+			<dict>
+				<key>COMPILER_FLAGS</key>
+				<string>-DREALM_HAVE_CONFIG -DREALM_COCOA_VERSION='@"0.98.7"' -D__ASSERTMACROS__ -w -Xanalyzer -analyzer-disable-all-checks</string>
+			</dict>
+		</dict>
 		<key>A96E3669159014035CEFF8C889FCEA08</key>
 		<dict>
 			<key>fileRef</key>
@@ -6529,18 +6517,6 @@
 			<dict>
 				<key>COMPILER_FLAGS</key>
 				<string>-w -Xanalyzer -analyzer-disable-all-checks</string>
-			</dict>
-		</dict>
-		<key>A99ED1A4713DCE974A6E395345A48213</key>
-		<dict>
-			<key>fileRef</key>
-			<string>80B6B61EEE6BE56892C8FA25BFB850D5</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-			<key>settings</key>
-			<dict>
-				<key>COMPILER_FLAGS</key>
-				<string>-DREALM_HAVE_CONFIG -DREALM_COCOA_VERSION='@"0.98.6"' -D__ASSERTMACROS__ -w -Xanalyzer -analyzer-disable-all-checks</string>
 			</dict>
 		</dict>
 		<key>AA31962A4169A6408704024227D1B757</key>
@@ -6585,6 +6561,18 @@
 			<string>APNGKit/libpng-apng/png.h</string>
 			<key>sourceTree</key>
 			<string>&lt;group&gt;</string>
+		</dict>
+		<key>AA83FB1FCFE8B582685586E057F1549A</key>
+		<dict>
+			<key>fileRef</key>
+			<string>F13CB09ACB8E94E2A1AB0C138F371551</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+			<key>settings</key>
+			<dict>
+				<key>COMPILER_FLAGS</key>
+				<string>-DREALM_HAVE_CONFIG -DREALM_COCOA_VERSION='@"0.98.7"' -D__ASSERTMACROS__ -w -Xanalyzer -analyzer-disable-all-checks</string>
+			</dict>
 		</dict>
 		<key>AAB7886F5025699C2B9D2887C276C4D8</key>
 		<dict>
@@ -6713,18 +6701,6 @@
 			<key>sourceTree</key>
 			<string>&lt;group&gt;</string>
 		</dict>
-		<key>ACB2A7605D5B9549226B46DF6E67FEAA</key>
-		<dict>
-			<key>fileRef</key>
-			<string>F13CB09ACB8E94E2A1AB0C138F371551</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-			<key>settings</key>
-			<dict>
-				<key>COMPILER_FLAGS</key>
-				<string>-DREALM_HAVE_CONFIG -DREALM_COCOA_VERSION='@"0.98.6"' -D__ASSERTMACROS__ -w -Xanalyzer -analyzer-disable-all-checks</string>
-			</dict>
-		</dict>
 		<key>ACECE76DE86F4CE8675E3035E711FB71</key>
 		<dict>
 			<key>children</key>
@@ -6755,6 +6731,18 @@
 			<dict>
 				<key>COMPILER_FLAGS</key>
 				<string>-w -Xanalyzer -analyzer-disable-all-checks</string>
+			</dict>
+		</dict>
+		<key>AE54A1520F39C66D8A1F55B6723311EA</key>
+		<dict>
+			<key>fileRef</key>
+			<string>5FA3C8A652D3813EC7B08CF0E12CFCC2</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+			<key>settings</key>
+			<dict>
+				<key>COMPILER_FLAGS</key>
+				<string>-DREALM_HAVE_CONFIG -DREALM_COCOA_VERSION='@"0.98.7"' -D__ASSERTMACROS__ -w -Xanalyzer -analyzer-disable-all-checks</string>
 			</dict>
 		</dict>
 		<key>AF17E208A1C840BB75CB7041D21778F8</key>
@@ -7256,6 +7244,18 @@
 			<key>sourceTree</key>
 			<string>&lt;group&gt;</string>
 		</dict>
+		<key>B8D081892E2D7E3C9796DD723D738EFF</key>
+		<dict>
+			<key>fileRef</key>
+			<string>8242653634000FAAA5B602F4ACF082C1</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+			<key>settings</key>
+			<dict>
+				<key>COMPILER_FLAGS</key>
+				<string>-DREALM_HAVE_CONFIG -DREALM_COCOA_VERSION='@"0.98.7"' -D__ASSERTMACROS__ -w -Xanalyzer -analyzer-disable-all-checks</string>
+			</dict>
+		</dict>
 		<key>B974F0E474904E70F78B2DB283AAD74C</key>
 		<dict>
 			<key>includeInIndex</key>
@@ -7357,18 +7357,6 @@
 			<string>2737B61583A3E6E6629CCD782026231D</string>
 			<key>remoteInfo</key>
 			<string>APNGKit</string>
-		</dict>
-		<key>BD971F15F2D19964055967745FA83575</key>
-		<dict>
-			<key>fileRef</key>
-			<string>FAE565610EA19E72C6FC6EA63CEF08BE</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-			<key>settings</key>
-			<dict>
-				<key>COMPILER_FLAGS</key>
-				<string>-DREALM_HAVE_CONFIG -DREALM_COCOA_VERSION='@"0.98.6"' -D__ASSERTMACROS__ -w -Xanalyzer -analyzer-disable-all-checks</string>
-			</dict>
 		</dict>
 		<key>BE08EAE009AC749DA0A0D67A6F4E1FE1</key>
 		<dict>
@@ -7567,6 +7555,18 @@
 			<key>isa</key>
 			<string>PBXBuildFile</string>
 		</dict>
+		<key>C1D70C07939C3E9F8505CE19A7DAA2E7</key>
+		<dict>
+			<key>fileRef</key>
+			<string>8B796449208A5BCCB5918820D151D43F</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+			<key>settings</key>
+			<dict>
+				<key>COMPILER_FLAGS</key>
+				<string>-DREALM_HAVE_CONFIG -DREALM_COCOA_VERSION='@"0.98.7"' -D__ASSERTMACROS__ -w -Xanalyzer -analyzer-disable-all-checks</string>
+			</dict>
+		</dict>
 		<key>C2553CF6C9F61AF63960085C4DE45F16</key>
 		<dict>
 			<key>buildActionMask</key>
@@ -7685,6 +7685,18 @@
 			<key>sourceTree</key>
 			<string>&lt;group&gt;</string>
 		</dict>
+		<key>C445E3A57B9487E42C2220048F34CE7D</key>
+		<dict>
+			<key>fileRef</key>
+			<string>FAE565610EA19E72C6FC6EA63CEF08BE</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+			<key>settings</key>
+			<dict>
+				<key>COMPILER_FLAGS</key>
+				<string>-DREALM_HAVE_CONFIG -DREALM_COCOA_VERSION='@"0.98.7"' -D__ASSERTMACROS__ -w -Xanalyzer -analyzer-disable-all-checks</string>
+			</dict>
+		</dict>
 		<key>C4B3C15B8ACB8B8ECC0466781B5838BD</key>
 		<dict>
 			<key>fileRef</key>
@@ -7711,18 +7723,6 @@
 			<string>PBXHeadersBuildPhase</string>
 			<key>runOnlyForDeploymentPostprocessing</key>
 			<string>0</string>
-		</dict>
-		<key>C4EC21A68A9CA70F106BFB15DA59C849</key>
-		<dict>
-			<key>fileRef</key>
-			<string>82DD9C35CDFDD65FECF48D8BB7C4131A</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-			<key>settings</key>
-			<dict>
-				<key>COMPILER_FLAGS</key>
-				<string>-DREALM_HAVE_CONFIG -DREALM_COCOA_VERSION='@"0.98.6"' -D__ASSERTMACROS__ -w -Xanalyzer -analyzer-disable-all-checks</string>
-			</dict>
 		</dict>
 		<key>C554DE21CC9D84213F37A0A2468E43C8</key>
 		<dict>
@@ -7933,6 +7933,18 @@
 			<key>sourceTree</key>
 			<string>&lt;group&gt;</string>
 		</dict>
+		<key>CAD2D60A0310FBC6BE9C47AC01F1B596</key>
+		<dict>
+			<key>fileRef</key>
+			<string>B799CF6ABFFFC92E195AC0C583FA7AEB</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+			<key>settings</key>
+			<dict>
+				<key>COMPILER_FLAGS</key>
+				<string>-DREALM_HAVE_CONFIG -DREALM_COCOA_VERSION='@"0.98.7"' -D__ASSERTMACROS__ -w -Xanalyzer -analyzer-disable-all-checks</string>
+			</dict>
+		</dict>
 		<key>CAE7DEE1B8BCE7CCBE315B40E349ED4E</key>
 		<dict>
 			<key>includeInIndex</key>
@@ -7985,18 +7997,6 @@
 			<key>sourceTree</key>
 			<string>DEVELOPER_DIR</string>
 		</dict>
-		<key>CBA38AB4AA87164B011C1F20DD228F07</key>
-		<dict>
-			<key>fileRef</key>
-			<string>0C2C81C9594F8F83D5081DD43CAACDCB</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-			<key>settings</key>
-			<dict>
-				<key>COMPILER_FLAGS</key>
-				<string>-DREALM_HAVE_CONFIG -DREALM_COCOA_VERSION='@"0.98.6"' -D__ASSERTMACROS__ -w -Xanalyzer -analyzer-disable-all-checks</string>
-			</dict>
-		</dict>
 		<key>CD70463D5E3996596514B412BC9C37F3</key>
 		<dict>
 			<key>includeInIndex</key>
@@ -8022,18 +8022,6 @@
 				<array>
 					<string>Project</string>
 				</array>
-			</dict>
-		</dict>
-		<key>CDD9A8276AB4538C897BC6FEF4894D4F</key>
-		<dict>
-			<key>fileRef</key>
-			<string>504ED35ABC85FB05914E86E46C8A463E</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-			<key>settings</key>
-			<dict>
-				<key>COMPILER_FLAGS</key>
-				<string>-DREALM_HAVE_CONFIG -DREALM_COCOA_VERSION='@"0.98.6"' -D__ASSERTMACROS__ -w -Xanalyzer -analyzer-disable-all-checks</string>
 			</dict>
 		</dict>
 		<key>CE9C5A550944EA6CF8C976F78D155AAE</key>
@@ -8271,6 +8259,18 @@
 				<string>-w -Xanalyzer -analyzer-disable-all-checks</string>
 			</dict>
 		</dict>
+		<key>D519AE503BAB947051C11D0ABA691003</key>
+		<dict>
+			<key>fileRef</key>
+			<string>504ED35ABC85FB05914E86E46C8A463E</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+			<key>settings</key>
+			<dict>
+				<key>COMPILER_FLAGS</key>
+				<string>-DREALM_HAVE_CONFIG -DREALM_COCOA_VERSION='@"0.98.7"' -D__ASSERTMACROS__ -w -Xanalyzer -analyzer-disable-all-checks</string>
+			</dict>
+		</dict>
 		<key>D5C4D9C2EBA1E03A7BDC99EE7B72C06F</key>
 		<dict>
 			<key>fileRef</key>
@@ -8505,48 +8505,60 @@
 			<key>runOnlyForDeploymentPostprocessing</key>
 			<string>0</string>
 		</dict>
+		<key>DADE84687BD8C51F5B47BF7156CFA979</key>
+		<dict>
+			<key>fileRef</key>
+			<string>E03F62D19F18B77868A5E62D29F748ED</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+			<key>settings</key>
+			<dict>
+				<key>COMPILER_FLAGS</key>
+				<string>-DREALM_HAVE_CONFIG -DREALM_COCOA_VERSION='@"0.98.7"' -D__ASSERTMACROS__ -w -Xanalyzer -analyzer-disable-all-checks</string>
+			</dict>
+		</dict>
 		<key>DB231CB215173E9890A56D7385870571</key>
 		<dict>
 			<key>buildActionMask</key>
 			<string>2147483647</string>
 			<key>files</key>
 			<array>
-				<string>A603A22FFC1396DA2D6AD5593B4C28EB</string>
-				<string>86DB76D717433C1242815F343109ACB5</string>
-				<string>A99ED1A4713DCE974A6E395345A48213</string>
-				<string>93729E9413E82C4D7666C86D32150C65</string>
-				<string>7FFA3D8F2CCB8B04FA204BAC2F01310C</string>
-				<string>EE7C3CC4B66B816D0ACE1FEB9DB2F4B8</string>
+				<string>CAD2D60A0310FBC6BE9C47AC01F1B596</string>
+				<string>F1CA7E2CF71373E6A76B8D82B4DBDDFD</string>
+				<string>2AA4B6CCC18D842BD5C0675C0C7C1465</string>
+				<string>3578CC0B0F0AD2B7167583B28C09A459</string>
+				<string>7BD7816A4620C4C5242B4F38D0C24BA0</string>
+				<string>9C9F1054A0FB1F0111E61704CF8E9C2A</string>
 				<string>6631D8735F68683CF4731B3680DFEDA0</string>
-				<string>7E0BFF9B58FFEAE9384A1F2013CA6480</string>
-				<string>37D3CC0839C8AFB1F42C58A477F96070</string>
-				<string>9E758D89958BA7194BAF8D1935DFE436</string>
-				<string>44574DA1457E7BA0A35B35D974545825</string>
-				<string>E3E78BB5CA23FA7CCF56FD17B2F96872</string>
-				<string>092324413A8AF417B7C87A3BDEA3B12A</string>
-				<string>E07C986345AB7D296D09A66C7B1190BA</string>
-				<string>816007D734E4CEECAC4C9C9F5E02E13E</string>
-				<string>0036BD0925DA85349FD182BBF0F2450C</string>
-				<string>4D18EA657669DCB0BE15408A57D6577D</string>
-				<string>3FFB2BA0D6EE3D54085DC80A06046EFA</string>
-				<string>7012CB98A0E6EAC81DE7E9A5FC96D5CC</string>
-				<string>138B653B74CF9164C4BA4E9E183D1655</string>
-				<string>39EBABB2471B1E7EC526DF9076D795B1</string>
-				<string>558DD78E58CC34BF0026713EDFBA1095</string>
-				<string>C4EC21A68A9CA70F106BFB15DA59C849</string>
-				<string>A9007FB5AA562DD41E1B787D6051F220</string>
-				<string>E7BF8B4F321DEF23099ADFC7AA0969DB</string>
-				<string>947D33C357F334FF94047D42AE4B8F11</string>
-				<string>21738CC4CD6C3128C7FF1F40B3434B26</string>
-				<string>023DC6B2BE4848F9E4EE9B65AF7B617B</string>
-				<string>11AE51E98BB62EEDA1654EED0A1CEBFC</string>
-				<string>EA64EE39F996A86B66CFEB284EAC1B59</string>
-				<string>4769D3D65FD770C1EA6CD90E7855BBEA</string>
-				<string>BD971F15F2D19964055967745FA83575</string>
-				<string>CDD9A8276AB4538C897BC6FEF4894D4F</string>
-				<string>497F8A84309272F9E8B57CFEDC31C191</string>
-				<string>ACB2A7605D5B9549226B46DF6E67FEAA</string>
-				<string>CBA38AB4AA87164B011C1F20DD228F07</string>
+				<string>992051DF93867FBAD2786CFEF0AF11A5</string>
+				<string>757597790F587219DE9D02B7F52CAE29</string>
+				<string>6700628BE8C23412E3875B7D37B0D261</string>
+				<string>2C040742B9E4A59E0E84AED84A42C507</string>
+				<string>3D3E80E63869E1FEDF564957A989DCE7</string>
+				<string>2B8E2081E45F5825F7355E058F0E0629</string>
+				<string>9E57E91DE30CF5F21811D2F65CF3DE59</string>
+				<string>81720D590CDA8D58C11B495218800D81</string>
+				<string>83E64E209B454E84D45D766E70FCBBE8</string>
+				<string>E9A10EB5206CF9DA86DDCD6E57F165F9</string>
+				<string>AE54A1520F39C66D8A1F55B6723311EA</string>
+				<string>3A40C61955FF2D079FAEBEBA21FB5EFB</string>
+				<string>7E873C06F6D7C3CCCED64BA3898D9DEA</string>
+				<string>A956DAB4ACB7B9480D145FAB5003785A</string>
+				<string>B8D081892E2D7E3C9796DD723D738EFF</string>
+				<string>F2E788F2A1B0FCE9C4D8962ECA89F746</string>
+				<string>DADE84687BD8C51F5B47BF7156CFA979</string>
+				<string>DEB291E0CD426BAC7FF90C2B9018159A</string>
+				<string>367FA8844936FA56BBA150453823278C</string>
+				<string>4ED504971104D7462CDBB2E54B4FBD75</string>
+				<string>9181A0228474A85BE036B417D8583093</string>
+				<string>C1D70C07939C3E9F8505CE19A7DAA2E7</string>
+				<string>7E7CD9024857121689F642C62040827E</string>
+				<string>102F9891C7170547EAB92AABCE67841B</string>
+				<string>C445E3A57B9487E42C2220048F34CE7D</string>
+				<string>D519AE503BAB947051C11D0ABA691003</string>
+				<string>3922F7223711A6B89D0C39AA2C335146</string>
+				<string>AA83FB1FCFE8B582685586E057F1549A</string>
+				<string>9E773FD93CEF6F652E7B2EB098D90342</string>
 			</array>
 			<key>isa</key>
 			<string>PBXSourcesBuildPhase</string>
@@ -8645,6 +8657,18 @@
 			<key>runOnlyForDeploymentPostprocessing</key>
 			<string>0</string>
 		</dict>
+		<key>DEB291E0CD426BAC7FF90C2B9018159A</key>
+		<dict>
+			<key>fileRef</key>
+			<string>997550332B0399303B1C113C1E575714</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+			<key>settings</key>
+			<dict>
+				<key>COMPILER_FLAGS</key>
+				<string>-DREALM_HAVE_CONFIG -DREALM_COCOA_VERSION='@"0.98.7"' -D__ASSERTMACROS__ -w -Xanalyzer -analyzer-disable-all-checks</string>
+			</dict>
+		</dict>
 		<key>DF4630B97BCCD3997F8664E18631B60E</key>
 		<dict>
 			<key>includeInIndex</key>
@@ -8709,18 +8733,6 @@
 				<array>
 					<string>Private</string>
 				</array>
-			</dict>
-		</dict>
-		<key>E07C986345AB7D296D09A66C7B1190BA</key>
-		<dict>
-			<key>fileRef</key>
-			<string>49BD8EC92852909CE60184B3100304BB</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-			<key>settings</key>
-			<dict>
-				<key>COMPILER_FLAGS</key>
-				<string>-DREALM_HAVE_CONFIG -DREALM_COCOA_VERSION='@"0.98.6"' -D__ASSERTMACROS__ -w -Xanalyzer -analyzer-disable-all-checks</string>
 			</dict>
 		</dict>
 		<key>E0A4249902114C0277F10A91CFC529B3</key>
@@ -8928,18 +8940,6 @@
 				<array>
 					<string>Public</string>
 				</array>
-			</dict>
-		</dict>
-		<key>E3E78BB5CA23FA7CCF56FD17B2F96872</key>
-		<dict>
-			<key>fileRef</key>
-			<string>F52A8A08AA4A70D99CE9A558996F1028</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-			<key>settings</key>
-			<dict>
-				<key>COMPILER_FLAGS</key>
-				<string>-DREALM_HAVE_CONFIG -DREALM_COCOA_VERSION='@"0.98.6"' -D__ASSERTMACROS__ -w -Xanalyzer -analyzer-disable-all-checks</string>
 			</dict>
 		</dict>
 		<key>E459AC2891FFB7C29C754F31C580821A</key>
@@ -9165,18 +9165,6 @@
 			<key>productType</key>
 			<string>com.apple.product-type.framework</string>
 		</dict>
-		<key>E7BF8B4F321DEF23099ADFC7AA0969DB</key>
-		<dict>
-			<key>fileRef</key>
-			<string>997550332B0399303B1C113C1E575714</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-			<key>settings</key>
-			<dict>
-				<key>COMPILER_FLAGS</key>
-				<string>-DREALM_HAVE_CONFIG -DREALM_COCOA_VERSION='@"0.98.6"' -D__ASSERTMACROS__ -w -Xanalyzer -analyzer-disable-all-checks</string>
-			</dict>
-		</dict>
 		<key>E7CFF2B31C63CFC1BF2C59A40F5EF613</key>
 		<dict>
 			<key>fileRef</key>
@@ -9256,6 +9244,18 @@
 			<key>sourceTree</key>
 			<string>DEVELOPER_DIR</string>
 		</dict>
+		<key>E9A10EB5206CF9DA86DDCD6E57F165F9</key>
+		<dict>
+			<key>fileRef</key>
+			<string>8422EEA00AAC28A319B395566B40380E</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+			<key>settings</key>
+			<dict>
+				<key>COMPILER_FLAGS</key>
+				<string>-DREALM_HAVE_CONFIG -DREALM_COCOA_VERSION='@"0.98.7"' -D__ASSERTMACROS__ -w -Xanalyzer -analyzer-disable-all-checks</string>
+			</dict>
+		</dict>
 		<key>E9B727B263ED7D9E271FD77750884D1A</key>
 		<dict>
 			<key>includeInIndex</key>
@@ -9316,18 +9316,6 @@
 			<string>PBXHeadersBuildPhase</string>
 			<key>runOnlyForDeploymentPostprocessing</key>
 			<string>0</string>
-		</dict>
-		<key>EA64EE39F996A86B66CFEB284EAC1B59</key>
-		<dict>
-			<key>fileRef</key>
-			<string>6B61BA91FDA4CF4864286123E7E232F1</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-			<key>settings</key>
-			<dict>
-				<key>COMPILER_FLAGS</key>
-				<string>-DREALM_HAVE_CONFIG -DREALM_COCOA_VERSION='@"0.98.6"' -D__ASSERTMACROS__ -w -Xanalyzer -analyzer-disable-all-checks</string>
-			</dict>
 		</dict>
 		<key>EA6D9C5155435489044CAA6D6DABD1C7</key>
 		<dict>
@@ -9504,18 +9492,6 @@
 			<key>sourceTree</key>
 			<string>&lt;group&gt;</string>
 		</dict>
-		<key>EE7C3CC4B66B816D0ACE1FEB9DB2F4B8</key>
-		<dict>
-			<key>fileRef</key>
-			<string>B22F45E9FDC31D0184B4B96512A6F306</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-			<key>settings</key>
-			<dict>
-				<key>COMPILER_FLAGS</key>
-				<string>-DREALM_HAVE_CONFIG -DREALM_COCOA_VERSION='@"0.98.6"' -D__ASSERTMACROS__ -w -Xanalyzer -analyzer-disable-all-checks</string>
-			</dict>
-		</dict>
 		<key>EF318CA6CF02B040750E2B9481AEB2AA</key>
 		<dict>
 			<key>includeInIndex</key>
@@ -9624,6 +9600,18 @@
 			<key>sourceTree</key>
 			<string>&lt;group&gt;</string>
 		</dict>
+		<key>F1CA7E2CF71373E6A76B8D82B4DBDDFD</key>
+		<dict>
+			<key>fileRef</key>
+			<string>45A67C1530BDED6BEC65EB10CF25D483</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+			<key>settings</key>
+			<dict>
+				<key>COMPILER_FLAGS</key>
+				<string>-DREALM_HAVE_CONFIG -DREALM_COCOA_VERSION='@"0.98.7"' -D__ASSERTMACROS__ -w -Xanalyzer -analyzer-disable-all-checks</string>
+			</dict>
+		</dict>
 		<key>F1EADBB8398DA6CFD6121D19FF905AFC</key>
 		<dict>
 			<key>includeInIndex</key>
@@ -9645,6 +9633,18 @@
 			<string>CB9A79F8CC61A1A9D0510540429582D4</string>
 			<key>isa</key>
 			<string>PBXBuildFile</string>
+		</dict>
+		<key>F2E788F2A1B0FCE9C4D8962ECA89F746</key>
+		<dict>
+			<key>fileRef</key>
+			<string>82DD9C35CDFDD65FECF48D8BB7C4131A</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+			<key>settings</key>
+			<dict>
+				<key>COMPILER_FLAGS</key>
+				<string>-DREALM_HAVE_CONFIG -DREALM_COCOA_VERSION='@"0.98.7"' -D__ASSERTMACROS__ -w -Xanalyzer -analyzer-disable-all-checks</string>
+			</dict>
 		</dict>
 		<key>F2E9945B7494E20ED7DC4720A2B8CDC9</key>
 		<dict>
