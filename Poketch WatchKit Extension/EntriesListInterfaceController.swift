@@ -35,8 +35,8 @@ class EntriesListInterfaceController: WKInterfaceController {
         }
     }
     
-    let sectionSize: Int = 90
-    let pageSize: Int = 9
+    let sectionSize: Int = 60
+    let pageSize: Int = 6
     var page: Int = 0 {
         willSet {
             [
